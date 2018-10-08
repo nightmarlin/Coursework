@@ -13,8 +13,8 @@
             //
             this.SettingChanging += this.SettingChangingEventHandler;
             //
-            this.SettingsSaving += this.SettingsSavingEventHandler;
-            //
+	        this.SettingsSaving += this.SettingsSavingEventHandler;
+	        //
         }
         
         private void SettingChangingEventHandler(object Sender, System.Configuration.SettingChangingEventArgs E) {

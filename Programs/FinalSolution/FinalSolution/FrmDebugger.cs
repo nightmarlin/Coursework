@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
-using System.IO;
-using System.IO.Ports;
+using System.Drawing;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 /* - SRC: https://stackoverflow.com/questions/355724/embedding-a-dos-console-in-a-windows-form -
@@ -56,14 +54,25 @@ namespace Solution {
 		/// <param name="MyParent">The FrmDesigner that instantiated the FrmDebugger</param>
 		public FrmDebugger(string FileToDebug, FrmDesigner MyParent) {
 			InitializeComponent();
+
+			BtnStartExecution.Enabled = true;
+
+			BtnStartExecution.EnabledChanged += Buttons_EnabledChanged;
+			BtnExitDebugging.EnabledChanged += Buttons_EnabledChanged;
+			BtnPauseExecution.EnabledChanged += Buttons_EnabledChanged;
+			BtnSubmitInput.EnabledChanged += Buttons_EnabledChanged;
+			BtnStopExecution.EnabledChanged += Buttons_EnabledChanged;
+
 			StopDebuggingInterfaceChanges();
 
-
-			Application.ApplicationExit += (S, E) => {
-				_DebugProcess?.Kill();
+			// Bind the enter key to sending an input
+			TxtInputToProgram.KeyUp += (Sender, Args) => {
+				if (Args.KeyCode == Keys.Enter) {
+					BtnSubmitInput_Click(null, null);
+				}
 			};
-
-
+			
+			// If parameters are missing, don't function okay
 			if (FileToDebug == null || MyParent == null) {
 				TxtStandardOutput.Text = @"No program was loaded, debugging will not occur";
 				TxtVariableOutput.Text = @"No variables can be observed";
@@ -72,7 +81,17 @@ namespace Solution {
 				return;
 			}
 
+			// If the App is closed, kill the process
+			Application.ApplicationExit += (S, E) => {
+				try {
+					
+					_DebugProcess?.Close();
+					_DebugProcess?.Kill();
 
+				} catch (InvalidOperationException) {}
+			};
+
+			// Instantiate the process
 			_DebugProcess = new Process {
 				StartInfo = new ProcessStartInfo {
 					FileName = FileToDebug,
@@ -80,7 +99,8 @@ namespace Solution {
 					CreateNoWindow = true, // No new window
 					UseShellExecute = false, // Don't run it in the system shell
 
-					//Arguments = "DEBUG"
+					Arguments = "DEBUG", // We are debugging after all, and it's crucial
+										 //   to the behaviour of the programs
 
 					RedirectStandardError = true, // Allows me to read the error output
 					RedirectStandardOutput = true, // Allows me to read normal output
@@ -90,7 +110,7 @@ namespace Solution {
 				EnableRaisingEvents = true // Allows me to hook on to the "Exited" event
 			};
 
-			_ParentFrmDesigner = MyParent;
+			_ParentFrmDesigner = MyParent; // Set parent form
 
 			_ParentFrmDesigner.Hide(); // Hide the parent form
 
@@ -109,25 +129,26 @@ namespace Solution {
 				Dispose(); // Clean up
 			}
 
-			TxtStandardOutput.Text = $@"Process started at {_DebugProcess.StartTime:f} {Environment.NewLine}";
-				// Feedback to user
+			TxtStandardOutput.Text = $@": Process started at {_DebugProcess.StartTime:f} {Environment.NewLine}";
+			// Feedback to user
 
-			Console.WriteLine($@"Process is called: {_DebugProcess.ProcessName} {Environment.NewLine}" +
-			                $@"Process was started at {_DebugProcess.StartTime:f} {Environment.NewLine}" +
-			                $@"Process has {(_DebugProcess.HasExited ? "" : "not ")}exited");
-				// Feedback to me (plus string interpolation, yay)
+			//Console.WriteLine($@"Process is called: {_DebugProcess.ProcessName} {Environment.NewLine}" +
+			//                $@"Process was started at {_DebugProcess.StartTime:f} {Environment.NewLine}" +
+			//                $@"Process has {(_DebugProcess.HasExited ? "" : "not ")}exited");
+			//	// Feedback to me (plus string interpolation, yay)
 
-			_DebugProcess.ErrorDataReceived += new DataReceivedEventHandler(ReadError);
-
-			_DebugProcess.OutputDataReceived += new DataReceivedEventHandler(ReadOutput);
-
-			_DebugProcess.Exited += (Sender, E) => { StopDebuggingInterfaceChanges(); };
+			// Add output listeners
+			_DebugProcess.ErrorDataReceived += ReadError;
+			_DebugProcess.OutputDataReceived += ReadOutput;
+			
+			_DebugProcess.Exited += (Sender, E) => { StopDebuggingInterfaceChanges(); }; // Sleep if the program exits
 
 			StartDebuggingInterfaceChanges(); // Enable buttons
 
 			TxtInputToProgram.Text = ""; // Empty the input
 			TxtInputToProgram_TextChanged(null, null); // Disable the SUBMIT button
 
+			// ASYNC OPERATIONS
 			_DebugProcess.BeginOutputReadLine();
 			_DebugProcess.BeginErrorReadLine();
 
@@ -179,28 +200,46 @@ namespace Solution {
 			BtnExitDebugging.Enabled = true;
 
 			BtnPauseExecution.Enabled = false;
+
 			BtnStartExecution.Enabled = false;
+
 			BtnStopExecution.Enabled = false;
+
 			BtnSubmitInput.Enabled = false;
 
 			_IsDebugging = false;
+
 			TxtInputToProgram.Enabled = false;
+
 		}
 
 		/// <summary>
 		/// Enable the buttons (Except START cos we've already started)
 		/// </summary>
 		private void StartDebuggingInterfaceChanges() {
-			BtnExitDebugging.Enabled = true;
-			BtnPauseExecution.Enabled = true;
 			BtnStartExecution.Enabled = false;
+
+			BtnExitDebugging.Enabled = true;
+
+			BtnPauseExecution.Enabled = true;
+
 			BtnStopExecution.Enabled = true;
+
 			BtnSubmitInput.Enabled = true;
 
 			_IsDebugging = true;
+
 			TxtInputToProgram.Enabled = true;
+			TxtInputToProgram_TextChanged(null, null);
 		}
 
+		private void Buttons_EnabledChanged(object S, EventArgs E) {
+
+			if (!(S is Button Sender)) return;
+
+			Sender.BackColor = Sender.Enabled ? Color.FromKnownColor(KnownColor.ScrollBar) : Color.FromKnownColor(KnownColor.ControlDarkDark);
+			Sender.ForeColor = Sender.Enabled ? Color.FromKnownColor(KnownColor.Black) : Color.Gray;
+		}
 		#endregion
 
 		#region Control Flow Buttons
@@ -210,11 +249,16 @@ namespace Solution {
 			var ToSubmit = Regex.Replace(TxtInputToProgram.Text, @"\p{C}+", string.Empty);
 				// Remove unreadable characters (Thanks Regex)
 
-			if (ToSubmit == string.Empty) return; // Don't send an empty string
-			
-			Console.WriteLine(@"Sent: " + ToSubmit);
+			if (ToSubmit == string.Empty) {
+				TxtInputToProgram_TextChanged(null, null);
+				TxtInputToProgram.Text = ""; // Empty the text box
+				return;
 
-			TxtStandardOutput.Text += $@": {ToSubmit}{Environment.NewLine}";
+			} // Don't send an empty string
+			
+			//Console.WriteLine(@"Sent: " + ToSubmit);
+
+			TxtStandardOutput.Text += $@"> {ToSubmit}{Environment.NewLine}"; // Reflect user input
 
 			await _DebugProcess.StandardInput.WriteLineAsync(ToSubmit); // Send input to the program
 			
@@ -259,6 +303,8 @@ namespace Solution {
 		/// <param name="Sender">Reqd. for events</param>
 		/// <param name="E">Reqd. for events</param>
 		private void BtnExitDebugging_Click(object Sender, EventArgs E) {
+
+			// Stop
 			StopDebuggingInterfaceChanges();
 			KillDebugProcess();
 
@@ -266,10 +312,6 @@ namespace Solution {
 
 			Hide(); // Become invisible
 			Dispose(); // Clean up
-		}
-
-		private async void StartOutputRead() {
-			TxtStandardOutput.Text += await _DebugProcess.StandardOutput.ReadToEndAsync();
 		}
 
 		#endregion

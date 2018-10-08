@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Solution {
@@ -11,9 +8,15 @@ namespace Solution {
 		/// </summary>
 		[STAThread]
 		static void Main() {
-			Application.EnableVisualStyles();
-			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new FrmDesigner());
+			try {
+				Application.EnableVisualStyles();
+				Application.SetCompatibleTextRenderingDefault(false);
+				Application.Run(new FrmDesigner());
+			} catch (Exception Ex) {
+				Console.WriteLine($@"A serious error occurred: {Environment.NewLine}" +
+				                  $@"{Ex.GetType()}{Environment.NewLine}{Ex.Data}");
+				Console.ReadLine();
+			}
 		}
 	}
 }
