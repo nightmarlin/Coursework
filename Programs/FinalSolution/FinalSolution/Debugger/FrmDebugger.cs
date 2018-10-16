@@ -4,6 +4,8 @@ using System.Drawing;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
+using Solution.Designer;
+
 /* - SRC: https://stackoverflow.com/questions/355724/embedding-a-dos-console-in-a-windows-form -
    var processStartInfo = new ProcessStartInfo("SomeOldApp.exe", "-p SomeParameters");
    
@@ -25,11 +27,12 @@ using System.Windows.Forms;
    process.WaitForExit();
  */
 
-namespace Solution {
+namespace Solution.Debugger {
 
 	/// <summary>
-	///     The form upon which all debugging will occur
+	/// The form upon which all debugging will occur
 	/// </summary>
+	/// <inheritdoc />
 	public partial class FrmDebugger : Form {
 	
 		private readonly Process _DebugProcess;
@@ -37,7 +40,7 @@ namespace Solution {
 		private bool _IsDebugging;
 
 		/// <summary>
-		///     Parameter-less initialization. Disables all buttons except Exit so nothing breaks
+		/// Parameter-less initialization. Disables all buttons except Exit so nothing breaks
 		/// </summary>
 		public FrmDebugger() {
 			InitializeComponent();
@@ -48,7 +51,7 @@ namespace Solution {
 		}
 
 		/// <summary>
-		///     Initialization with parameters. Allows debugging to begin
+		/// Initialization with parameters. Allows debugging to begin
 		/// </summary>
 		/// <param name="FileToDebug">The path of the "*.exe" file to be debugged</param>
 		/// <param name="MyParent">The FrmDesigner that instantiated the FrmDebugger</param>

@@ -1,4 +1,4 @@
-﻿namespace Solution {
+﻿namespace Solution.Debugger {
 	partial class FrmDebugger {
 		/// <summary>
 		/// Required designer variable.
@@ -49,12 +49,13 @@
 			this.TxtStandardOutput.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.TxtStandardOutput.ForeColor = System.Drawing.SystemColors.ControlDark;
 			this.TxtStandardOutput.Location = new System.Drawing.Point(3, 3);
+			this.TxtStandardOutput.MaxLength = 1073741824;
 			this.TxtStandardOutput.Multiline = true;
 			this.TxtStandardOutput.Name = "TxtStandardOutput";
 			this.TxtStandardOutput.ReadOnly = true;
 			this.TxtStandardOutput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
 			this.TxtStandardOutput.Size = new System.Drawing.Size(456, 422);
-			this.TxtStandardOutput.TabIndex = 1;
+			this.TxtStandardOutput.TabIndex = 7;
 			this.TxtStandardOutput.Text = "Standard Output.";
 			// 
 			// tableLayoutPanel1
@@ -70,15 +71,18 @@
 			this.tableLayoutPanel1.RowCount = 1;
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
 			this.tableLayoutPanel1.Size = new System.Drawing.Size(456, 34);
-			this.tableLayoutPanel1.TabIndex = 2;
+			this.tableLayoutPanel1.TabIndex = 0;
 			// 
 			// TxtInputToProgram
 			// 
+			this.TxtInputToProgram.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+			this.TxtInputToProgram.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.RecentlyUsedList;
 			this.TxtInputToProgram.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.TxtInputToProgram.Location = new System.Drawing.Point(3, 3);
+			this.TxtInputToProgram.MaxLength = 1073741824;
 			this.TxtInputToProgram.Name = "TxtInputToProgram";
 			this.TxtInputToProgram.Size = new System.Drawing.Size(336, 20);
-			this.TxtInputToProgram.TabIndex = 0;
+			this.TxtInputToProgram.TabIndex = 1;
 			this.TxtInputToProgram.TextChanged += new System.EventHandler(this.TxtInputToProgram_TextChanged);
 			// 
 			// BtnSubmitInput
@@ -89,7 +93,7 @@
 			this.BtnSubmitInput.Location = new System.Drawing.Point(345, 3);
 			this.BtnSubmitInput.Name = "BtnSubmitInput";
 			this.BtnSubmitInput.Size = new System.Drawing.Size(108, 28);
-			this.BtnSubmitInput.TabIndex = 1;
+			this.BtnSubmitInput.TabIndex = 2;
 			this.BtnSubmitInput.Text = "SUBMIT";
 			this.BtnSubmitInput.UseVisualStyleBackColor = false;
 			this.BtnSubmitInput.Click += new System.EventHandler(this.BtnSubmitInput_Click);
@@ -137,12 +141,13 @@
 			// BtnExitDebugging
 			// 
 			this.BtnExitDebugging.BackColor = System.Drawing.SystemColors.ScrollBar;
+			this.BtnExitDebugging.DialogResult = System.Windows.Forms.DialogResult.Cancel;
 			this.BtnExitDebugging.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.BtnExitDebugging.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.BtnExitDebugging.Location = new System.Drawing.Point(222, 3);
 			this.BtnExitDebugging.Name = "BtnExitDebugging";
 			this.BtnExitDebugging.Size = new System.Drawing.Size(69, 28);
-			this.BtnExitDebugging.TabIndex = 3;
+			this.BtnExitDebugging.TabIndex = 6;
 			this.BtnExitDebugging.Text = "EXIT";
 			this.BtnExitDebugging.UseVisualStyleBackColor = false;
 			this.BtnExitDebugging.Click += new System.EventHandler(this.BtnExitDebugging_Click);
@@ -155,7 +160,7 @@
 			this.BtnStartExecution.Location = new System.Drawing.Point(149, 3);
 			this.BtnStartExecution.Name = "BtnStartExecution";
 			this.BtnStartExecution.Size = new System.Drawing.Size(67, 28);
-			this.BtnStartExecution.TabIndex = 2;
+			this.BtnStartExecution.TabIndex = 5;
 			this.BtnStartExecution.Text = "START";
 			this.BtnStartExecution.UseVisualStyleBackColor = false;
 			this.BtnStartExecution.Click += new System.EventHandler(this.BtnStartExecution_Click);
@@ -169,7 +174,7 @@
 			this.BtnStopExecution.Location = new System.Drawing.Point(3, 3);
 			this.BtnStopExecution.Name = "BtnStopExecution";
 			this.BtnStopExecution.Size = new System.Drawing.Size(67, 28);
-			this.BtnStopExecution.TabIndex = 0;
+			this.BtnStopExecution.TabIndex = 3;
 			this.BtnStopExecution.Text = "STOP";
 			this.BtnStopExecution.UseVisualStyleBackColor = false;
 			this.BtnStopExecution.Click += new System.EventHandler(this.BtnStopExecution_Click);
@@ -183,7 +188,7 @@
 			this.BtnPauseExecution.Location = new System.Drawing.Point(76, 3);
 			this.BtnPauseExecution.Name = "BtnPauseExecution";
 			this.BtnPauseExecution.Size = new System.Drawing.Size(67, 28);
-			this.BtnPauseExecution.TabIndex = 1;
+			this.BtnPauseExecution.TabIndex = 4;
 			this.BtnPauseExecution.Text = "PAUSE";
 			this.BtnPauseExecution.UseVisualStyleBackColor = false;
 			this.BtnPauseExecution.Click += new System.EventHandler(this.BtnPauseExecution_Click);
@@ -209,11 +214,12 @@
 			this.TxtErrorOutput.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.TxtErrorOutput.ForeColor = System.Drawing.Color.DarkRed;
 			this.TxtErrorOutput.Location = new System.Drawing.Point(3, 214);
+			this.TxtErrorOutput.MaxLength = 1073741824;
 			this.TxtErrorOutput.Multiline = true;
 			this.TxtErrorOutput.Name = "TxtErrorOutput";
 			this.TxtErrorOutput.ReadOnly = true;
 			this.TxtErrorOutput.Size = new System.Drawing.Size(288, 205);
-			this.TxtErrorOutput.TabIndex = 1;
+			this.TxtErrorOutput.TabIndex = 9;
 			this.TxtErrorOutput.Text = "Error Output. Nothing\'s gone wrong yet";
 			// 
 			// TxtVariableOutput
@@ -222,18 +228,21 @@
 			this.TxtVariableOutput.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.TxtVariableOutput.ForeColor = System.Drawing.Color.MediumSeaGreen;
 			this.TxtVariableOutput.Location = new System.Drawing.Point(3, 3);
+			this.TxtVariableOutput.MaxLength = 1073741824;
 			this.TxtVariableOutput.Multiline = true;
 			this.TxtVariableOutput.Name = "TxtVariableOutput";
 			this.TxtVariableOutput.ReadOnly = true;
 			this.TxtVariableOutput.Size = new System.Drawing.Size(288, 205);
-			this.TxtVariableOutput.TabIndex = 0;
+			this.TxtVariableOutput.TabIndex = 8;
 			this.TxtVariableOutput.Text = "Observed Variables";
 			// 
 			// FrmDebugger
 			// 
+			this.AcceptButton = this.BtnSubmitInput;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+			this.CancelButton = this.BtnExitDebugging;
 			this.ClientSize = new System.Drawing.Size(786, 492);
 			this.Controls.Add(this.tableLayoutPanel2);
 			this.ForeColor = System.Drawing.SystemColors.ControlText;

@@ -1,22 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Threading;
 using System.Windows.Forms;
 
-namespace Solution {
+using Solution.Debugger;
 
+namespace Solution.Designer {
+	
+	/// <summary>
+	/// The form upon which designing occurs
+	/// </summary>
+	/// <inheritdoc />
 	public partial class FrmDesigner : Form {
 
 		/// <summary>
 		/// Initializes and instantiates the component
 		/// </summary>
+		/// <inheritdoc />
 		public FrmDesigner() {
 			InitializeComponent();
 			Shown += FrmDesigner_Shown;
@@ -50,7 +48,7 @@ namespace Solution {
 		/// <param name="E">Reqd. for events</param>
 		private void BtnShowDebugger_Click(object Sender, EventArgs E) {
 
-			const string MyProcess = @".\\BébéProgram.exe";
+			const string MyProcess = @".\\BébéProgramMK2.exe";
 
 			var MyDebugger = new FrmDebugger(MyProcess, this);
 			//var MyDebugger = new FrmDebugger();

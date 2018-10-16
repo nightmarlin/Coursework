@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 
+using Newtonsoft.Json;
 
-namespace Solution {
+namespace Solution.Debugger {
 	partial class FrmDebugger {
 
 		#region Read operations
@@ -108,7 +110,7 @@ namespace Solution {
 			return !(Line is null) && Line.StartsWith(@"DAT|");
 		}
 
-		private void OutputVariables(string Data) {
+		private void OutputVariablesOld(string Data) {
 
 			// Remove `DAT|[`
 			Data = Data.Remove(0, 5);
@@ -129,7 +131,36 @@ namespace Solution {
 
 			VariableOut = "Variables:" + Environment.NewLine + Environment.NewLine + VariableOut;
 
-			/* For the input `DAT|[["Name1","Value1"]["Name2","Value2"]]`, you get
+			/* For the input `DAT|[["Name1","Value1"],["Name2","Value2"]]`, you get
+			 *
+			 * `Variables:
+			 *
+			 * Name1 = Value1
+			 * Name2 = Value2`
+			 *
+			 */
+
+			TxtVariableOutput.Text = VariableOut;
+
+		}
+
+		private void OutputVariables(string Data) {
+
+			// Remove `DAT|`
+			Data = Data.Remove(0, 4);
+
+			//Console.WriteLine(Data);
+			
+			// Remove last `]`
+			var ListOut = JsonConvert.DeserializeObject<List<string[]>>(Data);
+
+			var VariableOut = "Variables:" + Environment.NewLine;
+
+			foreach (var Stringse in ListOut) {
+				VariableOut += $"{Stringse[0]} <{Stringse[2]}> = {Stringse[1]}{Environment.NewLine}{Environment.NewLine}";
+			}
+
+			/* For the input `DAT|[["Name1","Value1"],["Name2","Value2"]]`, you get
 			 *
 			 * `Variables:
 			 *

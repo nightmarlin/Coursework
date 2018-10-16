@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
 
+using Solution.Designer;
+
 namespace Solution {
 	static class Program {
 		/// <summary>

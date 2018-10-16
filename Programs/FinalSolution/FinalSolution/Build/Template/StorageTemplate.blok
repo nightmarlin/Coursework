@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+
+<!DOCTYPE ProjectStorage> 
+
+<ProjectStorage>
+
+    <Name></Name>
+    <!-- The name of the project  -->
+
+    <blocks></blocks>
+    <!-- The block data of the project -->
+
+    <CustomSetting name="" value="" />
+    <!-- Storage for custom settings data -->
+    
+    <BuildTime></BuildTime>
+    <!-- The datetime at which the project finished building -->
+    
+    <BuildAuthor></BuildAuthor>
+    <!-- The author of the program -->
+
+</ProjectStorage>

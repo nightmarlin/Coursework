@@ -1,6 +1,4 @@
-﻿using System.Drawing;
-
-namespace Solution {
+﻿namespace Solution.Designer {
 	partial class FrmDesigner {
 		/// <summary>
 		/// Required designer variable.
