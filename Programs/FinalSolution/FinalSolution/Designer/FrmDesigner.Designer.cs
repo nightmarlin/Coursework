@@ -28,6 +28,7 @@
 			this.FileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.OpenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.PnlWelcomePage = new System.Windows.Forms.Panel();
+			this.TxtFilePath = new System.Windows.Forms.TextBox();
 			this.BtnShowDebugger = new System.Windows.Forms.Button();
 			this.PnlWorkspace = new System.Windows.Forms.Panel();
 			this.MainMenu.SuspendLayout();
@@ -63,6 +64,7 @@
 			// PnlWelcomePage
 			// 
 			this.PnlWelcomePage.BackColor = System.Drawing.SystemColors.Control;
+			this.PnlWelcomePage.Controls.Add(this.TxtFilePath);
 			this.PnlWelcomePage.Controls.Add(this.BtnShowDebugger);
 			this.PnlWelcomePage.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.PnlWelcomePage.Location = new System.Drawing.Point(0, 0);
@@ -71,13 +73,21 @@
 			this.PnlWelcomePage.TabIndex = 1;
 			this.PnlWelcomePage.Visible = false;
 			// 
+			// TxtFilePath
+			// 
+			this.TxtFilePath.Location = new System.Drawing.Point(185, 62);
+			this.TxtFilePath.Name = "TxtFilePath";
+			this.TxtFilePath.Size = new System.Drawing.Size(363, 20);
+			this.TxtFilePath.TabIndex = 1;
+			this.TxtFilePath.Text = ".\\BébéProgramMK2.exe";
+			// 
 			// BtnShowDebugger
 			// 
-			this.BtnShowDebugger.Location = new System.Drawing.Point(238, 136);
+			this.BtnShowDebugger.Location = new System.Drawing.Point(185, 88);
 			this.BtnShowDebugger.Name = "BtnShowDebugger";
-			this.BtnShowDebugger.Size = new System.Drawing.Size(257, 123);
+			this.BtnShowDebugger.Size = new System.Drawing.Size(363, 123);
 			this.BtnShowDebugger.TabIndex = 0;
-			this.BtnShowDebugger.Text = "ShowDebugger";
+			this.BtnShowDebugger.Text = "Show Debugger\r\nType absolute \'.exe\' path into textbox\r\nIE: \'C:\\Users\\Me\\My Documents\\Program.exe\'";
 			this.BtnShowDebugger.UseVisualStyleBackColor = true;
 			this.BtnShowDebugger.Click += new System.EventHandler(this.BtnShowDebugger_Click);
 			// 
@@ -107,6 +117,7 @@
 			this.MainMenu.ResumeLayout(false);
 			this.MainMenu.PerformLayout();
 			this.PnlWelcomePage.ResumeLayout(false);
+			this.PnlWelcomePage.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -120,6 +131,7 @@
 		private System.Windows.Forms.Panel PnlWorkspace;
 		private System.Windows.Forms.ToolStripMenuItem OpenToolStripMenuItem;
 		private System.Windows.Forms.Button BtnShowDebugger;
+		private System.Windows.Forms.TextBox TxtFilePath;
 	}
 }
 

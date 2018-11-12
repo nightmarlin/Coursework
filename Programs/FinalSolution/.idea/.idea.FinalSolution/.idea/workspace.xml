@@ -1,0 +1,705 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a0e8f969-4a7a-463f-b39f-621ddda0c1be" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.FinalSolution/.idea/contentModel.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.FinalSolution/.idea/indexLayout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.FinalSolution/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.FinalSolution/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.FinalSolution/riderModule.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FinalSolution/Build/Template/ProgramTemplate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FinalSolution/Build/Template/ProgramTemplate.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FinalSolution/Build/Template/ProgramTemplate_User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FinalSolution/Build/Template/ProgramTemplate_User.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FinalSolution/Debugger/FrmDebugger.ReadOperations.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FinalSolution/Debugger/FrmDebugger.ReadOperations.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FinalSolution/Debugger/FrmDebugger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FinalSolution/Debugger/FrmDebugger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FinalSolution/Designer/FrmDesigner.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FinalSolution/Designer/FrmDesigner.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FinalSolution/Designer/FrmDesigner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FinalSolution/Designer/FrmDesigner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FinalSolution/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FinalSolution/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Word Documents/Miller, Lewis - V3.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Word Documents/Miller, Lewis - V3.docx" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="446001316">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="9" />
+          <entry key="project.open.time.11" value="1" />
+          <entry key="project.open.time.12" value="1" />
+          <entry key="project.open.time.15" value="1" />
+          <entry key="project.open.time.16" value="1" />
+          <entry key="project.open.time.22" value="1" />
+          <entry key="project.open.time.26" value="1" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.opened" value="9" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="cs" value="29" />
+          <entry key="resx" value="1" />
+          <entry key="settings" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="C#" value="29" />
+          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="Resources" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="cs" value="5489" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="C#" value="5489" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.vcs.git.usages" />
+      <usages-collector id="statistics.js.language.service.starts" />
+      <usages-collector id="statistics.kubernetes.usages" />
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FinalSolution/Designer/FrmDesigner.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+              <folding>
+                <marker date="1541762024107" expanded="false" signature="6:84" ph="..." />
+                <marker date="1541762024107" expanded="true" signature="114:2043" ph="{...}" />
+                <marker date="1541762024107" expanded="true" signature="119:210" ph="/// The form upon which designing occurs ... " />
+                <marker date="1541762024107" expanded="true" signature="252:2041" ph="{...}" />
+                <marker date="1541762024107" expanded="true" signature="257:357" ph="/// Initializes and instantiates the component ... " />
+                <marker date="1541762024107" expanded="true" signature="381:443" ph="{...}" />
+                <marker date="1541762024107" expanded="true" signature="447:656" ph="/// When the form is shown, call the GarbageCollector for discarded resources ... " />
+                <marker date="1541762024107" expanded="true" signature="718:740" ph="{...}" />
+                <marker date="1541762024107" expanded="true" signature="744:933" ph="/// Shows the Welcome Panel and hides the Workspace Panel ... " />
+                <marker date="1541762024107" expanded="true" signature="994:1068" ph="{...}" />
+                <marker date="1541762024107" expanded="true" signature="1072:1342" ph="/// When clicked, shows the &lt;see cref=&quot;T:Solution.Debugger.FrmDebugger&quot;/&gt; with the &lt;see cref=&quot;T:Solution.Build.Te ... " />
+                <marker date="1541762024107" expanded="true" signature="1408:2036" ph="{...}" />
+                <marker date="1541762024107" expanded="true" signature="1489:1618" ph="{...}" />
+                <marker date="1541762024107" expanded="true" signature="1660:1780" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FinalSolution/Debugger/FrmDebugger.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="6">
+              <caret line="310" column="45" selection-start-line="310" selection-start-column="45" selection-end-line="310" selection-end-column="45" />
+              <folding>
+                <marker date="1541764426872" expanded="false" signature="6:153" ph="..." />
+                <marker date="1541764426872" expanded="true" signature="155:944" ph="/* - SRC: https://stackoverflow.com/questions/355724/embedding-a-dos-console-in-a-windows-form - ... */" />
+                <marker date="1541764426872" expanded="true" signature="974:12586" ph="{...}" />
+                <marker date="1541764426872" expanded="true" signature="978:1077" ph="/// The form upon which all debugging will occur ... " />
+                <marker date="1541764426872" expanded="true" signature="1119:12583" ph="{...}" />
+                <marker date="1541764426872" expanded="true" signature="1248:1392" ph="/// Parameter-less initialization. Disables all buttons except Exit so nothing breaks when the user clicks them ... " />
+                <marker date="1541764426872" expanded="true" signature="1416:1801" ph="{...}" />
+                <marker date="1541764426872" expanded="true" signature="1805:2070" ph="/// Initialization with parameters. Allows debugging to begin ... " />
+                <marker date="1541764426872" expanded="true" signature="2134:6300" ph="{...}" />
+                <marker date="1541764426872" expanded="true" signature="2907:3079" ph="{...}" />
+                <marker date="1541764426872" expanded="true" signature="2945:3074" ph="{...}" />
+                <marker date="1541764426872" expanded="true" signature="3235:3454" ph="{...}" />
+                <marker date="1541764426872" expanded="true" signature="3545:3914" ph="{...}" />
+                <marker date="1541764426872" expanded="true" signature="3555:3816" ph="{...}" />
+                <marker date="1541764426872" expanded="true" signature="3631:3809" ph="/* This is needed because otherwise the child process is not killed. It then keeps running, ... */" />
+                <marker date="1541764426872" expanded="true" signature="3978:4602" ph="{...}" />
+                <marker date="1541764426872" expanded="true" signature="4017:4518" ph="{...}" />
+                <marker date="1541764426872" expanded="true" signature="4187:4283" ph="/* We are debugging after all, and it's crucial ... */" />
+                <marker date="1541764426872" expanded="true" signature="4800:5149" ph="{...}" />
+                <marker date="1541764426872" expanded="true" signature="5258:5648" ph="/* Feedback to user ... */" />
+                <marker date="1541764426872" expanded="true" signature="6304:6880" ph="Process related methods" />
+                <marker date="1541764426872" expanded="true" signature="6339:6481" ph="///&#9;Closes all open streams and then kills the &lt;see cref=&quot;T:System.Diagnostics.Process&quot;/&gt; if it's still alive ... " />
+                <marker date="1541764426872" expanded="true" signature="6516:6866" ph="{...}" />
+                <marker date="1541764426872" expanded="true" signature="6526:6777" ph="{...}" />
+                <marker date="1541764426872" expanded="true" signature="6885:10212" ph="Interface appearance methods" />
+                <marker date="1541764426872" expanded="true" signature="6925:7139" ph="/// Enables / Disables the SUBMIT button based on if there's text in the input box ... " />
+                <marker date="1541764426872" expanded="true" signature="7213:7359" ph="{...}" />
+                <marker date="1541764426872" expanded="true" signature="7363:7589" ph="/// There used to be something here, but removing this snippet breaks the WYSIWYG editor so... ... " />
+                <marker date="1541764426872" expanded="true" signature="7702:8119" ph="/* Represents a method with no parameters. ... */" />
+                <marker date="1541764426872" expanded="true" signature="8125:8185" ph="/// Disable all the buttons ... " />
+                <marker date="1541764426872" expanded="true" signature="8233:8963" ph="{...}" />
+                <marker date="1541764426872" expanded="true" signature="8280:8647" ph="{...}" />
+                <marker date="1541764426872" expanded="true" signature="8559:8589" ph="{...}" />
+                <marker date="1541764426872" expanded="true" signature="8622:8642" ph="{...}" />
+                <marker date="1541764426872" expanded="true" signature="8967:9063" ph="/// Enable the buttons (Except START cos we've already started) ... " />
+                <marker date="1541764426872" expanded="true" signature="9112:9510" ph="{...}" />
+                <marker date="1541764426872" expanded="true" signature="9114:9212" ph="/* This method is never called by another thread, so it doesn't ... */" />
+                <marker date="1541764426872" expanded="true" signature="9573:10199" ph="{...}" />
+                <marker date="1541764426872" expanded="true" signature="9646:9968" ph="/* 'object' is a really vague type, referring to every possible inherited type in C##. Pattern matching ... */" />
+                <marker date="1541764426872" expanded="true" signature="10216:12579" ph="Control Flow Buttons" />
+                <marker date="1541764426872" expanded="true" signature="10316:11063" ph="{...}" />
+                <marker date="1541764426872" expanded="true" signature="10523:10670" ph="{...}" />
+                <marker date="1541764426872" expanded="true" signature="11067:11276" ph="/// Doesn't do anything to the program, just prevents the user sending inputs ... " />
+                <marker date="1541764426872" expanded="true" signature="11344:11422" ph="{...}" />
+                <marker date="1541764426872" expanded="true" signature="11426:11629" ph="/// Kills the process and any affiliated readers. Disables some buttons ... " />
+                <marker date="1541764426872" expanded="true" signature="11696:11760" ph="{...}" />
+                <marker date="1541764426872" expanded="true" signature="11764:11972" ph="/// Doesn't do anything to the program, just enables the user to send inputs ... " />
+                <marker date="1541764426872" expanded="true" signature="12040:12082" ph="{...}" />
+                <marker date="1541764426872" expanded="true" signature="12086:12308" ph="/// Kills the program and any affiliated readers, then shows the parent form and cleans up ... " />
+                <marker date="1541764426872" expanded="true" signature="12375:12565" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FinalSolution/Build/Template/ProgramTemplate_User.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="38">
+              <caret line="6" selection-start-line="6" selection-end-line="6" />
+              <folding>
+                <marker date="1541755822335" expanded="false" signature="6:115" ph="..." />
+                <marker date="1541755822335" expanded="true" signature="161:761" ph="{...}" />
+                <marker date="1541755822335" expanded="true" signature="166:390" ph="/// Your program in C##. You can take this and compile it separately and it will run just the same ... " />
+                <marker date="1541755822335" expanded="true" signature="420:758" ph="{...}" />
+                <marker date="1541755822335" expanded="true" signature="468:561" ph="Internal Variables" />
+                <marker date="1541755822335" expanded="true" signature="498:548" ph="/* &lt;VariableSet&gt; ... */" />
+                <marker date="1541755822335" expanded="true" signature="565:634" ph="/// The entry point for your program ... " />
+                <marker date="1541755822335" expanded="true" signature="676:754" ph="{...}" />
+                <marker date="1541755822335" expanded="false" signature="681:750" ph="Programmed Logic" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FinalSolution/Build/Template/ProgramTemplate.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="551">
+              <caret line="35" column="45" selection-start-line="35" selection-start-column="45" selection-end-line="35" selection-end-column="45" />
+              <folding>
+                <marker date="1541762620491" expanded="false" signature="6:150" ph="..." />
+                <marker date="1541762620491" expanded="true" signature="242:434" ph="/// Template class for code construction. User code is placed in the &lt;see cref=&quot;T:Solution.Build.Template.Program ... " />
+                <marker date="1541762620491" expanded="true" signature="462:3130" ph="{...}" />
+                <marker date="1541762620491" expanded="true" signature="566:681" ph="/// The name of the program being debugged. ... " />
+                <marker date="1541762620491" expanded="true" signature="764:2171" ph="{...}" />
+                <marker date="1541762620491" expanded="true" signature="1110:1920" ph="{...}" />
+                <marker date="1541762620491" expanded="true" signature="1141:1914" ph="{...}" />
+                <marker date="1541762620491" expanded="true" signature="1143:1250" ph="/* Check if DEBUG was passed. If it wasn't then an IndexOutOfRangeException ... */" />
+                <marker date="1541762620491" expanded="true" signature="1291:1667" ph="{...}" />
+                <marker date="1541762620491" expanded="true" signature="1353:1660" ph="{...}" />
+                <marker date="1541762620491" expanded="true" signature="1954:1983" ph="{...}" />
+                <marker date="1541762620491" expanded="true" signature="2175:3126" ph="Get variables" />
+                <marker date="1541762620491" expanded="true" signature="2249:3112" ph="{...}" />
+                <marker date="1541762620491" expanded="true" signature="2574:2734" ph="/* Returns a list of all the static variables in the Program class ... */" />
+                <marker date="1541762620491" expanded="true" signature="2819:3085" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FinalSolution/Debugger/FrmDebugger.ReadOperations.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2734">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
+              <folding>
+                <marker date="1541762796995" expanded="false" signature="6:97" ph="..." />
+                <marker date="1541762796995" expanded="true" signature="127:5533" ph="{...}" />
+                <marker date="1541762796995" expanded="true" signature="156:5531" ph="{...}" />
+                <marker date="1541762796995" expanded="true" signature="161:2972" ph="Read operations" />
+                <marker date="1541762796995" expanded="true" signature="264:545" ph="/// https://stackoverflow.com/questions/10775367/cross-thread-operation-not-valid-control-textbox1-accessed-from- ... " />
+                <marker date="1541762796995" expanded="true" signature="607:1464" ph="{...}" />
+                <marker date="1541762796995" expanded="true" signature="681:1159" ph="{...}" />
+                <marker date="1541762796995" expanded="true" signature="869:985" ph="{...}" />
+                <marker date="1541762796995" expanded="true" signature="1018:1153" ph="{...}" />
+                <marker date="1541762796995" expanded="true" signature="1025:1134" ph="/* Don't break. ... */" />
+                <marker date="1541762796995" expanded="true" signature="1231:1309" ph="{...}" />
+                <marker date="1541762796995" expanded="true" signature="1470:1751" ph="/// https://stackoverflow.com/questions/10775367/cross-thread-operation-not-valid-control-textbox1-accessed-from- ... " />
+                <marker date="1541762796995" expanded="true" signature="1812:2958" ph="{...}" />
+                <marker date="1541762796995" expanded="true" signature="1857:2101" ph="{...}" />
+                <marker date="1541762796995" expanded="true" signature="1980:2042" ph="{...}" />
+                <marker date="1541762796995" expanded="true" signature="2075:2095" ph="{...}" />
+                <marker date="1541762796995" expanded="true" signature="2182:2266" ph="{...}" />
+                <marker date="1541762796995" expanded="true" signature="2335:2688" ph="{...}" />
+                <marker date="1541762796995" expanded="true" signature="2468:2549" ph="/* Stop Async error and output reading ... */" />
+                <marker date="1541762796995" expanded="true" signature="2586:2682" ph="{...}" />
+                <marker date="1541762796995" expanded="true" signature="2775:2948" ph="/* Because of the speed at which the process is killed, InvalidOperationExceptions could pop up in ... */" />
+                <marker date="1541762796995" expanded="true" signature="2976:5528" ph="Observe Variables" />
+                <marker date="1541762796995" expanded="true" signature="3050:3202" ph="{...}" />
+                <marker date="1541762796995" expanded="true" signature="3055:3143" ph="/* Is it null? It could be ... */" />
+                <marker date="1541762796995" expanded="true" signature="3251:4399" ph="{...}" />
+                <marker date="1541762796995" expanded="true" signature="3308:3360" ph="/* Console.WriteLine(Data); ... */" />
+                <marker date="1541762796995" expanded="true" signature="3854:4352" ph="/* For the input `DAT|[[&quot;Name1&quot;,&quot;Value1&quot;],[&quot;Name2&quot;,&quot;Value2&quot;]]`, you get ... */" />
+                <marker date="1541762796995" expanded="true" signature="4445:5514" ph="{...}" />
+                <marker date="1541762796995" expanded="true" signature="4455:5287" ph="{...}" />
+                <marker date="1541762796995" expanded="true" signature="4462:4649" ph="/* Remove &quot;DAT|&quot;. Note that `string.Remove` is used instead of `string.Replace`. This is because ... */" />
+                <marker date="1541762796995" expanded="true" signature="4685:4764" ph="/* Console.WriteLine(Data); ... */" />
+                <marker date="1541762796995" expanded="true" signature="4934:5056" ph="{...}" />
+                <marker date="1541762796995" expanded="true" signature="5062:5239" ph="/* For the input `DAT|[[&quot;Name1&quot;,&quot;Value1&quot;],[&quot;Name2&quot;,&quot;Value2&quot;]]`, you get ... */" />
+                <marker date="1541762796995" expanded="true" signature="5309:5509" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/FinalSolution/Program.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="18" column="35" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
+              <folding>
+                <marker date="1541764426475" expanded="false" signature="6:67" ph="..." />
+                <marker date="1541764426475" expanded="true" signature="88:763" ph="{...}" />
+                <marker date="1541764426475" expanded="true" signature="112:761" ph="{...}" />
+                <marker date="1541764426475" expanded="true" signature="116:194" ph="/// The main entry point for the application. ... " />
+                <marker date="1541764426475" expanded="true" signature="230:758" ph="{...}" />
+                <marker date="1541764426475" expanded="true" signature="239:381" ph="{...}" />
+                <marker date="1541764426475" expanded="true" signature="403:754" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/FinalSolution/Designer/FrmDesigner.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/FinalSolution/Settings.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/FinalSolution/Properties/Resources.resx" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/FinalSolution/Properties/Resources.Designer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/FinalSolution/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/FinalSolution/Properties/Settings.Designer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/FinalSolution/Build/Template/ProgramTemplate.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/FinalSolution/Properties/AssemblyInfo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/FinalSolution/Build/Template/ProgramTemplate_User.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/FinalSolution/Debugger/FrmDebugger.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/FinalSolution/Debugger/FrmDebugger.ReadOperations.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/FinalSolution/Build/Template/ProgramTemplate_User.cs" />
+        <option value="$PROJECT_DIR$/FinalSolution/Designer/FrmDesigner.cs" />
+        <option value="$PROJECT_DIR$/FinalSolution/Build/Template/ProgramTemplate.cs" />
+        <option value="$PROJECT_DIR$/FinalSolution/Debugger/FrmDebugger.ReadOperations.cs" />
+        <option value="$PROJECT_DIR$/FinalSolution/Debugger/FrmDebugger.cs" />
+        <option value="$PROJECT_DIR$/FinalSolution/Program.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="299" />
+    <option name="y" value="40" />
+    <option name="width" value="1400" />
+    <option name="height" value="1000" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator currentView="SolutionExplorer" proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="FileSystemExplorer" />
+      <pane id="SolutionExplorer">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="FinalSolution" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="FinalSolution" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="FinalSolution" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="FinalSolution" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="FinalSolution" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Build" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="FinalSolution" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="FinalSolution" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Build" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Template" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="FinalSolution" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="FinalSolution" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Debugger" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="FinalSolution" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="FinalSolution" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Debugger" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="FrmDebugger.cs" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="FinalSolution" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="FinalSolution" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Designer" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="FinalSolution" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="FinalSolution" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Resources" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+        <option name="show-all-files" value="false" />
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
+    <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Default" type="DotNetProject" factoryName=".NET Project">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/FinalSolution/bin/Debug/FinalSolution.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/FinalSolution/bin/Debug" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/FinalSolution/FinalSolution.csproj" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="Console" />
+      <option name="PROJECT_TFM" value=".NETFramework,Version=v4.7.1" />
+      <method v="2">
+        <option name="Build" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a0e8f969-4a7a-463f-b39f-621ddda0c1be" name="Default Changelist" comment="" />
+      <created>1540379010480</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1540379010480</updated>
+      <workItem from="1540379018212" duration="489000" />
+      <workItem from="1540817671816" duration="361000" />
+      <workItem from="1540896447541" duration="806000" />
+      <workItem from="1541515473287" duration="2239000" />
+      <workItem from="1541592725021" duration="1764000" />
+      <workItem from="1541669652718" duration="1623000" />
+      <workItem from="1541752769457" duration="2865000" />
+      <workItem from="1541760041592" duration="2761000" />
+      <workItem from="1541764110671" duration="316000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="13224000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="70" y="-8" width="1858" height="1096" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49840257" visible="true" weight="0.27196884" />
+      <window_info id="Structure" order="1" sideWeight="0.50159746" side_tool="true" weight="0.269188" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3290735" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39829606" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="NuGet" order="7" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Unit Tests" order="11" />
+      <window_info anchor="bottom" id="Terminal" order="12" weight="0.32952183" />
+      <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" />
+      <window_info anchor="bottom" id="Build" order="14" weight="0.3290735" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Errors In Solution" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="Unit Tests Coverage" order="5" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" suspend="NONE" type="DotNet Exception Breakpoints">
+          <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/FinalSolution/Settings.cs">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FinalSolution/Properties/AssemblyInfo.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="7" column="27" lean-forward="true" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FinalSolution/Properties/Settings.settings">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FinalSolution/Properties/Settings.Designer.cs">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FinalSolution/Properties/Resources.resx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1560" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FinalSolution/Properties/Resources.Designer.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-601" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FinalSolution/Build/Template/ProgramTemplate_User.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <marker date="1541755822335" expanded="false" signature="6:115" ph="..." />
+            <marker date="1541755822335" expanded="true" signature="161:761" ph="{...}" />
+            <marker date="1541755822335" expanded="true" signature="166:390" ph="/// Your program in C##. You can take this and compile it separately and it will run just the same ... " />
+            <marker date="1541755822335" expanded="true" signature="420:758" ph="{...}" />
+            <marker date="1541755822335" expanded="true" signature="468:561" ph="Internal Variables" />
+            <marker date="1541755822335" expanded="true" signature="498:548" ph="/* &lt;VariableSet&gt; ... */" />
+            <marker date="1541755822335" expanded="true" signature="565:634" ph="/// The entry point for your program ... " />
+            <marker date="1541755822335" expanded="true" signature="676:754" ph="{...}" />
+            <marker date="1541755822335" expanded="false" signature="681:750" ph="Programmed Logic" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FinalSolution/Build/Template/ProgramTemplate.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="551">
+          <caret line="35" column="45" selection-start-line="35" selection-start-column="45" selection-end-line="35" selection-end-column="45" />
+          <folding>
+            <marker date="1541762620491" expanded="false" signature="6:150" ph="..." />
+            <marker date="1541762620491" expanded="true" signature="242:434" ph="/// Template class for code construction. User code is placed in the &lt;see cref=&quot;T:Solution.Build.Template.Program ... " />
+            <marker date="1541762620491" expanded="true" signature="462:3130" ph="{...}" />
+            <marker date="1541762620491" expanded="true" signature="566:681" ph="/// The name of the program being debugged. ... " />
+            <marker date="1541762620491" expanded="true" signature="764:2171" ph="{...}" />
+            <marker date="1541762620491" expanded="true" signature="1110:1920" ph="{...}" />
+            <marker date="1541762620491" expanded="true" signature="1141:1914" ph="{...}" />
+            <marker date="1541762620491" expanded="true" signature="1143:1250" ph="/* Check if DEBUG was passed. If it wasn't then an IndexOutOfRangeException ... */" />
+            <marker date="1541762620491" expanded="true" signature="1291:1667" ph="{...}" />
+            <marker date="1541762620491" expanded="true" signature="1353:1660" ph="{...}" />
+            <marker date="1541762620491" expanded="true" signature="1954:1983" ph="{...}" />
+            <marker date="1541762620491" expanded="true" signature="2175:3126" ph="Get variables" />
+            <marker date="1541762620491" expanded="true" signature="2249:3112" ph="{...}" />
+            <marker date="1541762620491" expanded="true" signature="2574:2734" ph="/* Returns a list of all the static variables in the Program class ... */" />
+            <marker date="1541762620491" expanded="true" signature="2819:3085" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FinalSolution/Designer/FrmDesigner.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+          <folding>
+            <marker date="1541762024107" expanded="false" signature="6:84" ph="..." />
+            <marker date="1541762024107" expanded="true" signature="114:2043" ph="{...}" />
+            <marker date="1541762024107" expanded="true" signature="119:210" ph="/// The form upon which designing occurs ... " />
+            <marker date="1541762024107" expanded="true" signature="252:2041" ph="{...}" />
+            <marker date="1541762024107" expanded="true" signature="257:357" ph="/// Initializes and instantiates the component ... " />
+            <marker date="1541762024107" expanded="true" signature="381:443" ph="{...}" />
+            <marker date="1541762024107" expanded="true" signature="447:656" ph="/// When the form is shown, call the GarbageCollector for discarded resources ... " />
+            <marker date="1541762024107" expanded="true" signature="718:740" ph="{...}" />
+            <marker date="1541762024107" expanded="true" signature="744:933" ph="/// Shows the Welcome Panel and hides the Workspace Panel ... " />
+            <marker date="1541762024107" expanded="true" signature="994:1068" ph="{...}" />
+            <marker date="1541762024107" expanded="true" signature="1072:1342" ph="/// When clicked, shows the &lt;see cref=&quot;T:Solution.Debugger.FrmDebugger&quot;/&gt; with the &lt;see cref=&quot;T:Solution.Build.Te ... " />
+            <marker date="1541762024107" expanded="true" signature="1408:2036" ph="{...}" />
+            <marker date="1541762024107" expanded="true" signature="1489:1618" ph="{...}" />
+            <marker date="1541762024107" expanded="true" signature="1660:1780" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FinalSolution/Debugger/FrmDebugger.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6">
+          <caret line="310" column="45" selection-start-line="310" selection-start-column="45" selection-end-line="310" selection-end-column="45" />
+          <folding>
+            <marker date="1541764426872" expanded="false" signature="6:153" ph="..." />
+            <marker date="1541764426872" expanded="true" signature="155:944" ph="/* - SRC: https://stackoverflow.com/questions/355724/embedding-a-dos-console-in-a-windows-form - ... */" />
+            <marker date="1541764426872" expanded="true" signature="974:12586" ph="{...}" />
+            <marker date="1541764426872" expanded="true" signature="978:1077" ph="/// The form upon which all debugging will occur ... " />
+            <marker date="1541764426872" expanded="true" signature="1119:12583" ph="{...}" />
+            <marker date="1541764426872" expanded="true" signature="1248:1392" ph="/// Parameter-less initialization. Disables all buttons except Exit so nothing breaks when the user clicks them ... " />
+            <marker date="1541764426872" expanded="true" signature="1416:1801" ph="{...}" />
+            <marker date="1541764426872" expanded="true" signature="1805:2070" ph="/// Initialization with parameters. Allows debugging to begin ... " />
+            <marker date="1541764426872" expanded="true" signature="2134:6300" ph="{...}" />
+            <marker date="1541764426872" expanded="true" signature="2907:3079" ph="{...}" />
+            <marker date="1541764426872" expanded="true" signature="2945:3074" ph="{...}" />
+            <marker date="1541764426872" expanded="true" signature="3235:3454" ph="{...}" />
+            <marker date="1541764426872" expanded="true" signature="3545:3914" ph="{...}" />
+            <marker date="1541764426872" expanded="true" signature="3555:3816" ph="{...}" />
+            <marker date="1541764426872" expanded="true" signature="3631:3809" ph="/* This is needed because otherwise the child process is not killed. It then keeps running, ... */" />
+            <marker date="1541764426872" expanded="true" signature="3978:4602" ph="{...}" />
+            <marker date="1541764426872" expanded="true" signature="4017:4518" ph="{...}" />
+            <marker date="1541764426872" expanded="true" signature="4187:4283" ph="/* We are debugging after all, and it's crucial ... */" />
+            <marker date="1541764426872" expanded="true" signature="4800:5149" ph="{...}" />
+            <marker date="1541764426872" expanded="true" signature="5258:5648" ph="/* Feedback to user ... */" />
+            <marker date="1541764426872" expanded="true" signature="6304:6880" ph="Process related methods" />
+            <marker date="1541764426872" expanded="true" signature="6339:6481" ph="///&#9;Closes all open streams and then kills the &lt;see cref=&quot;T:System.Diagnostics.Process&quot;/&gt; if it's still alive ... " />
+            <marker date="1541764426872" expanded="true" signature="6516:6866" ph="{...}" />
+            <marker date="1541764426872" expanded="true" signature="6526:6777" ph="{...}" />
+            <marker date="1541764426872" expanded="true" signature="6885:10212" ph="Interface appearance methods" />
+            <marker date="1541764426872" expanded="true" signature="6925:7139" ph="/// Enables / Disables the SUBMIT button based on if there's text in the input box ... " />
+            <marker date="1541764426872" expanded="true" signature="7213:7359" ph="{...}" />
+            <marker date="1541764426872" expanded="true" signature="7363:7589" ph="/// There used to be something here, but removing this snippet breaks the WYSIWYG editor so... ... " />
+            <marker date="1541764426872" expanded="true" signature="7702:8119" ph="/* Represents a method with no parameters. ... */" />
+            <marker date="1541764426872" expanded="true" signature="8125:8185" ph="/// Disable all the buttons ... " />
+            <marker date="1541764426872" expanded="true" signature="8233:8963" ph="{...}" />
+            <marker date="1541764426872" expanded="true" signature="8280:8647" ph="{...}" />
+            <marker date="1541764426872" expanded="true" signature="8559:8589" ph="{...}" />
+            <marker date="1541764426872" expanded="true" signature="8622:8642" ph="{...}" />
+            <marker date="1541764426872" expanded="true" signature="8967:9063" ph="/// Enable the buttons (Except START cos we've already started) ... " />
+            <marker date="1541764426872" expanded="true" signature="9112:9510" ph="{...}" />
+            <marker date="1541764426872" expanded="true" signature="9114:9212" ph="/* This method is never called by another thread, so it doesn't ... */" />
+            <marker date="1541764426872" expanded="true" signature="9573:10199" ph="{...}" />
+            <marker date="1541764426872" expanded="true" signature="9646:9968" ph="/* 'object' is a really vague type, referring to every possible inherited type in C##. Pattern matching ... */" />
+            <marker date="1541764426872" expanded="true" signature="10216:12579" ph="Control Flow Buttons" />
+            <marker date="1541764426872" expanded="true" signature="10316:11063" ph="{...}" />
+            <marker date="1541764426872" expanded="true" signature="10523:10670" ph="{...}" />
+            <marker date="1541764426872" expanded="true" signature="11067:11276" ph="/// Doesn't do anything to the program, just prevents the user sending inputs ... " />
+            <marker date="1541764426872" expanded="true" signature="11344:11422" ph="{...}" />
+            <marker date="1541764426872" expanded="true" signature="11426:11629" ph="/// Kills the process and any affiliated readers. Disables some buttons ... " />
+            <marker date="1541764426872" expanded="true" signature="11696:11760" ph="{...}" />
+            <marker date="1541764426872" expanded="true" signature="11764:11972" ph="/// Doesn't do anything to the program, just enables the user to send inputs ... " />
+            <marker date="1541764426872" expanded="true" signature="12040:12082" ph="{...}" />
+            <marker date="1541764426872" expanded="true" signature="12086:12308" ph="/// Kills the program and any affiliated readers, then shows the parent form and cleans up ... " />
+            <marker date="1541764426872" expanded="true" signature="12375:12565" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FinalSolution/Debugger/FrmDebugger.ReadOperations.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2734">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <marker date="1541762796995" expanded="false" signature="6:97" ph="..." />
+            <marker date="1541762796995" expanded="true" signature="127:5533" ph="{...}" />
+            <marker date="1541762796995" expanded="true" signature="156:5531" ph="{...}" />
+            <marker date="1541762796995" expanded="true" signature="161:2972" ph="Read operations" />
+            <marker date="1541762796995" expanded="true" signature="264:545" ph="/// https://stackoverflow.com/questions/10775367/cross-thread-operation-not-valid-control-textbox1-accessed-from- ... " />
+            <marker date="1541762796995" expanded="true" signature="607:1464" ph="{...}" />
+            <marker date="1541762796995" expanded="true" signature="681:1159" ph="{...}" />
+            <marker date="1541762796995" expanded="true" signature="869:985" ph="{...}" />
+            <marker date="1541762796995" expanded="true" signature="1018:1153" ph="{...}" />
+            <marker date="1541762796995" expanded="true" signature="1025:1134" ph="/* Don't break. ... */" />
+            <marker date="1541762796995" expanded="true" signature="1231:1309" ph="{...}" />
+            <marker date="1541762796995" expanded="true" signature="1470:1751" ph="/// https://stackoverflow.com/questions/10775367/cross-thread-operation-not-valid-control-textbox1-accessed-from- ... " />
+            <marker date="1541762796995" expanded="true" signature="1812:2958" ph="{...}" />
+            <marker date="1541762796995" expanded="true" signature="1857:2101" ph="{...}" />
+            <marker date="1541762796995" expanded="true" signature="1980:2042" ph="{...}" />
+            <marker date="1541762796995" expanded="true" signature="2075:2095" ph="{...}" />
+            <marker date="1541762796995" expanded="true" signature="2182:2266" ph="{...}" />
+            <marker date="1541762796995" expanded="true" signature="2335:2688" ph="{...}" />
+            <marker date="1541762796995" expanded="true" signature="2468:2549" ph="/* Stop Async error and output reading ... */" />
+            <marker date="1541762796995" expanded="true" signature="2586:2682" ph="{...}" />
+            <marker date="1541762796995" expanded="true" signature="2775:2948" ph="/* Because of the speed at which the process is killed, InvalidOperationExceptions could pop up in ... */" />
+            <marker date="1541762796995" expanded="true" signature="2976:5528" ph="Observe Variables" />
+            <marker date="1541762796995" expanded="true" signature="3050:3202" ph="{...}" />
+            <marker date="1541762796995" expanded="true" signature="3055:3143" ph="/* Is it null? It could be ... */" />
+            <marker date="1541762796995" expanded="true" signature="3251:4399" ph="{...}" />
+            <marker date="1541762796995" expanded="true" signature="3308:3360" ph="/* Console.WriteLine(Data); ... */" />
+            <marker date="1541762796995" expanded="true" signature="3854:4352" ph="/* For the input `DAT|[[&quot;Name1&quot;,&quot;Value1&quot;],[&quot;Name2&quot;,&quot;Value2&quot;]]`, you get ... */" />
+            <marker date="1541762796995" expanded="true" signature="4445:5514" ph="{...}" />
+            <marker date="1541762796995" expanded="true" signature="4455:5287" ph="{...}" />
+            <marker date="1541762796995" expanded="true" signature="4462:4649" ph="/* Remove &quot;DAT|&quot;. Note that `string.Remove` is used instead of `string.Replace`. This is because ... */" />
+            <marker date="1541762796995" expanded="true" signature="4685:4764" ph="/* Console.WriteLine(Data); ... */" />
+            <marker date="1541762796995" expanded="true" signature="4934:5056" ph="{...}" />
+            <marker date="1541762796995" expanded="true" signature="5062:5239" ph="/* For the input `DAT|[[&quot;Name1&quot;,&quot;Value1&quot;],[&quot;Name2&quot;,&quot;Value2&quot;]]`, you get ... */" />
+            <marker date="1541762796995" expanded="true" signature="5309:5509" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FinalSolution/Program.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="18" column="35" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
+          <folding>
+            <marker date="1541764426475" expanded="false" signature="6:67" ph="..." />
+            <marker date="1541764426475" expanded="true" signature="88:763" ph="{...}" />
+            <marker date="1541764426475" expanded="true" signature="112:761" ph="{...}" />
+            <marker date="1541764426475" expanded="true" signature="116:194" ph="/// The main entry point for the application. ... " />
+            <marker date="1541764426475" expanded="true" signature="230:758" ph="{...}" />
+            <marker date="1541764426475" expanded="true" signature="239:381" ph="{...}" />
+            <marker date="1541764426475" expanded="true" signature="403:754" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

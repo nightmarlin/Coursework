@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\choc8\.Rider2018.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\choc8\.Rider2018.2\system\resharper-host\local\Transient\ReSharperHost\v182\SolutionCaches\_FinalSolution.1421836565.00" t="ExcludeRecursive" />
+    <e p="D:\HDD Documents\Computing\Coursework\Programs\FinalSolution" t="IncludeFlat">
+      <e p="FinalSolution" t="IncludeRecursive">
+        <e p="App.config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Build" t="Include">
+          <e p="Template" t="Include">
+            <e p="CompilerTemplate.csproj" t="Include" />
+            <e p="ProgramTemplate.cs" t="Include" />
+            <e p="ProgramTemplate_User.cs" t="Include" />
+            <e p="StorageTemplate.blok" t="Include" />
+          </e>
+        </e>
+        <e p="Debugger" t="Include">
+          <e p="FrmDebugger.cs" t="Include" />
+          <e p="FrmDebugger.Designer.cs" t="Include" />
+          <e p="FrmDebugger.ReadOperations.cs" t="Include" />
+          <e p="FrmDebugger.resx" t="Include" />
+        </e>
+        <e p="Designer" t="Include">
+          <e p="FrmDesigner.cs" t="Include" />
+          <e p="FrmDesigner.Designer.cs" t="Include" />
+          <e p="FrmDesigner.resx" t="Include" />
+        </e>
+        <e p="FinalSolution.csproj" t="IncludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+          <e p="Resources.Designer.cs" t="Include" />
+          <e p="Resources.resx" t="Include" />
+          <e p="Settings.Designer.cs" t="Include" />
+          <e p="Settings.settings" t="Include" />
+        </e>
+        <e p="Resources" t="Include">
+          <e p="MainIcon.ico" t="Include" />
+        </e>
+        <e p="Settings.cs" t="Include" />
+      </e>
+      <e p="FinalSolution.sln" t="IncludeFlat" />
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>

@@ -14,9 +14,10 @@ namespace Solution {
 				Application.EnableVisualStyles();
 				Application.SetCompatibleTextRenderingDefault(false);
 				Application.Run(new FrmDesigner());
-			} catch (Exception Ex) {
+			} catch (Exception Ex) { // If an unhandled error bubbles up to the top, log the details and exit for safety
 				Console.WriteLine($@"A serious error occurred: {Environment.NewLine}" +
-				                  $@"{Ex.GetType()}{Environment.NewLine}{Ex.Data}");
+				                  $@"{Ex.GetType()}{Environment.NewLine}{Ex.Data}{Environment.NewLine}" +
+				                  @"Mission failed. We'll get 'em next time");
 				Console.ReadLine();
 			}
 		}

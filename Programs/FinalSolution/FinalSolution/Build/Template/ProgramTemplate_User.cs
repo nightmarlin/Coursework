@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+//<using>
 
 namespace Solution.Build.Template {
 	
@@ -16,7 +17,7 @@ namespace Solution.Build.Template {
 		// This is where your variables are kept
 		#region Internal Variables
 
-		//VariableSet
+		//<VariableSet>
 		
 		// public static T FieldName;
 		#endregion
@@ -27,7 +28,7 @@ namespace Solution.Build.Template {
 		public static void Main(string[] args) {
 			#region Programmed Logic
 
-			//Program
+			//<Program>
 
 			#endregion Program Logic
 		}

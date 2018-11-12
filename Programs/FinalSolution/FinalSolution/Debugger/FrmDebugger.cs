@@ -40,14 +40,14 @@ namespace Solution.Debugger {
 		private bool _IsDebugging;
 
 		/// <summary>
-		/// Parameter-less initialization. Disables all buttons except Exit so nothing breaks
+		/// Parameter-less initialization. Disables all buttons except Exit so nothing breaks when the user clicks them
 		/// </summary>
 		public FrmDebugger() {
-			InitializeComponent();
-			StopDebuggingInterfaceChanges();
-			TxtStandardOutput.Text = @"No program was loaded, debugging will not occur";
-			TxtVariableOutput.Text = @"No variables can be observed";
-			TxtErrorOutput.Text = @"No errors will be recorded";
+			InitializeComponent(); // Reqd. for forms
+			StopDebuggingInterfaceChanges(); // Kill off all the buttons
+			TxtStandardOutput.Text = @"No program was loaded, debugging will not occur"; // Inform the user that
+			TxtVariableOutput.Text = @"No variables can be observed"; // 					debugging is not going to
+			TxtErrorOutput.Text = @"No errors will be recorded"; //							happen
 		}
 
 		/// <summary>
@@ -56,26 +56,27 @@ namespace Solution.Debugger {
 		/// <param name="FileToDebug">The path of the "*.exe" file to be debugged</param>
 		/// <param name="MyParent">The FrmDesigner that instantiated the FrmDebugger</param>
 		public FrmDebugger(string FileToDebug, FrmDesigner MyParent) {
-			InitializeComponent();
+			InitializeComponent(); // Reqd. for forms
 
-			BtnStartExecution.Enabled = true;
+			BtnStartExecution.Enabled = true; // Text colour changes do not occur on disabled controls
 
-			BtnStartExecution.EnabledChanged += Buttons_EnabledChanged;
-			BtnExitDebugging.EnabledChanged += Buttons_EnabledChanged;
-			BtnPauseExecution.EnabledChanged += Buttons_EnabledChanged;
-			BtnSubmitInput.EnabledChanged += Buttons_EnabledChanged;
+			BtnStartExecution.EnabledChanged += Buttons_EnabledChanged; // Handle the events
+			BtnExitDebugging.EnabledChanged += Buttons_EnabledChanged;  // By using the same handler, code can be
+			BtnPauseExecution.EnabledChanged += Buttons_EnabledChanged; //   reduced to prevent unnecessary
+			BtnSubmitInput.EnabledChanged += Buttons_EnabledChanged;    //   methods
 			BtnStopExecution.EnabledChanged += Buttons_EnabledChanged;
 
-			StopDebuggingInterfaceChanges();
+			StopDebuggingInterfaceChanges(); // Not sure if we're ready yet, so disable everything Just In Case (JIC)
 
 			// Bind the enter key to sending an input
 			TxtInputToProgram.KeyUp += (Sender, Args) => {
 				if (Args.KeyCode == Keys.Enter) {
 					BtnSubmitInput_Click(null, null);
+						// null parameters because the delegate requires them, but we don't use them
 				}
 			};
 			
-			// If parameters are missing, don't function okay
+			// If parameters are missing, don't function because otherwise things are going to break violently
 			if (FileToDebug == null || MyParent == null) {
 				TxtStandardOutput.Text = @"No program was loaded, debugging will not occur";
 				TxtVariableOutput.Text = @"No variables can be observed";
@@ -90,8 +91,11 @@ namespace Solution.Debugger {
 					
 					_DebugProcess?.Close();
 					_DebugProcess?.Kill();
+					
+					// This is needed because otherwise the child process is not killed. It then keeps running,
+					//   causing RAM-leaking behaviours. We don't like those. They're bad for the RAM
 
-				} catch (InvalidOperationException) {}
+				} catch (InvalidOperationException) {} // Don't break if the program has already been murdered
 			};
 
 			// Instantiate the process
@@ -141,17 +145,17 @@ namespace Solution.Debugger {
 			//	// Feedback to me (plus string interpolation, yay)
 
 			// Add output listeners
-			_DebugProcess.ErrorDataReceived += ReadError;
-			_DebugProcess.OutputDataReceived += ReadOutput;
+			_DebugProcess.ErrorDataReceived += ReadError; // Bind the ASYNC code
+			_DebugProcess.OutputDataReceived += ReadOutput; // MORE ASYNC CODE BINDING
 			
 			_DebugProcess.Exited += (Sender, E) => { StopDebuggingInterfaceChanges(); }; // Sleep if the program exits
 
-			StartDebuggingInterfaceChanges(); // Enable buttons
+			StartDebuggingInterfaceChanges(); // Enable buttons because nothing broke
 
 			TxtInputToProgram.Text = ""; // Empty the input
 			TxtInputToProgram_TextChanged(null, null); // Disable the SUBMIT button
 
-			// ASYNC OPERATIONS
+			// START THE ASYNC OPERATIONS
 			_DebugProcess.BeginOutputReadLine();
 			_DebugProcess.BeginErrorReadLine();
 
@@ -161,15 +165,18 @@ namespace Solution.Debugger {
 		#region Process related methods
 
 		/// <summary>
-		///	Closes all open streams and then kills the process if it's still alive
+		///	Closes all open streams and then kills the <see cref="T:System.Diagnostics.Process"/> if it's still alive
 		/// </summary>
 		private void KillDebugProcess() {
 
 			try {
-				_DebugProcess?.Kill();
-				_DebugProcess?.Close();
-				_DebugProcess?.Dispose();
-			} catch (InvalidOperationException) { }
+				_DebugProcess?.Kill(); // DIE
+				_DebugProcess?.Close(); // DIE
+				_DebugProcess?.Dispose(); // SERIOUSLY PLEASE JUST DIE
+				
+				// ?. operators are great because they do all the null checking for you. I really don't like errors...
+				
+			} catch (InvalidOperationException) { } // If this happens then it was already dead...
 		}
 
 		#endregion
@@ -196,30 +203,49 @@ namespace Solution.Debugger {
 		/// <param name="E">Reqd. for events</param>
 		private void FrmDebugger_Load(object Sender, EventArgs E) { }
 
+		private delegate void EmptyParamsDelegate(); // Represents a method with no parameters.
+			// I learnt about this one back when made a Connect4 game with a friend. They allow cross-thread
+			// invocation, which is not only really neat but also very helpful when working with UIs because they
+			// have a bad habit of "hanging" when long running code executes in the foreground. Delegates stop that.
+			// TL;DR: Form hanging is bad, delegate invocation is good
+		
 		/// <summary>
 		/// Disable all the buttons
 		/// </summary>
 		private void StopDebuggingInterfaceChanges() {
-			BtnExitDebugging.Enabled = true;
+			if (this.BtnExitDebugging.InvokeRequired) { // Multi-thread fun
+				var EPD = new EmptyParamsDelegate(StopDebuggingInterfaceChanges);
+					// Set up the delegate to represent the method it is being called in
+				
+				if (this.IsDisposed) return; // No InvalidOperationExceptions / ObjectDisposedExceptions please
+				try {
+					this.Invoke(EPD);
+				} catch (ObjectDisposedException) {
+					return;
+				}
+			} else {
+				// Make it look like we're sleeping
+				BtnExitDebugging.Enabled = true;
 
-			BtnPauseExecution.Enabled = false;
+				BtnPauseExecution.Enabled = false;
 
-			BtnStartExecution.Enabled = false;
+				BtnStartExecution.Enabled = false;
 
-			BtnStopExecution.Enabled = false;
+				BtnStopExecution.Enabled = false;
 
-			BtnSubmitInput.Enabled = false;
+				BtnSubmitInput.Enabled = false;
 
-			_IsDebugging = false;
+				_IsDebugging = false;
 
-			TxtInputToProgram.Enabled = false;
-
+				TxtInputToProgram.Enabled = false;
+			}
 		}
 
 		/// <summary>
 		/// Enable the buttons (Except START cos we've already started)
 		/// </summary>
-		private void StartDebuggingInterfaceChanges() {
+		private void StartDebuggingInterfaceChanges() { // This method is never called by another thread, so it doesn't
+														//   need a delegate
 			BtnStartExecution.Enabled = false;
 
 			BtnExitDebugging.Enabled = true;
@@ -238,7 +264,11 @@ namespace Solution.Debugger {
 
 		private void Buttons_EnabledChanged(object S, EventArgs E) {
 
-			if (!(S is Button Sender)) return;
+			if (!(S is Button Sender)) return; // Pattern matching is cool
+				// 'object' is a really vague type, referring to every possible inherited type in C#. Pattern matching
+				//   allows me to check if the sending object is actually a Button object. If it is I can then use
+				//   it safely as a button by casting it to a new variable. If it's not a Button then I exit the
+				//   method
 
 			Sender.BackColor = Sender.Enabled ? Color.FromKnownColor(KnownColor.ScrollBar) : Color.FromKnownColor(KnownColor.ControlDarkDark);
 			Sender.ForeColor = Sender.Enabled ? Color.FromKnownColor(KnownColor.Black) : Color.Gray;
@@ -247,14 +277,14 @@ namespace Solution.Debugger {
 
 		#region Control Flow Buttons
 
-		private async void BtnSubmitInput_Click(object Sender, EventArgs E) {
+		private async void BtnSubmitInput_Click(object Sender, EventArgs E) { // To send input to the user program
 
 			var ToSubmit = Regex.Replace(TxtInputToProgram.Text, @"\p{C}+", string.Empty);
 				// Remove unreadable characters (Thanks Regex)
 
 			if (ToSubmit == string.Empty) {
-				TxtInputToProgram_TextChanged(null, null);
 				TxtInputToProgram.Text = ""; // Empty the text box
+				TxtInputToProgram_TextChanged(null, null); // No need for parameters
 				return;
 
 			} // Don't send an empty string
@@ -315,6 +345,7 @@ namespace Solution.Debugger {
 
 			Hide(); // Become invisible
 			Dispose(); // Clean up
+			
 		}
 
 		#endregion

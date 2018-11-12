@@ -21,16 +21,16 @@ namespace Solution.Debugger {
 			// Check if correct thread
 			if (TxtStandardOutput.InvokeRequired) {
 				
-				// Exit if disposed (it's caused some errors due to the nature of Async)
+				// Exit if disposed (it's caused some errors due to the nature of async code)
 				if (this.IsDisposed) return;
 
 				var OutputDelegate = new OutputDelegate(ReadOutput);
 				try {
-					// Invoke on UI thread
+					// Invoke on UI thread (AKA: The correct thread)
 					this.Invoke(OutputDelegate, new object[] {S, E});
 				} catch (ObjectDisposedException) {
 					// Don't break.
-					// Normally breaks because of Async operations trying to operate on the disposed program
+					// Normally breaks because of async operations trying to operate on the disposed program
 					return;
 				}
 
@@ -72,22 +72,15 @@ namespace Solution.Debugger {
 					TxtErrorOutput.Text = $@"Error detected:{Environment.NewLine}{E.Data}";
 				}
 
-				Console.WriteLine(@"Error: " + E.Data);
-
-				try {
-					_DebugProcess.CancelErrorRead(); 
-					// Stop Async error reading
-				} catch (InvalidOperationException) { }
+				Console.WriteLine(@"Debug Process Error: " + E.Data);
 
 				try {
 					_DebugProcess.CancelOutputRead();
-					// Stop Async output reading
-				} catch (InvalidOperationException) { }
+					_DebugProcess.CancelErrorRead(); 
+					_DebugProcess.EnableRaisingEvents = false;
+					// Stop Async error and output reading
+					// Prevent further events from firing
 
-				_DebugProcess.EnableRaisingEvents = false;
-				// No more events
-
-				try {
 					if (!_DebugProcess.HasExited) {
 						_DebugProcess.Kill();
 						_DebugProcess.WaitForExit();
@@ -95,7 +88,11 @@ namespace Solution.Debugger {
 					}
 				} catch (InvalidOperationException) { }
 
+
 				StopDebuggingInterfaceChanges();
+				
+				// Because of the speed at which the process is killed, InvalidOperationExceptions could pop up in
+				// any of the operations. This statement just prevents instant crashes
 			}
 
 		}
@@ -138,6 +135,15 @@ namespace Solution.Debugger {
 			 * Name1 = Value1
 			 * Name2 = Value2`
 			 *
+			 * However for the input `DAT|[["Name1","A string with '["' or '"]' or '","' or ','"],["Name2","Value2"]]`
+			 *
+			 * `Variables:
+			 *
+			 * Name1 = A string with '' or '' or ' = ' or '
+			 * '
+			 * Name2 = Value2`
+			 *
+			 * Note the loss of '["' and '"]', alongside the replacement of ('","' with ' = ') and (',' with a new line)  
 			 */
 
 			TxtVariableOutput.Text = VariableOut;
@@ -146,30 +152,41 @@ namespace Solution.Debugger {
 
 		private void OutputVariables(string Data) {
 
-			// Remove `DAT|`
-			Data = Data.Remove(0, 4);
+			try {
 
-			//Console.WriteLine(Data);
-			
-			// Remove last `]`
-			var ListOut = JsonConvert.DeserializeObject<List<string[]>>(Data);
+				// Remove "DAT|". Note that `string.Remove` is used instead of `string.Replace`. This is because
+				//   variable data may contain the "DAT|" string, so the method should not delete that
+				Data = Data.Remove(0, 4);
 
-			var VariableOut = "Variables:" + Environment.NewLine;
+				//Console.WriteLine(Data);
 
-			foreach (var Stringse in ListOut) {
-				VariableOut += $"{Stringse[0]} <{Stringse[2]}> = {Stringse[1]}{Environment.NewLine}{Environment.NewLine}";
+				// Deserialize JSON object with NewtonSoft.Json
+				var ListOut = JsonConvert.DeserializeObject<List<string[]>>(Data);
+
+				var VariableOut = "Variables:" + Environment.NewLine;
+
+
+				foreach (var Strings in ListOut) {
+					VariableOut +=
+						$"{Strings[0]} <{Strings[2]}> = {Strings[1]}{Environment.NewLine}{Environment.NewLine}";
+				}
+
+				/* For the input `DAT|[["Name1","Value1"],["Name2","Value2"]]`, you get
+				 *
+				 * `Variables:
+				 *
+				 * Name1 <Type1> = Value1
+				 * Name2 <T2> = Value2`
+				 *
+				 */
+
+				TxtVariableOutput.Text = VariableOut;
+			} catch (Exception Ex) {
+
+				// Show the user the output
+				TxtStandardOutput.Text += $@"Unable to deserialize variable data:{Environment.NewLine}" +
+				                          $@"--> {Data}{Environment.NewLine}";
 			}
-
-			/* For the input `DAT|[["Name1","Value1"],["Name2","Value2"]]`, you get
-			 *
-			 * `Variables:
-			 *
-			 * Name1 = Value1
-			 * Name2 = Value2`
-			 *
-			 */
-
-			TxtVariableOutput.Text = VariableOut;
 
 		}
 
