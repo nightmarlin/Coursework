@@ -23,6 +23,12 @@
           <e p="FrmDebugger.resx" t="Include" />
         </e>
         <e p="Designer" t="Include">
+          <e p="Blocks" t="Include">
+            <e p="BaseBlock.cs" t="Include" />
+            <e p="EmptyNormalBlock.cs" t="Include" />
+            <e p="IntegerBlock.cs" t="Include" />
+            <e p="StarterBlock.cs" t="Include" />
+          </e>
           <e p="FrmDesigner.cs" t="Include" />
           <e p="FrmDesigner.Designer.cs" t="Include" />
           <e p="FrmDesigner.resx" t="Include" />

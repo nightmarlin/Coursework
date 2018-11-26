@@ -73,6 +73,12 @@
     <Compile Include="Debugger\FrmDebugger.ReadOperations.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Designer\Blocks\BaseBlock.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Designer\Blocks\EmptyNormalBlock.cs" />
+    <Compile Include="Designer\Blocks\IntegerBlock.cs" />
+    <Compile Include="Designer\Blocks\StarterBlock.cs" />
     <Compile Include="Designer\FrmDesigner.cs">
       <SubType>Form</SubType>
     </Compile>

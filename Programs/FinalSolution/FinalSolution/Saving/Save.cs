@@ -10,7 +10,7 @@ namespace Solution.Saving {
         /// <summary>
         /// Saves a new project
         /// </summary>
-        /// <param name="FolderPath">The folder to place the new project in</param>
+        /// <param name="BSSF">The save file to edit</param>
         /// <returns>Whether the method was successful</returns>
         public static bool SaveAs(BSharpSaveFile BSSF) {
             return false;
