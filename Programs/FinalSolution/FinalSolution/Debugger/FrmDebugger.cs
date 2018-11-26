@@ -4,7 +4,7 @@ using System.Drawing;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
-using Solution.Designer;
+using Solution.Welcome;
 
 /* - SRC: https://stackoverflow.com/questions/355724/embedding-a-dos-console-in-a-windows-form -
    var processStartInfo = new ProcessStartInfo("SomeOldApp.exe", "-p SomeParameters");
@@ -36,7 +36,7 @@ namespace Solution.Debugger {
 	public partial class FrmDebugger : Form {
 	
 		private readonly Process _DebugProcess;
-		private readonly FrmDesigner _ParentFrmDesigner;
+		private readonly FrmWelcome _ParentFrmWelcome;
 		private bool _IsDebugging;
 
 		/// <summary>
@@ -54,8 +54,8 @@ namespace Solution.Debugger {
 		/// Initialization with parameters. Allows debugging to begin
 		/// </summary>
 		/// <param name="FileToDebug">The path of the "*.exe" file to be debugged</param>
-		/// <param name="MyParent">The FrmDesigner that instantiated the FrmDebugger</param>
-		public FrmDebugger(string FileToDebug, FrmDesigner MyParent) {
+		/// <param name="MyParent">The FrmWelcome that instantiated the FrmDebugger</param>
+		public FrmDebugger(string FileToDebug, FrmWelcome MyParent) {
 			InitializeComponent(); // Reqd. for forms
 
 			BtnStartExecution.Enabled = true; // Text colour changes do not occur on disabled controls
@@ -117,9 +117,9 @@ namespace Solution.Debugger {
 				EnableRaisingEvents = true // Allows me to hook on to the "Exited" event
 			};
 
-			_ParentFrmDesigner = MyParent; // Set parent form
+			_ParentFrmWelcome = MyParent; // Set parent form
 
-			_ParentFrmDesigner.Hide(); // Hide the parent form
+			_ParentFrmWelcome.Hide(); // Hide the parent form
 
 			_IsDebugging = _DebugProcess.Start(); // Start the process
 
@@ -130,7 +130,7 @@ namespace Solution.Debugger {
 
 				KillDebugProcess(); // Kill everything just in case
 
-				_ParentFrmDesigner.Show(); // Show the main form
+				_ParentFrmWelcome.Show(); // Show the main form
 
 				Hide(); // Disappear
 				Dispose(); // Clean up
@@ -170,8 +170,8 @@ namespace Solution.Debugger {
 		private void KillDebugProcess() {
 
 			try {
-				_DebugProcess?.Kill(); // DIE
 				_DebugProcess?.Close(); // DIE
+				_DebugProcess?.Kill(); // DIE
 				_DebugProcess?.Dispose(); // SERIOUSLY PLEASE JUST DIE
 				
 				// ?. operators are great because they do all the null checking for you. I really don't like errors...
@@ -204,7 +204,7 @@ namespace Solution.Debugger {
 		private void FrmDebugger_Load(object Sender, EventArgs E) { }
 
 		private delegate void EmptyParamsDelegate(); // Represents a method with no parameters.
-			// I learnt about this one back when made a Connect4 game with a friend. They allow cross-thread
+			// I learned about this one back when made a Connect4 game with a friend. They allow cross-thread
 			// invocation, which is not only really neat but also very helpful when working with UIs because they
 			// have a bad habit of "hanging" when long running code executes in the foreground. Delegates stop that.
 			// TL;DR: Form hanging is bad, delegate invocation is good
@@ -341,7 +341,7 @@ namespace Solution.Debugger {
 			StopDebuggingInterfaceChanges();
 			KillDebugProcess();
 
-			_ParentFrmDesigner?.Show(); // Show parent form
+			_ParentFrmWelcome?.Show(); // Show parent form
 
 			Hide(); // Become invisible
 			Dispose(); // Clean up

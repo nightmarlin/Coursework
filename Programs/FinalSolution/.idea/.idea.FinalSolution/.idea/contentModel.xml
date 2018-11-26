@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
+    <e p="C:\Users\choc8\.Rider2018.2\config\extensions" t="IncludeRecursive" />
     <e p="C:\Users\choc8\.Rider2018.2\system\extResources" t="IncludeRecursive" />
     <e p="C:\Users\choc8\.Rider2018.2\system\resharper-host\local\Transient\ReSharperHost\v182\SolutionCaches\_FinalSolution.1421836565.00" t="ExcludeRecursive" />
     <e p="D:\HDD Documents\Computing\Coursework\Programs\FinalSolution" t="IncludeFlat">
@@ -9,10 +10,10 @@
         <e p="bin" t="ExcludeRecursive" />
         <e p="Build" t="Include">
           <e p="Template" t="Include">
-            <e p="CompilerTemplate.csproj" t="Include" />
-            <e p="ProgramTemplate.cs" t="Include" />
-            <e p="ProgramTemplate_User.cs" t="Include" />
-            <e p="StorageTemplate.blok" t="Include" />
+            <e p="ProjectName.BSharp" t="Include" />
+            <e p="ProjectName.cs" t="Include" />
+            <e p="ProjectName.csproj" t="Include" />
+            <e p="Wrapper.cs" t="Include" />
           </e>
         </e>
         <e p="Debugger" t="Include">
@@ -25,6 +26,9 @@
           <e p="FrmDesigner.cs" t="Include" />
           <e p="FrmDesigner.Designer.cs" t="Include" />
           <e p="FrmDesigner.resx" t="Include" />
+        </e>
+        <e p="Errors" t="Include">
+          <e p="BSharp_NotABSharpIndexException.cs" t="Include" />
         </e>
         <e p="FinalSolution.csproj" t="IncludeRecursive" />
         <e p="obj" t="ExcludeRecursive" />
@@ -40,7 +44,17 @@
         <e p="Resources" t="Include">
           <e p="MainIcon.ico" t="Include" />
         </e>
+        <e p="Saving" t="Include">
+          <e p="BSharpSaveFile.cs" t="Include" />
+          <e p="Save.cs" t="Include" />
+        </e>
         <e p="Settings.cs" t="Include" />
+        <e p="Welcome" t="Include">
+          <e p="FrmWelcome.cs" t="Include" />
+          <e p="FrmWelcome.Designer.cs" t="Include" />
+          <e p="FrmWelcome.resx" t="Include" />
+          <e p="RecentItem.cs" t="Include" />
+        </e>
       </e>
       <e p="FinalSolution.sln" t="IncludeFlat" />
       <e p="packages" t="ExcludeRecursive" />

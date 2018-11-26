@@ -69,7 +69,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Build\Template\ProgramTemplate_User.cs" />
+    <Compile Include="Build\Template\ProjectName.cs" />
     <Compile Include="Debugger\FrmDebugger.ReadOperations.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +79,16 @@
     <Compile Include="Designer\FrmDesigner.Designer.cs">
       <DependentUpon>FrmDesigner.cs</DependentUpon>
     </Compile>
+    <Compile Include="Errors\BSharp_NotABSharpIndexException.cs" />
+    <Compile Include="Saving\BSharpSaveFile.cs" />
+    <Compile Include="Saving\Save.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="Welcome\FrmWelcome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Welcome\FrmWelcome.Designer.cs">
+      <DependentUpon>FrmWelcome.cs</DependentUpon>
+    </Compile>
     <Compile Include="Debugger\FrmDebugger.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,13 +97,16 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Settings.cs" />
-    <Compile Include="Build\Template\ProgramTemplate.cs" />
+    <Compile Include="Build\Template\Wrapper.cs" />
+    <Compile Include="Welcome\RecentItem.cs" />
     <EmbeddedResource Include="Debugger\FrmDebugger.resx">
       <DependentUpon>FrmDebugger.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Designer\FrmDesigner.resx">
       <DependentUpon>FrmDesigner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Welcome\FrmWelcome.resx">
+      <DependentUpon>FrmWelcome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -135,10 +148,10 @@
     <None Include="Resources\MainIcon.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Build\Template\StorageTemplate.blok" />
+    <None Include="Build\Template\ProjectName.BSharp" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Build\Template\CompilerTemplate.csproj" />
+    <Content Include="Build\Template\ProjectName.csproj" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

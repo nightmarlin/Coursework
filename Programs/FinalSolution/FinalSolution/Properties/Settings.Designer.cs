@@ -8,18 +8,29 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Solution {
+namespace Solution.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.8.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.9.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
-        private static Solution.Settings defaultInstance = ((Solution.Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Solution.Settings())));
+        private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
         
-        public static Solution.Settings Default {
+        public static Settings Default {
             get {
                 return defaultInstance;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Collections.Specialized.StringCollection RecentItems {
+            get {
+                return ((global::System.Collections.Specialized.StringCollection)(this["RecentItems"]));
+            }
+            set {
+                this["RecentItems"] = value;
             }
         }
     }
