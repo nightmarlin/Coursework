@@ -28,7 +28,7 @@ namespace Solution.Designer.Blocks {
         public override void DisconnectParent() { }
 
         //
-        public override void DisconnectChild(BaseBlock ChildToRemove) { }
+        public override void DisconnectChild() { }
 
         //
         public override void DrawMe(object sender, PaintEventArgs e) {
@@ -44,7 +44,7 @@ namespace Solution.Designer.Blocks {
 
         //
         public override string GetCode() {
-            return "";
+            return "// Empty block" + (ChildBlock is null ? "" : ChildBlock.GetCode()) + Environment.NewLine;
         }
 
     }

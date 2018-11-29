@@ -27,7 +27,7 @@ namespace Solution.Designer.Blocks {
 			this.LocationChanged += new EventHandler(OnResized);    // Relocation also forces a redraw and reevaluation
 
 			this.ParentBlock = null;        // Empty the connections
-			this.ChildBlocks = null;        // 
+			this.ChildBlock = null;        // 
 
 			OnResized(null, null);          // Resize the component to match
 
@@ -105,7 +105,7 @@ namespace Solution.Designer.Blocks {
 		/// <summary>
 		/// 
 		/// </summary>
-		public List<BaseBlock> ChildBlocks { get; protected set; }
+		public BaseBlock ChildBlock { get; protected set; }
 
 		/// <summary>
 		/// 
@@ -118,7 +118,7 @@ namespace Solution.Designer.Blocks {
 		public abstract void ConnectUpwards(BaseBlock NewParent);
 		public abstract void ConnectDownwards(BaseBlock ChildToAdd);
 		public abstract void DisconnectParent();
-		public abstract void DisconnectChild(BaseBlock ChildToRemove);
+		public abstract void DisconnectChild();
 		public abstract void DrawMe(object sender, PaintEventArgs e);
 
 		public abstract string GetCode();

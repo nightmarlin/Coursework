@@ -49,7 +49,7 @@ namespace Solution.Designer.Blocks {
 		}
 
 		//
-		public override void DisconnectChild(BaseBlock ChildToRemove) {
+		public override void DisconnectChild() {
 
 		}
 

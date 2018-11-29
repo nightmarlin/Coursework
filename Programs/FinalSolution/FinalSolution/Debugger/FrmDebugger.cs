@@ -291,6 +291,8 @@ namespace Solution.Debugger {
 			
 			//Console.WriteLine(@"Sent: " + ToSubmit);
 
+			TxtInputToProgram.AutoCompleteCustomSource.Add(ToSubmit);
+
 			TxtStandardOutput.Text += $@"> {ToSubmit}{Environment.NewLine}"; // Reflect user input
 
 			await _DebugProcess.StandardInput.WriteLineAsync(ToSubmit); // Send input to the program

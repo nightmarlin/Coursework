@@ -76,7 +76,7 @@
 			// TxtInputToProgram
 			// 
 			this.TxtInputToProgram.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-			this.TxtInputToProgram.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.RecentlyUsedList;
+			this.TxtInputToProgram.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
 			this.TxtInputToProgram.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.TxtInputToProgram.Location = new System.Drawing.Point(3, 3);
 			this.TxtInputToProgram.MaxLength = 1073741824;
