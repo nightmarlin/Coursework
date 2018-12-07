@@ -21,7 +21,7 @@ namespace Solution.Welcome {
 		public FrmWelcome() {
 			InitializeComponent();
 			Shown += FrmWelcome_Shown;
-			var x = new List<RecentItem>();
+
 		}
 
 		/// <summary>
@@ -40,7 +40,7 @@ namespace Solution.Welcome {
 		/// <param name="E">Reqd. for events</param>
 		private void BtnShowDebugger_Click(object Sender, EventArgs E) {
 
-			var MyProcessName = TxtFilePath.Text;
+			var MyProcessName = Microsoft.VisualBasic.Interaction.InputBox("What's the file path?", "B#", ".\\BébéProgramMK2.exe");
 
 			if (!File.Exists(MyProcessName)) {
 				MessageBox.Show("Cannot run a file that doesn't exist", "B#", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -54,7 +54,6 @@ namespace Solution.Welcome {
 
 			var MyDebugger = new FrmDebugger(MyProcessName, this);
 			//var MyDebugger = new FrmDebugger();
-			
 			
 			MyDebugger.Show();
 

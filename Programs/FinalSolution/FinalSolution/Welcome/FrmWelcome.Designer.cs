@@ -36,7 +36,6 @@
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.List_RecentItems = new System.Windows.Forms.ListView();
 			this.Lbl_RecentItems_Header = new System.Windows.Forms.Label();
-			this.TxtFilePath = new System.Windows.Forms.TextBox();
 			this.BtnShowDebugger = new System.Windows.Forms.Button();
 			this.BtnShowDesigner = new System.Windows.Forms.Button();
 			this.MainMenu.SuspendLayout();
@@ -85,7 +84,6 @@
 			// 
 			// splitContainer1.Panel2
 			// 
-			this.splitContainer1.Panel2.Controls.Add(this.TxtFilePath);
 			this.splitContainer1.Panel2.Controls.Add(this.BtnShowDebugger);
 			this.splitContainer1.Panel2.Controls.Add(this.BtnShowDesigner);
 			this.splitContainer1.Size = new System.Drawing.Size(800, 426);
@@ -134,32 +132,23 @@
 			this.Lbl_RecentItems_Header.Text = "Recent Projects";
 			this.Lbl_RecentItems_Header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
-			// TxtFilePath
-			// 
-			this.TxtFilePath.Location = new System.Drawing.Point(34, 86);
-			this.TxtFilePath.Name = "TxtFilePath";
-			this.TxtFilePath.Size = new System.Drawing.Size(221, 20);
-			this.TxtFilePath.TabIndex = 9;
-			this.TxtFilePath.Text = ".\\BébéProgramMK2.exe";
-			// 
 			// BtnShowDebugger
 			// 
-			this.BtnShowDebugger.Location = new System.Drawing.Point(34, 112);
+			this.BtnShowDebugger.Location = new System.Drawing.Point(3, 3);
 			this.BtnShowDebugger.Name = "BtnShowDebugger";
 			this.BtnShowDebugger.Size = new System.Drawing.Size(221, 126);
 			this.BtnShowDebugger.TabIndex = 9;
-			this.BtnShowDebugger.Text = "Show Debugger\r\nType absolute \'.exe\' path into textbox\r\nIE: \'C:\\Users\\Me\\My Docume" +
-    "nts\\Program.exe\'";
+			this.BtnShowDebugger.Text = "Debug A Program";
 			this.BtnShowDebugger.UseVisualStyleBackColor = true;
 			this.BtnShowDebugger.Click += new System.EventHandler(this.BtnShowDebugger_Click);
 			// 
 			// BtnShowDesigner
 			// 
-			this.BtnShowDesigner.Location = new System.Drawing.Point(34, 244);
+			this.BtnShowDesigner.Location = new System.Drawing.Point(3, 135);
 			this.BtnShowDesigner.Name = "BtnShowDesigner";
 			this.BtnShowDesigner.Size = new System.Drawing.Size(221, 129);
 			this.BtnShowDesigner.TabIndex = 10;
-			this.BtnShowDesigner.Text = "Show the designer";
+			this.BtnShowDesigner.Text = "Create A Program";
 			this.BtnShowDesigner.UseVisualStyleBackColor = true;
 			this.BtnShowDesigner.Click += new System.EventHandler(this.BtnShowDesigner_Click);
 			// 
@@ -178,7 +167,6 @@
 			this.MainMenu.PerformLayout();
 			this.splitContainer1.Panel1.ResumeLayout(false);
 			this.splitContainer1.Panel2.ResumeLayout(false);
-			this.splitContainer1.Panel2.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
 			this.splitContainer1.ResumeLayout(false);
 			this.tableLayoutPanel1.ResumeLayout(false);
@@ -193,7 +181,6 @@
 		private System.Windows.Forms.ToolStripMenuItem FileToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem OpenToolStripMenuItem;
 		private System.Windows.Forms.SplitContainer splitContainer1;
-		private System.Windows.Forms.TextBox TxtFilePath;
 		private System.Windows.Forms.Button BtnShowDebugger;
 		private System.Windows.Forms.Button BtnShowDesigner;
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;

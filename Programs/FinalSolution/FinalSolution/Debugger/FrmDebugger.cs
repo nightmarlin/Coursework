@@ -213,16 +213,14 @@ namespace Solution.Debugger {
 		/// Disable all the buttons
 		/// </summary>
 		private void StopDebuggingInterfaceChanges() {
-			if (this.BtnExitDebugging.InvokeRequired) { // Multi-thread fun
+			if (BtnExitDebugging.InvokeRequired) { // Multi-thread fun
 				var EPD = new EmptyParamsDelegate(StopDebuggingInterfaceChanges);
 					// Set up the delegate to represent the method it is being called in
 				
-				if (this.IsDisposed) return; // No InvalidOperationExceptions / ObjectDisposedExceptions please
+				if (IsDisposed) return; // No InvalidOperationExceptions / ObjectDisposedExceptions please
 				try {
-					this.Invoke(EPD);
-				} catch (ObjectDisposedException) {
-					return;
-				}
+					Invoke(EPD);
+				} catch (ObjectDisposedException) { }
 			} else {
 				// Make it look like we're sleeping
 				BtnExitDebugging.Enabled = true;
@@ -344,6 +342,7 @@ namespace Solution.Debugger {
 			KillDebugProcess();
 
 			_ParentFrmWelcome?.Show(); // Show parent form
+			
 
 			Hide(); // Become invisible
 			Dispose(); // Clean up
