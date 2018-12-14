@@ -9,15 +9,10 @@ namespace Solution.Designer.Blocks {
 
         public decimal Value = 0;
 
-        public override void ConnectUpwards(BaseBlock Block) {
-            
-        }
-
         public override void ConnectDownwards(BaseBlock Block) {
             
         }
         
-        public override void DisconnectParent() {}
 
         public override void DisconnectChild() { }
         

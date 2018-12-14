@@ -23,12 +23,25 @@
 		/// the contents of this method with the code editor.
 		/// </summary>
 		private void InitializeComponent() {
+			System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Starter Block");
+			System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Control", new System.Windows.Forms.TreeNode[] {
+            treeNode1});
+			System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Empty Block");
+			System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Process", new System.Windows.Forms.TreeNode[] {
+            treeNode3});
+			System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Output");
+			System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Integer");
+			System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Variables", new System.Windows.Forms.TreeNode[] {
+            treeNode6});
 			this.MainMenu = new System.Windows.Forms.MenuStrip();
 			this.FileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.OpenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.SContainer_Workspace = new System.Windows.Forms.SplitContainer();
+			this.listBox1 = new System.Windows.Forms.ListBox();
+			this.treeView1 = new System.Windows.Forms.TreeView();
 			this.MainMenu.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.SContainer_Workspace)).BeginInit();
+			this.SContainer_Workspace.Panel2.SuspendLayout();
 			this.SContainer_Workspace.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -68,9 +81,49 @@
 			// SContainer_Workspace.Panel2
 			// 
 			this.SContainer_Workspace.Panel2.AllowDrop = true;
+			this.SContainer_Workspace.Panel2.Controls.Add(this.treeView1);
+			this.SContainer_Workspace.Panel2.Controls.Add(this.listBox1);
 			this.SContainer_Workspace.Size = new System.Drawing.Size(800, 426);
 			this.SContainer_Workspace.SplitterDistance = 266;
 			this.SContainer_Workspace.TabIndex = 2;
+			// 
+			// listBox1
+			// 
+			this.listBox1.FormattingEnabled = true;
+			this.listBox1.Items.AddRange(new object[] {
+            "Empty",
+            "Integer",
+            "Starter"});
+			this.listBox1.Location = new System.Drawing.Point(32, 73);
+			this.listBox1.Name = "listBox1";
+			this.listBox1.Size = new System.Drawing.Size(120, 329);
+			this.listBox1.TabIndex = 0;
+			// 
+			// treeView1
+			// 
+			this.treeView1.Location = new System.Drawing.Point(159, 73);
+			this.treeView1.Name = "treeView1";
+			treeNode1.Name = "StarterBlock";
+			treeNode1.Text = "Starter Block";
+			treeNode2.Name = "ControlBlocks";
+			treeNode2.Text = "Control";
+			treeNode3.Name = "EmptyNormalBlock";
+			treeNode3.Text = "Empty Block";
+			treeNode4.Name = "ProcessBlocks";
+			treeNode4.Text = "Process";
+			treeNode5.Name = "Output Blocks";
+			treeNode5.Text = "Output";
+			treeNode6.Name = "IntegerBlock";
+			treeNode6.Text = "Integer";
+			treeNode7.Name = "VariableBlocks";
+			treeNode7.Text = "Variables";
+			this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode2,
+            treeNode4,
+            treeNode5,
+            treeNode7});
+			this.treeView1.Size = new System.Drawing.Size(129, 329);
+			this.treeView1.TabIndex = 1;
 			// 
 			// FrmDesigner
 			// 
@@ -84,6 +137,7 @@
 			this.Text = "FrmDesigner";
 			this.MainMenu.ResumeLayout(false);
 			this.MainMenu.PerformLayout();
+			this.SContainer_Workspace.Panel2.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.SContainer_Workspace)).EndInit();
 			this.SContainer_Workspace.ResumeLayout(false);
 			this.ResumeLayout(false);
@@ -97,5 +151,7 @@
 		private System.Windows.Forms.ToolStripMenuItem FileToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem OpenToolStripMenuItem;
 		private System.Windows.Forms.SplitContainer SContainer_Workspace;
+		private System.Windows.Forms.TreeView treeView1;
+		private System.Windows.Forms.ListBox listBox1;
 	}
 }

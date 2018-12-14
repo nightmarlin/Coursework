@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 
@@ -181,13 +182,13 @@ namespace Solution.Debugger {
 				 */
 
 				TxtVariableOutput.Text = VariableOut;
-			} catch (Exception Ex) {
-
+			} catch (Exception) {
+				var x = "";
 				// Show the user the output
 				TxtStandardOutput.Text += $@"Unable to deserialize variable data:{Environment.NewLine}" +
 				                          $@"--> {Data}{Environment.NewLine}";
 			}
-
+		
 		}
 
 		#endregion

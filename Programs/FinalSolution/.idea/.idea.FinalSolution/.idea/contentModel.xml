@@ -59,7 +59,6 @@
           <e p="FrmWelcome.cs" t="Include" />
           <e p="FrmWelcome.Designer.cs" t="Include" />
           <e p="FrmWelcome.resx" t="Include" />
-          <e p="RecentItem.cs" t="Include" />
         </e>
       </e>
       <e p="FinalSolution.sln" t="IncludeFlat" />

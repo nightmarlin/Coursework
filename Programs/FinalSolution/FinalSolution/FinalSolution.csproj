@@ -77,9 +77,15 @@
     <Compile Include="Designer\Blocks\BaseBlock.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Designer\Blocks\EmptyNormalBlock.cs" />
-    <Compile Include="Designer\Blocks\IntegerBlock.cs" />
-    <Compile Include="Designer\Blocks\StarterBlock.cs" />
+    <Compile Include="Designer\Blocks\EmptyNormalBlock.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Designer\Blocks\IntegerBlock.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Designer\Blocks\StarterBlock.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Designer\FrmDesigner.cs">
       <SubType>Form</SubType>
     </Compile>

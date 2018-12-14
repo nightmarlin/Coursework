@@ -15,17 +15,8 @@ namespace Solution.Designer.Blocks {
         /// </summary>
         public EmptyNormalBlock() : base() { }
 
-        /// <summary>
-        /// Makes a connection to the parent block
-        /// </summary>
-        /// <param name="NewParent">Gives a reference to the parent block</param>
-        public override void ConnectUpwards(BaseBlock NewParent) { }
-
         //
         public override void ConnectDownwards(BaseBlock ChildToAdd) { }
-
-        //
-        public override void DisconnectParent() { }
 
         //
         public override void DisconnectChild() { }
@@ -33,12 +24,12 @@ namespace Solution.Designer.Blocks {
         //
         public override void DrawMe(object sender, PaintEventArgs e) {
             Graphics GFX = e.Graphics;
-            using (Pen P = new Pen(Color.Black, 2)) {
-                GFX.DrawRectangle(P, this.OutlineRectangle);
+            using (var P = new Pen(Color.Black, 2)) {
+                GFX.DrawRectangle(P, OutlineRectangle);
                 P.Color = Color.Red;
-                GFX.DrawRectangle(P, this.TopConnector);
+                GFX.DrawRectangle(P, TopConnector);
                 P.Color = Color.Blue;
-                GFX.DrawRectangle(P, this.BottomConnector);
+                GFX.DrawRectangle(P, BottomConnector);
             }
         }
 
@@ -46,7 +37,5 @@ namespace Solution.Designer.Blocks {
         public override string GetCode() {
             return "// Empty block" + (ChildBlock is null ? "" : ChildBlock.GetCode()) + Environment.NewLine;
         }
-
     }
-
 }

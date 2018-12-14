@@ -25,8 +25,7 @@ namespace Solution.Designer.Blocks {
 			this.Paint += new PaintEventHandler(this.DrawMe);       // Allows me to use the graphics object without wasting system
 																	// Resources to create my own
 			this.LocationChanged += new EventHandler(OnResized);    // Relocation also forces a redraw and reevaluation
-
-			this.ParentBlock = null;        // Empty the connections
+			
 			this.ChildBlock = null;        // 
 
 			OnResized(null, null);          // Resize the component to match
@@ -47,12 +46,12 @@ namespace Solution.Designer.Blocks {
 			int RectHeight = 10;
 
 			this.TopConnector = new Rectangle(RectStartX, RectStartY, RectWidth, RectHeight);
-
+			
 			RectStartY = (Size.Height) - 10;
 
 			this.BottomConnector = new Rectangle(RectStartX, RectStartY, RectWidth, RectHeight);
 			this.OutlineRectangle = new Rectangle(0, 7, DisplayRectangle.Width, DisplayRectangle.Height - 14);
-
+			
 		}
 
 		#region Movement Controls
@@ -98,12 +97,7 @@ namespace Solution.Designer.Blocks {
 		// Some variable encapsulation :)
 
 		/// <summary>
-		/// 
-		/// </summary>
-		public BaseBlock ParentBlock { get; protected set; }
-
-		/// <summary>
-		/// 
+		/// The block that this block leads on to
 		/// </summary>
 		public BaseBlock ChildBlock { get; protected set; }
 
@@ -115,9 +109,7 @@ namespace Solution.Designer.Blocks {
 		public Rectangle OutlineRectangle { get; protected set; }
 
 		// VB MustOverride equivalents
-		public abstract void ConnectUpwards(BaseBlock NewParent);
 		public abstract void ConnectDownwards(BaseBlock ChildToAdd);
-		public abstract void DisconnectParent();
 		public abstract void DisconnectChild();
 		public abstract void DrawMe(object sender, PaintEventArgs e);
 

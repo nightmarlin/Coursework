@@ -14,14 +14,7 @@ namespace Solution.Designer.Blocks {
 		public StartBlock() : base() {
 
 		}
-
-		/// <summary>
-		/// Available, but if called will do nothing, as there is no Top Connector
-		/// </summary>
-		/// <param name="NewParent">Gives a reference to the parent block</param>
-		public override void ConnectUpwards(BaseBlock NewParent) {
-
-		}
+		
 		/// <summary>
 		/// Edits the OnResized function to allow me to ignore the TopConnector
 		/// </summary>
@@ -40,11 +33,6 @@ namespace Solution.Designer.Blocks {
 
 		//
 		public override void ConnectDownwards(BaseBlock ChildToAdd) {
-
-		}
-
-		//
-		public override void DisconnectParent() {
 
 		}
 
