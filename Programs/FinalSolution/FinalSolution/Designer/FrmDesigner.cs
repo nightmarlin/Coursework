@@ -9,10 +9,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Solution.Designer {
+	/// <summary>
+	/// The form upon which designmentination occurs 
+	/// </summary>
 	public partial class FrmDesigner : Form {
-		/// <summary>
-		/// The form upon which designmentination occurs
-		/// </summary>
+		
+		/// <inheritdoc />
 		public FrmDesigner() {
 			InitializeComponent();
 		}

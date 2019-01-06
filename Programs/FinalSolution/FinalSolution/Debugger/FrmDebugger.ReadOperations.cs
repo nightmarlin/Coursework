@@ -183,7 +183,7 @@ namespace Solution.Debugger {
 
 				TxtVariableOutput.Text = VariableOut;
 			} catch (Exception) {
-				var x = "";
+				
 				// Show the user the output
 				TxtStandardOutput.Text += $@"Unable to deserialize variable data:{Environment.NewLine}" +
 				                          $@"--> {Data}{Environment.NewLine}";

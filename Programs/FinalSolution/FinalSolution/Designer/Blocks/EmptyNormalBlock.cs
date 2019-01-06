@@ -4,38 +4,38 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 
 namespace Solution.Designer.Blocks {
 
+    /// <summary>
+    /// An empty block, for testing purposes
+    /// </summary>
     class EmptyNormalBlock : BaseBlock {
 
-        /// <summary>
-        /// Constructor for the block
-        /// </summary>
-        public EmptyNormalBlock() : base() { }
+        /// <inheritdoc />
+        public EmptyNormalBlock() : base() {
+            Code = "// Empty Block";
+        }
 
-        //
-        public override void ConnectDownwards(BaseBlock ChildToAdd) { }
+        /// <inheritdoc />
+        public override void ConnectNext(int NextId) { }
 
-        //
-        public override void DisconnectChild() { }
+        /// <inheritdoc />
+        public override void DisconnectNext() { }
 
-        //
+        /// <inheritdoc />
         public override void DrawMe(object sender, PaintEventArgs e) {
             Graphics GFX = e.Graphics;
             using (var P = new Pen(Color.Black, 2)) {
                 GFX.DrawRectangle(P, OutlineRectangle);
                 P.Color = Color.Red;
-                GFX.DrawRectangle(P, TopConnector);
+                GFX.DrawRectangle(P, TopConnectorZone);
                 P.Color = Color.Blue;
-                GFX.DrawRectangle(P, BottomConnector);
+                GFX.DrawRectangle(P, BottomConnectorZone);
             }
         }
 
-        //
-        public override string GetCode() {
-            return "// Empty block" + (ChildBlock is null ? "" : ChildBlock.GetCode()) + Environment.NewLine;
-        }
     }
 }

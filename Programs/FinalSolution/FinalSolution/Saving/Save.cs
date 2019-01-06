@@ -16,6 +16,11 @@ namespace Solution.Saving {
             return false;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="BSSF"></param>
+        /// <returns></returns>
         public static bool SaveNormal(BSharpSaveFile BSSF) {
             return false;
         }

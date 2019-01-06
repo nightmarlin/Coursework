@@ -80,7 +80,7 @@
     <Compile Include="Designer\Blocks\EmptyNormalBlock.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Designer\Blocks\IntegerBlock.cs">
+    <Compile Include="Designer\Blocks\DecimalBlock.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Designer\Blocks\StarterBlock.cs">
