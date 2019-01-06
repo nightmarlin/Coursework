@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\choc8\.Rider2018.2\config\extensions" t="IncludeRecursive" />
-    <e p="C:\Users\choc8\.Rider2018.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\choc8\.Rider2018.2\system\resharper-host\local\Transient\ReSharperHost\v182\SolutionCaches\_FinalSolution.1421836565.00" t="ExcludeRecursive" />
+    <e p="C:\Users\choc8\.Rider2018.3\config\extensions" t="IncludeRecursive" />
+    <e p="C:\Users\choc8\.Rider2018.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\choc8\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_FinalSolution.1421836565.00" t="ExcludeRecursive" />
     <e p="D:\HDD Documents\Computing\Coursework\Programs\FinalSolution" t="IncludeFlat">
       <e p="FinalSolution" t="IncludeRecursive">
         <e p="App.config" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="Build" t="Include">
-          <e p="Template" t="Include">
-            <e p="ProjectName.BSharp" t="Include" />
-            <e p="ProjectName.cs" t="Include" />
-            <e p="ProjectName.csproj" t="Include" />
-            <e p="Wrapper.cs" t="Include" />
-          </e>
+          <e p="Builder.cs" t="Include" />
         </e>
         <e p="Debugger" t="Include">
           <e p="FrmDebugger.cs" t="Include" />

@@ -63,6 +63,13 @@ namespace Solution.Welcome {
 		}
 
 		private void BtnShowDesigner_Click(object sender, EventArgs e) {
+			var B = new Build.Builder("Test");
+
+			MessageBox.Show(B.Build(@"using System; namespace YourProject { public static class Program { public static void Main(string[] Args) { Console.WriteLine(""Test Program""); } } }")
+				                ? "Success"
+				                : "Failure");
+
+			/*
 			var Designer = new FrmDesigner();
 
 			Designer.Show();
@@ -70,7 +77,7 @@ namespace Solution.Welcome {
 			
 			Designer.VisibleChanged += (S, EArgs) => { this.Show(); };
 			Designer.Closed += (S, EArgs) => { this.Show(); };
-
+			*/
 		}
 	}
 }
