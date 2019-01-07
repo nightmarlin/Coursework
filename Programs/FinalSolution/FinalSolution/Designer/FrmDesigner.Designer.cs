@@ -37,11 +37,10 @@
 			this.FileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.OpenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.SContainer_Workspace = new System.Windows.Forms.SplitContainer();
-			this.listBox1 = new System.Windows.Forms.ListBox();
 			this.treeView1 = new System.Windows.Forms.TreeView();
 			this.MainMenu.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.SContainer_Workspace)).BeginInit();
-			this.SContainer_Workspace.Panel2.SuspendLayout();
+			this.SContainer_Workspace.Panel1.SuspendLayout();
 			this.SContainer_Workspace.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -78,30 +77,20 @@
 			this.SContainer_Workspace.Location = new System.Drawing.Point(0, 24);
 			this.SContainer_Workspace.Name = "SContainer_Workspace";
 			// 
+			// SContainer_Workspace.Panel1
+			// 
+			this.SContainer_Workspace.Panel1.Controls.Add(this.treeView1);
+			// 
 			// SContainer_Workspace.Panel2
 			// 
 			this.SContainer_Workspace.Panel2.AllowDrop = true;
-			this.SContainer_Workspace.Panel2.Controls.Add(this.treeView1);
-			this.SContainer_Workspace.Panel2.Controls.Add(this.listBox1);
 			this.SContainer_Workspace.Size = new System.Drawing.Size(800, 426);
 			this.SContainer_Workspace.SplitterDistance = 266;
 			this.SContainer_Workspace.TabIndex = 2;
 			// 
-			// listBox1
-			// 
-			this.listBox1.FormattingEnabled = true;
-			this.listBox1.Items.AddRange(new object[] {
-            "Empty",
-            "Integer",
-            "Starter"});
-			this.listBox1.Location = new System.Drawing.Point(32, 73);
-			this.listBox1.Name = "listBox1";
-			this.listBox1.Size = new System.Drawing.Size(120, 329);
-			this.listBox1.TabIndex = 0;
-			// 
 			// treeView1
 			// 
-			this.treeView1.Location = new System.Drawing.Point(159, 73);
+			this.treeView1.Location = new System.Drawing.Point(77, 27);
 			this.treeView1.Name = "treeView1";
 			treeNode1.Name = "StarterBlock";
 			treeNode1.Text = "Starter Block";
@@ -137,7 +126,7 @@
 			this.Text = "FrmDesigner";
 			this.MainMenu.ResumeLayout(false);
 			this.MainMenu.PerformLayout();
-			this.SContainer_Workspace.Panel2.ResumeLayout(false);
+			this.SContainer_Workspace.Panel1.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.SContainer_Workspace)).EndInit();
 			this.SContainer_Workspace.ResumeLayout(false);
 			this.ResumeLayout(false);
@@ -152,6 +141,5 @@
 		private System.Windows.Forms.ToolStripMenuItem OpenToolStripMenuItem;
 		private System.Windows.Forms.SplitContainer SContainer_Workspace;
 		private System.Windows.Forms.TreeView treeView1;
-		private System.Windows.Forms.ListBox listBox1;
 	}
 }

@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Solution.Designer {
+
+	/// <inheritdoc />
 	/// <summary>
 	/// The form upon which designmentination occurs 
 	/// </summary>

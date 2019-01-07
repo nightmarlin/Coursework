@@ -38,6 +38,7 @@
 			this.Lbl_RecentItems_Header = new System.Windows.Forms.Label();
 			this.BtnShowDebugger = new System.Windows.Forms.Button();
 			this.BtnShowDesigner = new System.Windows.Forms.Button();
+			this.emptyNormalBlock1 = new Solution.Designer.Blocks.EmptyNormalBlock();
 			this.MainMenu.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
 			this.splitContainer1.Panel1.SuspendLayout();
@@ -84,6 +85,7 @@
 			// 
 			// splitContainer1.Panel2
 			// 
+			this.splitContainer1.Panel2.Controls.Add(this.emptyNormalBlock1);
 			this.splitContainer1.Panel2.Controls.Add(this.BtnShowDebugger);
 			this.splitContainer1.Panel2.Controls.Add(this.BtnShowDesigner);
 			this.splitContainer1.Size = new System.Drawing.Size(800, 426);
@@ -152,6 +154,14 @@
 			this.BtnShowDesigner.UseVisualStyleBackColor = true;
 			this.BtnShowDesigner.Click += new System.EventHandler(this.BtnShowDesigner_Click);
 			// 
+			// emptyNormalBlock1
+			// 
+			this.emptyNormalBlock1.Id = 0;
+			this.emptyNormalBlock1.Location = new System.Drawing.Point(251, 225);
+			this.emptyNormalBlock1.Name = "emptyNormalBlock1";
+			this.emptyNormalBlock1.Size = new System.Drawing.Size(200, 100);
+			this.emptyNormalBlock1.TabIndex = 11;
+			// 
 			// FrmWelcome
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -186,6 +196,7 @@
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
 		private System.Windows.Forms.ListView List_RecentItems;
 		private System.Windows.Forms.Label Lbl_RecentItems_Header;
+		private Designer.Blocks.EmptyNormalBlock emptyNormalBlock1;
 	}
 }
 

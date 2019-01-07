@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing;
+
+using Microsoft.VisualBasic.Devices;
 
 namespace Solution.Designer.Blocks {
 
@@ -47,6 +50,10 @@ namespace Solution.Designer.Blocks {
 			Paint += DrawMe;       // Allows me to use the graphics object without wasting system
 																	// Resources to create my own
 			LocationChanged += OnResized;    // Relocation also forces a redraw and reevaluation
+
+			MouseUp += OnMouseUp;
+			MouseDown += OnMouseDown;
+			MouseMove += OnMouseMove;
 			
 			NextBlockId = (int)BasicBlockIds.NoConnection;        // 
 
@@ -62,59 +69,21 @@ namespace Solution.Designer.Blocks {
 		/// <param name="sender">Needed for the EventHandler delegate</param>
 		/// <param name="e">Needed for the EventHandler delegate</param>
 		protected void OnResized(object sender, EventArgs e) {
-			var RectStartX = 5;
-			var RectStartY = 0;
-			var RectWidth = 15;
-			var RectHeight = 10;
+			const int RectStartX = 5;
+			const int RectStartY = 0;
+			const int RectWidth = 15;
+			const int RectHeight = 10;
 
 			TopConnectorZone = new Rectangle(RectStartX, RectStartY, RectWidth, RectHeight);
 			
-			RectStartY = Size.Height - 10;
+			var BottomRectStartY = Size.Height - 10;
 
-			BottomConnectorZone = new Rectangle(RectStartX, RectStartY, RectWidth, RectHeight);
+			BottomConnectorZone = new Rectangle(RectStartX, BottomRectStartY, RectWidth, RectHeight);
 			OutlineRectangle = new Rectangle(0, 7, DisplayRectangle.Width, DisplayRectangle.Height - 14);
 			
 		}
 
-		#region Movement Controls
-		//bool IsMoving = false;
-		/*
-		/// <summary>
-		/// Is called when the mouse presses down on the control.
-		/// Note that this will be overidden to ensure that the block interacts correctly with other blocks
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		protected void OnMouseDown(object sender, EventArgs e) {
-			MoveTimer = new Timer {
-				Enabled = true,
-				Interval = 10
-			};
-			MoveTimer.Tick += new EventHandler(MoveTimer_Tick);
-			MoveTimer.Start();
-		}
-
-		/// <summary>
-		/// Is called when the mouse is released
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		protected void OnMouseUp(object sender, EventArgs e) {
-			MoveTimer.Stop();
-		}
-
-		private Point MousePointInControl;
-		private Timer MoveTimer;
-		/// <summary>
-		/// Is called when the timer ticks. Allows the control to move to where the mouse is
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		protected void MoveTimer_Tick(object sender, EventArgs e) {
-			
-		}
-		*/
-		#endregion
+		
 		
 		/// <summary>
 		/// The assigned Id of the block
@@ -165,5 +134,55 @@ namespace Solution.Designer.Blocks {
 		/// </summary>
 		public string Code = "// BaseBlock. You shouldn't be able to see this bit :)";
 
+		#region Movement Controls
+
+		protected bool IsMoving;
+		protected Color LastColour;
+
+		protected void OnMouseDown(object Sender, MouseEventArgs E) {
+			if (!(Sender is BaseBlock)) {
+				return;
+			}
+			LastColour = BackColor;
+			BackColor = Color.Blue;
+
+			IsMoving = true;
+
+		}
+
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="Sender"></param>
+		/// <param name="E"></param>
+		protected void OnMouseUp(object Sender, MouseEventArgs E) {
+			if (!(Sender is BaseBlock)) {
+				return;
+			}
+
+			BackColor = LastColour;
+			LastColour = Color.Blue;
+
+			IsMoving = false;
+		}
+
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="Sender"></param>
+		/// <param name="E"></param>
+		protected void OnMouseMove(object Sender, MouseEventArgs E) {
+			if (!(Sender is BaseBlock Block) || !IsMoving) {
+				return;
+			}
+
+			Debug.WriteLine(E.Location);
+			
+			//TODO: Get block movement working
+			Block.Location = E.Location;
+
+		}
+		
+		#endregion
 	}
 }
