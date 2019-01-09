@@ -11,24 +11,29 @@ namespace Solution {
 		/// The main entry point for the application.
 		/// </summary>
 		[STAThread]
-		static int Main() {
-			try {
-				
-				Application.EnableVisualStyles();
-				Application.SetCompatibleTextRenderingDefault(false);
-				Application.Run(new FrmWelcome());
-				
-				
-			} catch (Exception Ex) { // If an unhandled error bubbles up to the top, log the details and exit for safety
+		public static void Main() {
+			
+			var currentDomain = AppDomain.CurrentDomain;
+			// Handler for unhandled exceptions.
+			currentDomain.UnhandledException += GlobalUnhandledExceptionHandler;
+			// Handler for exceptions in threads behind forms.
+			Application.ThreadException += GlobalThreadExceptionHandler;
 
-				Console.WriteLine($@"A serious error occurred: {Environment.NewLine}" +
-				                  $@"{Ex.GetType()}{Environment.NewLine}{Ex.Data}{Environment.NewLine}" +
-				                  @"Mission failed. We'll get 'em next time");
-				Console.ReadLine();
-				return 1;
-			}
-
-			return 0;
+			Application.EnableVisualStyles();
+			Application.SetCompatibleTextRenderingDefault(false);
+			Application.Run(new FrmWelcome());
+			
 		}
+
+		private static void GlobalUnhandledExceptionHandler(object sender, UnhandledExceptionEventArgs e) {
+			var ex = (Exception) e.ExceptionObject;
+			Console.Error.WriteLine("A serious error occurred: " + ex.Message + Environment.NewLine + ex.StackTrace);
+		}
+
+		private static void GlobalThreadExceptionHandler(object sender, System.Threading.ThreadExceptionEventArgs e) {
+			var ex = e.Exception;
+			Console.Error.WriteLine("A serious error occurred: " + ex.Message + Environment.NewLine + ex.StackTrace);
+		}
+
 	}
 }

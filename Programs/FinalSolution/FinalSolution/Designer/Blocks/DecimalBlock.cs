@@ -25,16 +25,8 @@ namespace Solution.Designer.Blocks {
             }
         }
 
-        /// <inheritdoc />
-        public override void ConnectNext(int NextId) {
-        }
-
-
-        /// <inheritdoc />
-        public override void DisconnectNext() { }
-
-        /// <inheritdoc />
-        public override void DrawMe(object Sender, PaintEventArgs E) { }
+        /// <summary></summary>
+        public new void DrawMe(object Sender, PaintEventArgs E) { }
         
 
     }

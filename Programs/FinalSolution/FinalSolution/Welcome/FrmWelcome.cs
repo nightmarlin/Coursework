@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
 using Solution.Debugger;
 using Solution.Designer;
+using Solution.Designer.Blocks;
 
 namespace Solution.Welcome {
 	
@@ -20,25 +22,15 @@ namespace Solution.Welcome {
 		/// <inheritdoc />
 		public FrmWelcome() {
 			InitializeComponent();
-			Shown += FrmWelcome_Shown;
-
-		}
-
-		/// <summary>
-		/// When the form is shown, call the <see cref="T:System.GC"/> for discarded resources
-		/// </summary>
-		/// <param name="Sender">Reqd. for events</param>
-		/// <param name="E">Reqd. for events</param>
-		private void FrmWelcome_Shown(object Sender, EventArgs E) {
-			GC.Collect();
+			Shown += (S, E) => GC.Collect();
 		}
 
 		/// <summary>
 		/// When clicked, shows the <see cref="T:Solution.Debugger.FrmDebugger"/> with the <see cref="T:Solution.Build.Template.Program"/> running
 		/// </summary>
-		/// <param name="Sender">Reqd. for events</param>
+		/// <param name="S">Reqd. for events</param>
 		/// <param name="E">Reqd. for events</param>
-		private void BtnShowDebugger_Click(object Sender, EventArgs E) {
+		private void BtnShowDebugger_Click(object S, EventArgs E) {
 
 			var MyProcessName = Microsoft.VisualBasic.Interaction.InputBox("What's the file path?", "B#", ".\\BébéProgramMK2.exe");
 
@@ -57,27 +49,24 @@ namespace Solution.Welcome {
 			
 			MyDebugger.Show();
 
-			MyDebugger.VisibleChanged += (S, EArgs) => { this.Show(); };
-			MyDebugger.Closed += (S, EArgs) => { this.Show(); };
+			MyDebugger.VisibleChanged += (S2, E2) => { Show(); };
+			MyDebugger.Closed += (S2, E2) => { Show(); };
 
 		}
 
-		private void BtnShowDesigner_Click(object sender, EventArgs e) {
-			var B = new Build.Builder("Test");
-
-			MessageBox.Show(B.Build(@"using System; namespace YourProject { public static class Program { public static void Main(string[] Args) { Console.WriteLine(""Test Program""); } } }")
-				                ? "Success"
-				                : "Failure");
-
-			/*
-			var Designer = new FrmDesigner();
+		private void BtnShowDesigner_Click(object S, EventArgs E) {
+			
+			var Designer = new FrmDesigner(this);
+			Designer.VisibleChanged += (S2, E2) => { Show(); };
+			Designer.Closed += (S2, E2) => { Show(); };
 
 			Designer.Show();
 
-			
-			Designer.VisibleChanged += (S, EArgs) => { this.Show(); };
-			Designer.Closed += (S, EArgs) => { this.Show(); };
-			*/
+			Hide();
+
 		}
+		
+		
+
 	}
 }

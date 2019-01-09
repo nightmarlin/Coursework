@@ -45,21 +45,17 @@ namespace Solution.Designer.Blocks {
 		/// </summary>
 		protected BaseBlock() {
 
-			SetStyle(ControlStyles.OptimizedDoubleBuffer, true); // Double buffering. Something the rest of my class are having issues with
-			Resize += OnResized;             // Good for the designer view when I'm working with the blocks
-			Paint += DrawMe;       // Allows me to use the graphics object without wasting system
-																	// Resources to create my own
-			LocationChanged += OnResized;    // Relocation also forces a redraw and reevaluation
+			SetStyle(ControlStyles.OptimizedDoubleBuffer,
+			         true); // Double buffering. Something the rest of my class are having issues with
+			Resize += OnResized; // Good for the designer view when I'm working with the blocks
+			Paint += DrawMe; // Allows me to use the graphics object without wasting system
+			// Resources to create my own
+			LocationChanged += OnResized; // Relocation also forces a redraw and reevaluation
 
-			MouseUp += OnMouseUp;
-			MouseDown += OnMouseDown;
-			MouseMove += OnMouseMove;
-			
-			NextBlockId = (int)BasicBlockIds.NoConnection;        // 
+			NextBlockId = (int) BasicBlockIds.NoConnection; // 
 
-			OnResized(null, null);          // Resize the component to match
+			OnResized(null, null); // Resize the component to match
 
-			// MoveTimer.Tick += new EventHandler(this.MoveTimer_Tick);
 
 		}
 
@@ -75,16 +71,16 @@ namespace Solution.Designer.Blocks {
 			const int RectHeight = 10;
 
 			TopConnectorZone = new Rectangle(RectStartX, RectStartY, RectWidth, RectHeight);
-			
+
 			var BottomRectStartY = Size.Height - 10;
 
 			BottomConnectorZone = new Rectangle(RectStartX, BottomRectStartY, RectWidth, RectHeight);
 			OutlineRectangle = new Rectangle(0, 7, DisplayRectangle.Width, DisplayRectangle.Height - 14);
-			
+
 		}
 
-		
-		
+
+
 		/// <summary>
 		/// The assigned Id of the block
 		/// </summary>
@@ -99,12 +95,12 @@ namespace Solution.Designer.Blocks {
 		/// An area at the top of the panel which the user can click to connect to the previous block
 		/// </summary>
 		public Rectangle TopConnectorZone { get; protected set; }
-		
+
 		/// <summary>
 		/// An area at the top of the panel which the user can click to connect to the next block
 		/// </summary>
 		public Rectangle BottomConnectorZone { get; protected set; }
-		
+
 		/// <summary>
 		/// The rectangle the user can interact with to move the block
 		/// </summary>
@@ -115,74 +111,70 @@ namespace Solution.Designer.Blocks {
 		/// Code is executed in the order (this) => (BaseBlock.Id == this.NextBlockId) etc
 		/// </summary>
 		/// <param name="NextId">The block to link to</param>
-		public abstract void ConnectNext(int NextId);
-		
+		public void ConnectNext(int NextId) {
+			NextBlockId = NextId;
+		}
+
 		/// <summary>
 		/// Allows for the disconnection of this block and the one after it
 		/// </summary>
-		public abstract void DisconnectNext();
-		
+		public void DisconnectNext() {
+			NextBlockId = (int) BasicBlockIds.NoConnection;
+
+		}
+
 		/// <summary>
 		/// Provides the draw method for the block
 		/// </summary>
 		/// <param name="sender">The object that called the function</param>
 		/// <param name="e">The corresponding PaintEventArgs object</param>
-		public abstract void DrawMe(object sender, PaintEventArgs e);
+		public void DrawMe(object sender, PaintEventArgs e) {
+
+			Graphics GFX = e.Graphics;
+			using (var P = new Pen(Color.Black, 2)) {
+				GFX.DrawRectangle(P, OutlineRectangle);
+				P.Color = Color.Red;
+				GFX.DrawRectangle(P, TopConnectorZone);
+
+				var MyParent = FindForm();
+				if (MyParent is FrmDesigner FD) {
+					foreach (var C in FD.SContainer_Workspace.Panel2.Controls) {
+						if (!(C is BaseBlock B)) continue;
+						if (B.NextBlockId == Id) {
+							GFX.FillRectangle(Brushes.Red, TopConnectorZone);
+						}
+					}
+				}
+
+				P.Color = Color.Blue;
+				GFX.DrawRectangle(P, BottomConnectorZone);
+
+				if (NextBlockId != (int) BasicBlockIds.NoConnection) {
+					GFX.FillRectangle(Brushes.Blue, BottomConnectorZone);
+				}
+
+				if (ConnectorSelected == true) {
+					// TopConnector
+					GFX.FillEllipse(Brushes.Goldenrod, TopConnectorZone);
+				} else if (ConnectorSelected == false) {
+					// BottomConnector
+					GFX.FillEllipse(Brushes.Goldenrod, BottomConnectorZone);
+				}
+
+			}
+		}
+
+		/// <summary>
+		/// <c>null</c>: Neither selected.
+		/// <c>true</c>: TopConnector selected.
+		/// <c>false</c>: BottomConnector Selected
+		/// </summary>
+		public bool? ConnectorSelected;
 
 		/// <summary>
 		/// The code that this block represents
 		/// </summary>
 		public string Code = "// BaseBlock. You shouldn't be able to see this bit :)";
 
-		#region Movement Controls
-
-		protected bool IsMoving;
-		protected Color LastColour;
-
-		protected void OnMouseDown(object Sender, MouseEventArgs E) {
-			if (!(Sender is BaseBlock)) {
-				return;
-			}
-			LastColour = BackColor;
-			BackColor = Color.Blue;
-
-			IsMoving = true;
-
-		}
-
-		/// <summary>
-		/// 
-		/// </summary>
-		/// <param name="Sender"></param>
-		/// <param name="E"></param>
-		protected void OnMouseUp(object Sender, MouseEventArgs E) {
-			if (!(Sender is BaseBlock)) {
-				return;
-			}
-
-			BackColor = LastColour;
-			LastColour = Color.Blue;
-
-			IsMoving = false;
-		}
-
-		/// <summary>
-		/// 
-		/// </summary>
-		/// <param name="Sender"></param>
-		/// <param name="E"></param>
-		protected void OnMouseMove(object Sender, MouseEventArgs E) {
-			if (!(Sender is BaseBlock Block) || !IsMoving) {
-				return;
-			}
-
-			Debug.WriteLine(E.Location);
-			
-			//TODO: Get block movement working
-			Block.Location = E.Location;
-
-		}
-		
-		#endregion
 	}
 }

@@ -15,27 +15,11 @@ namespace Solution.Designer.Blocks {
     class EmptyNormalBlock : BaseBlock {
 
         /// <inheritdoc />
-        public EmptyNormalBlock() : base() {
+        public EmptyNormalBlock() {
             Code = "// Empty Block";
         }
 
-        /// <inheritdoc />
-        public override void ConnectNext(int NextId) { }
-
-        /// <inheritdoc />
-        public override void DisconnectNext() { }
-
-        /// <inheritdoc />
-        public override void DrawMe(object sender, PaintEventArgs e) {
-            Graphics GFX = e.Graphics;
-            using (var P = new Pen(Color.Black, 2)) {
-                GFX.DrawRectangle(P, OutlineRectangle);
-                P.Color = Color.Red;
-                GFX.DrawRectangle(P, TopConnectorZone);
-                P.Color = Color.Blue;
-                GFX.DrawRectangle(P, BottomConnectorZone);
-            }
-        }
+        
 
     }
 }
