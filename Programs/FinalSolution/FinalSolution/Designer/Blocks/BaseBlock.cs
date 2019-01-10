@@ -120,7 +120,6 @@ namespace Solution.Designer.Blocks {
 		/// </summary>
 		public void DisconnectNext() {
 			NextBlockId = (int) BasicBlockIds.NoConnection;
-
 		}
 
 		/// <summary>

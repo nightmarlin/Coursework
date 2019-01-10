@@ -193,19 +193,15 @@ namespace Solution.Designer {
 		
 		private BaseBlock First;
 		private BaseBlock Second;
-		private bool? LastClicked;
-		/*
-		 * Null  ->  No connector has been clicked yet
-		 * True  ->  The last connector to be clicked was a TopConnector
-		 * False ->  The last connector to be clicked was a BottomConnector
-		 */
 
 		private void TopConnector_Clicked(BaseBlock Block) {
 
-			if (!(Second is null)) {
+			if (!(Second is null) | Block is StartBlock) {
+				
 				if (Block == Second) {
-					Second.ConnectorSelected = null;
-					Second.Refresh();
+					Debug.WriteLine($"Second: {Second.Name}");
+					Block.ConnectorSelected = null;
+					Block.Refresh();
 					Second = null;
 				}
 
@@ -214,24 +210,12 @@ namespace Solution.Designer {
 
 			Block.ConnectorSelected = true;
 			Block.Refresh();
-			
-			switch (LastClicked) {
-				case null: {
-					LastClicked = true;
-					Second = Block;
-					break;
-				}
 
-				case false: {
-					Second = Block;
-					MakeConnection();
-					break;
-				}
-
-				default: { // LastClicked = true
-					// TopConnectors do not connect to TopConnectors
-					break;
-				}
+			if (First is null) {
+				Second = Block;
+			} else {
+				Second = Block;
+				MakeConnection();
 			}
 		}
 
@@ -239,8 +223,8 @@ namespace Solution.Designer {
 			
 			if (!(First is null)) {
 				if (Block == First) {
-					First.ConnectorSelected = null;
-					First.Refresh();
+					Block.ConnectorSelected = null;
+					Block.Refresh();
 					First = null;
 				}
 				return;
@@ -249,29 +233,16 @@ namespace Solution.Designer {
 			Block.ConnectorSelected = false;
 			Block.Refresh();
 			
-			switch (LastClicked) {
-				case null: {
-					LastClicked = false;
-					First = Block;
-					break;
-				}
-
-				case true: {
-					First = Block;
-					MakeConnection();
-					break;
-				}
-
-				default: { // LastClicked = false
-					// BottomConnectors do not connect to BottomConnectors
-					break;
-				}
+			if (Second is null) {
+				First = Block;
+			} else {
+				First = Block;
+				MakeConnection();
 			}
 		}
 
 		[SuppressMessage("ReSharper", "LocalVariableHidesMember")]
 		private void MakeConnection() {
-			LastClicked = null;
 			this.First.ConnectorSelected = null;
 			this.Second.ConnectorSelected = null;
 
@@ -281,8 +252,7 @@ namespace Solution.Designer {
 			this.First = null;
 			this.Second = null;
 
-			if (First == Second || Second is StartBlock) return;
-
+			if (First == Second) return;
 			
 			Connections.Add(First, Second);
 			First.ConnectNext(Second.Id);

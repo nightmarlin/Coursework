@@ -24,10 +24,10 @@ namespace Solution.Designer.Blocks {
 		/// <param name="sender">EventHandler delegate required code</param>
 		/// <param name="e">EventHandler delegate required code</param>
 		protected new void OnResized(object sender, EventArgs e) {
-			var RectStartX = 5;
+			const int RectStartX = 5;
+			const int RectWidth = 15;
+			const int RectHeight = 10;
 			var RectStartY = Height - 10;
-			var RectWidth = 15;
-			var RectHeight = 10;
 
 			BottomConnectorZone = new Rectangle(RectStartX, RectStartY, RectWidth, RectHeight);
 
@@ -36,6 +36,9 @@ namespace Solution.Designer.Blocks {
 
 		/// <summary>Doesn't draw the TopConnector</summary>
 		public new void DrawMe(object S, PaintEventArgs E) {
+			
+			TopConnectorZone = new Rectangle(0, 0, 0, 0);
+			
 			var GFX = E.Graphics;
 			using (var P = new Pen(Color.Black, 2)) {
 				GFX.DrawRectangle(P, OutlineRectangle);
