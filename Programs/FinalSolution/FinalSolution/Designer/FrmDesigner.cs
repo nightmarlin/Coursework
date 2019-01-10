@@ -6,6 +6,8 @@ using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Security.AccessControl;
 using System.Windows.Forms;
 
 using Microsoft.VisualBasic.Devices;
@@ -43,6 +45,7 @@ namespace Solution.Designer {
 
 			BlockTree.NodeMouseDoubleClick += AddBlock;
 			QuitToolStripMenuItem.Click += BtnExit_Click;
+			DeleteToolStripMenuItem.Click += DeleteToolStripMenuItem_Click;
 
 			SContainer_Workspace.Panel2.SuspendLayout();
 			/*{
@@ -66,6 +69,7 @@ namespace Solution.Designer {
 					Size = new Size(200, 100),
 					TabIndex = (int) BasicBlockIds.Starter
 				};
+				StartBlock.Name = StartBlock.GetType().Name + StartBlock.Id;
 
 				StartBlock.MouseDown += Block_OnMouseDown;
 				StartBlock.MouseUp += Block_OnMouseUp;
@@ -91,44 +95,58 @@ namespace Solution.Designer {
 		
 		#region Block Tree
 		
-		private int NextId = (int) BasicBlockIds.Variable;
+		private int NextId = (int) BasicBlockIds.First;
 
 		private void AddBlock(object S, TreeNodeMouseClickEventArgs E) {
 
 			if (E.Node.Nodes.Count != 0) return;
+			var
+				
+			/* NewBlock = new EmptyNormalBlock {
+			 *     // Add New Block
+			 *	   Id = NextId,
+			 *     Size = new Size(200, 100),
+			 *     TabIndex = NextId
+			 * };
+			 * NewBlock.Name = NewBlock.GetType().Name + NextId;
+			 */
+			
+			NewBlock = GenericBlockConstructor<EmptyNormalBlock>();
+			
+			AddBlock(NewBlock);
 
-			BaseBlock NewBlock;
+		}
 
-			NewBlock = new EmptyNormalBlock {
+		private BaseBlock GenericBlockConstructor<T>() where T : BaseBlock, new() {
+			
+			var ToAdd = new T {
 				// Add New Block
 				Id = NextId,
 				Size = new Size(200, 100),
 				TabIndex = NextId
 			};
-			NewBlock.Name = NewBlock.GetType().Name + NextId;
 
-			AddBlock(NewBlock);
+			ToAdd.Name = ToAdd.GetType().Name + NextId;
+			
+			ToAdd.MouseDown += Block_OnMouseDown;
+			ToAdd.MouseUp += Block_OnMouseUp;
 
+			NextId++;
+			
+			return ToAdd;
 		}
 
 		private void AddBlock(BaseBlock ToAdd) {
 
-			
-			
-			var NewX = SContainer_Workspace.Panel2.Width / 2 - ToAdd.Width / 2;
-			var NewY = SContainer_Workspace.Panel2.Height / 2 - ToAdd.Height / 2;
+			var X = SContainer_Workspace.Panel2.Width / 2 - ToAdd.Width / 2;
+			var Y = SContainer_Workspace.Panel2.Height / 2 - ToAdd.Height / 2;
 
-			ToAdd.Location = new Point(NewX, NewY);
-
-			ToAdd.MouseDown += Block_OnMouseDown;
-			ToAdd.MouseUp += Block_OnMouseUp;
-
+			ToAdd.Location = new Point(X, Y);
 
 			SContainer_Workspace.Panel2.SuspendLayout();
 			SContainer_Workspace.Panel2.Controls.Add(ToAdd);
 			SContainer_Workspace.Panel2.ResumeLayout(true);
 
-			NextId++;
 		}
 
 		#endregion
@@ -145,12 +163,15 @@ namespace Solution.Designer {
 
 			Block.BringToFront();
 
+			if (Deleting) {
+				DeleteBlock(Block);
+				return;
+			}
 
 			if (Block.RectangleToScreen(Block.TopConnectorZone).Contains(MousePosition)) {
 				TopConnector_Clicked(Block);
 				return;
 			}
-
 			if (Block.RectangleToScreen(Block.BottomConnectorZone).Contains(MousePosition)) {
 				BottomConnector_Clicked(Block);
 				return;
@@ -181,7 +202,7 @@ namespace Solution.Designer {
 			var MousePos = SContainer_Workspace.Panel2.PointToClient(MousePosition);
 
 			ToMove.Left = MousePos.X - Offset.X;
-			ToMove.Top = MousePos.Y- Offset.Y;
+			ToMove.Top = MousePos.Y - Offset.Y;
 
 		}
 
@@ -213,6 +234,7 @@ namespace Solution.Designer {
 
 			if (First is null) {
 				Second = Block;
+				
 			} else {
 				Second = Block;
 				MakeConnection();
@@ -243,21 +265,26 @@ namespace Solution.Designer {
 
 		[SuppressMessage("ReSharper", "LocalVariableHidesMember")]
 		private void MakeConnection() {
+			
 			this.First.ConnectorSelected = null;
 			this.Second.ConnectorSelected = null;
 
 			var First = this.First;
 			var Second = this.Second;
-			
+
 			this.First = null;
 			this.Second = null;
+			
+			if (First == Second) {
+				First.Refresh();
+				Second.Refresh();
+				MessageBox.Show("You can't do that!", "B#", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				return;
+			}
 
-			if (First == Second) return;
 			
 			Connections.Add(First, Second);
 			First.ConnectNext(Second.Id);
-
-			MessageBox.Show("Connected");
 
 			SContainer_Workspace.Panel2.Refresh();
 			
@@ -266,6 +293,38 @@ namespace Solution.Designer {
 
 		}
 
+		private bool Deleting;
+		private void DeleteToolStripMenuItem_Click(object S = null, EventArgs E = null) {
+			Deleting = !Deleting;
+			DeleteToolStripMenuItem.BackColor = Deleting
+				? Color.BurlyWood
+				: Color.FromKnownColor(KnownColor.ControlDark);
+			DeleteToolStripMenuItem.Text = Deleting
+				? "< Deleting >"
+				: "Delete";
+		}
+
+		private void DeleteBlock(BaseBlock Block) {
+			
+			DeleteToolStripMenuItem_Click();
+
+			if (Block is StartBlock) {
+				MessageBox.Show("Cannot delete this type of block", "B#", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				return;
+			}
+			
+			Block.DisconnectNext();
+
+			var FeaturedConnections = Connections.Select(C => C.Key == Block);
+			
+			foreach (var FC in FeaturedConnections) {
+				Debug.WriteLine(FC);
+			}
+			Debug.WriteLine("");
+
+
+		}
+		
 		#endregion
 		
 		#region Drawing
@@ -276,32 +335,23 @@ namespace Solution.Designer {
 
 				if (Connection.Key == ToMove || Connection.Value == ToMove) continue;
 
-				var P1 =
-					SContainer_Workspace
-						.Panel2
-						.PointToClient(Connection
-						               .Key
-						               .PointToScreen(new Point(Connection
-						                                        .Key.BottomConnectorZone
-						                                        .Location.X, Connection
-						                                                     .Key
-						                                                     .BottomConnectorZone
-						                                                     .Location.Y + Connection
-						                                                                   .Key
-						                                                                   .BottomConnectorZone
-						                                                                   .Height)));
-				var P2 = SContainer_Workspace
-				         .Panel2
-				         .PointToClient(Connection
-				                        .Value
-				                        .PointToScreen(Connection
-				                                       .Value
-				                                       .TopConnectorZone
-				                                       .Location));
+				var CK = Connection.Key;
+				var CV = Connection.Value;
+				var CR = Connection.Key.BottomConnectorZone.Location;
+				
+				var P1 = SContainer_Workspace.Panel2
+				                             .PointToClient(CK.PointToScreen(new Point(CR.X,
+				                                                                       CR.Y +
+				                                                                       CK.BottomConnectorZone.Height)
+				                                                             )
+				                                            );
+				
+				var P2 = SContainer_Workspace.Panel2.PointToClient(CV.PointToScreen(CV.TopConnectorZone.Location));
+				
 				SCWPnl2GFX.DrawLine(Pens.Black, P1, P2);
 
-				P1.X = P1.X + Connection.Key.BottomConnectorZone.Width;
-				P2.X = P2.X + Connection.Value.TopConnectorZone.Width;
+				P1.X = P1.X + CK.BottomConnectorZone.Width;
+				P2.X = P2.X + CV.TopConnectorZone.Width;
 
 				SCWPnl2GFX.DrawLine(Pens.Black, P1, P2);
 
@@ -310,6 +360,7 @@ namespace Solution.Designer {
 
 
 		#endregion
+
 
 	}
 }

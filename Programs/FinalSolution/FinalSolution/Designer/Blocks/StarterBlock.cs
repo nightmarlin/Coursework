@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -14,8 +15,6 @@ namespace Solution.Designer.Blocks {
 		/// <inheritdoc />
 		public StartBlock() {
 			Code = "// Start block";
-			Paint -= base.DrawMe;
-			Paint += this.DrawMe;
 		}
 		
 		/// <summary>
@@ -34,9 +33,9 @@ namespace Solution.Designer.Blocks {
 			OutlineRectangle = new Rectangle(0, 7, DisplayRectangle.Width, DisplayRectangle.Height - 14);
 		}
 
+		/// <inheritdoc />
 		/// <summary>Doesn't draw the TopConnector</summary>
-		public new void DrawMe(object S, PaintEventArgs E) {
-			
+		public override void DrawMe(object S, PaintEventArgs E) {
 			TopConnectorZone = new Rectangle(0, 0, 0, 0);
 			
 			var GFX = E.Graphics;
@@ -44,14 +43,14 @@ namespace Solution.Designer.Blocks {
 				GFX.DrawRectangle(P, OutlineRectangle);
 				//P.Color = Color.Red;							// No top connector
 				//GFX.DrawRectangle(P, this.TopConnectorZone);
-				P.Color = Color.Blue;
+				P.Color = Color.DarkBlue;
 				GFX.DrawRectangle(P, BottomConnectorZone);
 				if (NextBlockId != (int) BasicBlockIds.NoConnection) {
-					GFX.FillRectangle(Brushes.Blue, BottomConnectorZone);
+					GFX.FillRectangle(Brushes.DarkBlue, BottomConnectorZone);
 				}
 
 				if (ConnectorSelected == false) {
-					GFX.FillRectangle(Brushes.Goldenrod, BottomConnectorZone);
+					GFX.FillRectangle(Brushes.BurlyWood, BottomConnectorZone);
 				}
 			}
 		}

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Windows.Forms;
 
 using Solution.Welcome;
@@ -15,9 +16,17 @@ namespace Solution {
 			
 			var currentDomain = AppDomain.CurrentDomain;
 			// Handler for unhandled exceptions.
-			currentDomain.UnhandledException += GlobalUnhandledExceptionHandler;
+			currentDomain.UnhandledException += (S, E) => {
+				var Ex = (Exception) E.ExceptionObject;
+				Console.Error.WriteLine("A serious error occurred: " + Ex.Message + Environment.NewLine +
+				                        Ex.StackTrace);
+			};
 			// Handler for exceptions in threads behind forms.
-			Application.ThreadException += GlobalThreadExceptionHandler;
+			Application.ThreadException += (S, E) => {
+				var Ex = E.Exception;
+				Console.Error.WriteLine("A serious error occurred: " + Ex.Message + Environment.NewLine +
+				                        Ex.StackTrace);
+			};
 
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
@@ -25,15 +34,6 @@ namespace Solution {
 			
 		}
 
-		private static void GlobalUnhandledExceptionHandler(object sender, UnhandledExceptionEventArgs e) {
-			var ex = (Exception) e.ExceptionObject;
-			Console.Error.WriteLine("A serious error occurred: " + ex.Message + Environment.NewLine + ex.StackTrace);
-		}
-
-		private static void GlobalThreadExceptionHandler(object sender, System.Threading.ThreadExceptionEventArgs e) {
-			var ex = e.Exception;
-			Console.Error.WriteLine("A serious error occurred: " + ex.Message + Environment.NewLine + ex.StackTrace);
-		}
 
 	}
 }

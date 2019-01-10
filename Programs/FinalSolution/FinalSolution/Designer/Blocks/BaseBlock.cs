@@ -29,7 +29,12 @@ namespace Solution.Designer.Blocks {
 		/// <summary>
 		/// The starter block, where code generation starts. Only one of these per project
 		/// </summary>
-		Starter = 1
+		Starter = 1,
+		
+		/// <summary>
+		/// The first user added block
+		/// </summary>
+		First = 2
 
 	}
 
@@ -127,12 +132,12 @@ namespace Solution.Designer.Blocks {
 		/// </summary>
 		/// <param name="sender">The object that called the function</param>
 		/// <param name="e">The corresponding PaintEventArgs object</param>
-		public void DrawMe(object sender, PaintEventArgs e) {
+		public virtual void DrawMe(object sender, PaintEventArgs e) {
 
 			Graphics GFX = e.Graphics;
 			using (var P = new Pen(Color.Black, 2)) {
 				GFX.DrawRectangle(P, OutlineRectangle);
-				P.Color = Color.Red;
+				P.Color = Color.DarkRed;
 				GFX.DrawRectangle(P, TopConnectorZone);
 
 				var MyParent = FindForm();
@@ -140,24 +145,24 @@ namespace Solution.Designer.Blocks {
 					foreach (var C in FD.SContainer_Workspace.Panel2.Controls) {
 						if (!(C is BaseBlock B)) continue;
 						if (B.NextBlockId == Id) {
-							GFX.FillRectangle(Brushes.Red, TopConnectorZone);
+							GFX.FillRectangle(Brushes.DarkRed, TopConnectorZone);
 						}
 					}
 				}
 
-				P.Color = Color.Blue;
+				P.Color = Color.DarkBlue;
 				GFX.DrawRectangle(P, BottomConnectorZone);
 
 				if (NextBlockId != (int) BasicBlockIds.NoConnection) {
-					GFX.FillRectangle(Brushes.Blue, BottomConnectorZone);
+					GFX.FillRectangle(Brushes.DarkBlue, BottomConnectorZone);
 				}
 
 				if (ConnectorSelected == true) {
 					// TopConnector
-					GFX.FillEllipse(Brushes.Goldenrod, TopConnectorZone);
+					GFX.FillRectangle(Brushes.BurlyWood, TopConnectorZone);
 				} else if (ConnectorSelected == false) {
 					// BottomConnector
-					GFX.FillEllipse(Brushes.Goldenrod, BottomConnectorZone);
+					GFX.FillRectangle(Brushes.BurlyWood, BottomConnectorZone);
 				}
 
 			}

@@ -86,6 +86,7 @@
     <Compile Include="Designer\Blocks\StarterBlock.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Designer\Blocks\VarDeclareBlock.cs" />
     <Compile Include="Designer\FrmDesigner.cs">
       <SubType>Form</SubType>
     </Compile>

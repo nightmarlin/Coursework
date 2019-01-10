@@ -23,6 +23,7 @@
             <e p="DecimalBlock.cs" t="Include" />
             <e p="EmptyNormalBlock.cs" t="Include" />
             <e p="StarterBlock.cs" t="Include" />
+            <e p="VarDeclareBlock.cs" t="Include" />
           </e>
           <e p="FrmDesigner.cs" t="Include" />
           <e p="FrmDesigner.Designer.cs" t="Include" />

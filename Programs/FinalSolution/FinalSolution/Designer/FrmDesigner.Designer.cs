@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 
 namespace Solution.Designer {
 	partial class FrmDesigner {
@@ -38,7 +39,8 @@ namespace Solution.Designer {
 			this.MainMenu = new System.Windows.Forms.MenuStrip();
 			this.FileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.OpenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.QuitToolStripMenuItem = new ToolStripMenuItem();
+			this.QuitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.DeleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.SContainer_Workspace = new System.Windows.Forms.SplitContainer();
 			this.BlockTree = new System.Windows.Forms.TreeView();
 			this.MainMenu.SuspendLayout();
@@ -51,7 +53,7 @@ namespace Solution.Designer {
 			// 
 			this.MainMenu.BackColor = System.Drawing.SystemColors.ControlDark;
 			this.MainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.FileToolStripMenuItem, this.QuitToolStripMenuItem});
+            this.FileToolStripMenuItem, this.QuitToolStripMenuItem, this.DeleteToolStripMenuItem});
 			this.MainMenu.Location = new System.Drawing.Point(0, 0);
 			this.MainMenu.Name = "MainMenu";
 			this.MainMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
@@ -78,6 +80,12 @@ namespace Solution.Designer {
 			this.QuitToolStripMenuItem.Name = "QuitToolStripMenuItem";
 			this.QuitToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
 			this.QuitToolStripMenuItem.Text = "Quit";
+			//
+			// DeleteToolStripMenuItem
+			//
+			this.DeleteToolStripMenuItem.Name = "DeleteToolStripMenuItem";
+			this.DeleteToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+			this.DeleteToolStripMenuItem.Text = "Delete";
 			// 
 			// SContainer_Workspace
 			// 
@@ -152,6 +160,7 @@ namespace Solution.Designer {
 		private System.Windows.Forms.ToolStripMenuItem FileToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem OpenToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem QuitToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem DeleteToolStripMenuItem;
 		/// <summary>
 		/// The SplitContainer containing the block tree and active editor panels
 		/// </summary>
