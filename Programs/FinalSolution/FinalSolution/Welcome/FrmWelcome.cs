@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
 using Solution.Debugger;
 using Solution.Designer;
-using Solution.Designer.Blocks;
 
 namespace Solution.Welcome {
 	
@@ -33,7 +30,7 @@ namespace Solution.Welcome {
 		private void BtnShowDebugger_Click(object S, EventArgs E) {
 
 			var MyProcessName = Microsoft.VisualBasic.Interaction.InputBox("What's the file path?", "B#", ".\\BébéProgramMK2.exe");
-
+			
 			if (!File.Exists(MyProcessName)) {
 				MessageBox.Show("Cannot run a file that doesn't exist", "B#", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return;
@@ -45,13 +42,11 @@ namespace Solution.Welcome {
 			}
 
 			var MyDebugger = new FrmDebugger(MyProcessName, this);
-			//var MyDebugger = new FrmDebugger();
-			
-			MyDebugger.Show();
 
 			MyDebugger.VisibleChanged += (S2, E2) => { Show(); };
 			MyDebugger.Closed += (S2, E2) => { Show(); };
 
+			MyDebugger.Show();
 		}
 
 		private void BtnShowDesigner_Click(object S, EventArgs E) {

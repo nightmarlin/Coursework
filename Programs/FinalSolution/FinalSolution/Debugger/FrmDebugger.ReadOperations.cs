@@ -23,16 +23,15 @@ namespace Solution.Debugger {
 			if (TxtStandardOutput.InvokeRequired) {
 				
 				// Exit if disposed (it's caused some errors due to the nature of async code)
-				if (this.IsDisposed) return;
+				if (IsDisposed) return;
 
 				var OutputDelegate = new OutputDelegate(ReadOutput);
 				try {
 					// Invoke on UI thread (AKA: The correct thread)
-					this.Invoke(OutputDelegate, new object[] {S, E});
+					Invoke(OutputDelegate, new object[] {S, E});
 				} catch (ObjectDisposedException) {
 					// Don't break.
 					// Normally breaks because of async operations trying to operate on the disposed program
-					return;
 				}
 
 			} else {
@@ -57,15 +56,13 @@ namespace Solution.Debugger {
 		/// <param name="S">the object that sent the event</param>
 		/// <param name="E">the data attached to the event</param>
 		private void ReadError(object S, DataReceivedEventArgs E) {
-			if (this.TxtErrorOutput.InvokeRequired) {
+			if (TxtErrorOutput.InvokeRequired) {
 				// Invoke if needed
 				var OutputDelegate = new OutputDelegate(ReadError);
-				if (this.IsDisposed) return;
+				if (IsDisposed) return;
 				try {
-					this.Invoke(OutputDelegate, new object[] {S, E});
-				} catch (ObjectDisposedException) {
-					return;
-				}
+					Invoke(OutputDelegate, new object[] {S, E});
+				} catch (ObjectDisposedException) { }
 
 			} else {
 				// We're on the thread so do what I need to do
@@ -108,48 +105,48 @@ namespace Solution.Debugger {
 			return !(Line is null) && Line.StartsWith(@"DAT|");
 		}
 
-		private void OutputVariablesOld(string Data) {
-
-			// Remove `DAT|[`
-			Data = Data.Remove(0, 5);
-
-			//Console.WriteLine(Data);
-			
-			// Remove last `]`
-			var VariableOut = Data.Remove(Data.Length - 1);
-
-			// Remove `["` instances
-			VariableOut = VariableOut.Replace("[\"", "");
-			// Remove `"]` instances
-			VariableOut = VariableOut.Replace("\"]", "");
-			// Replace `","` with ` = `
-			VariableOut = VariableOut.Replace("\",\"", " = ");
-			// Replace `,` instances with a new line
-			VariableOut = VariableOut.Replace(",", Environment.NewLine);
-
-			VariableOut = "Variables:" + Environment.NewLine + Environment.NewLine + VariableOut;
-
-			/* For the input `DAT|[["Name1","Value1"],["Name2","Value2"]]`, you get
-			 *
-			 * `Variables:
-			 *
-			 * Name1 = Value1
-			 * Name2 = Value2`
-			 *
-			 * However for the input `DAT|[["Name1","A string with '["' or '"]' or '","' or ','"],["Name2","Value2"]]`
-			 *
-			 * `Variables:
-			 *
-			 * Name1 = A string with '' or '' or ' = ' or '
-			 * '
-			 * Name2 = Value2`
-			 *
-			 * Note the loss of '["' and '"]', alongside the replacement of ('","' with ' = ') and (',' with a new line)  
-			 */
-
-			TxtVariableOutput.Text = VariableOut;
-
-		}
+//		private void OutputVariablesOld(string Data) {
+         //
+         //			// Remove `DAT|[`
+         //			Data = Data.Remove(0, 5);
+         //
+         //			//Console.WriteLine(Data);
+         //			
+         //			// Remove last `]`
+         //			var VariableOut = Data.Remove(Data.Length - 1);
+         //
+         //			// Remove `["` instances
+         //			VariableOut = VariableOut.Replace("[\"", "");
+         //			// Remove `"]` instances
+         //			VariableOut = VariableOut.Replace("\"]", "");
+         //			// Replace `","` with ` = `
+         //			VariableOut = VariableOut.Replace("\",\"", " = ");
+         //			// Replace `,` instances with a new line
+         //			VariableOut = VariableOut.Replace(",", Environment.NewLine);
+         //
+         //			VariableOut = "Variables:" + Environment.NewLine + Environment.NewLine + VariableOut;
+         //
+         //			/* For the input `DAT|[["Name1","Value1"],["Name2","Value2"]]`, you get
+         //			 *
+         //			 * `Variables:
+         //			 *
+         //			 * Name1 = Value1
+         //			 * Name2 = Value2`
+         //			 *
+         //			 * However for the input `DAT|[["Name1","A string with '["' or '"]' or '","' or ','"],["Name2","Value2"]]`
+         //			 *
+         //			 * `Variables:
+         //			 *
+         //			 * Name1 = A string with '' or '' or ' = ' or '
+         //			 * '
+         //			 * Name2 = Value2`
+         //			 *
+         //			 * Note the loss of '["' and '"]', alongside the replacement of ('","' with ' = ') and (',' with a new line)  
+         //			 */
+         //
+         //			TxtVariableOutput.Text = VariableOut;
+         //
+         //		}
 
 		private void OutputVariables(string Data) {
 

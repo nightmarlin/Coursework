@@ -1,11 +1,8 @@
 using System;
 using System.CodeDom.Compiler;
-using System.Diagnostics;
-using System.IO;
 using System.Reflection;
 using System.Resources;
 using System.Text;
-using System.Threading;
 using System.Windows.Forms;
 // ReSharper disable LocalizableElement
 

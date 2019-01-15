@@ -1,16 +1,10 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Deployment.Internal.CodeSigning;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Security.AccessControl;
 using System.Windows.Forms;
-
-using Microsoft.VisualBasic.Devices;
 
 using Solution.Designer.Blocks;
 using Solution.Welcome;
@@ -198,7 +192,7 @@ namespace Solution.Designer {
 		}
 
 		private void DoMove(object S, EventArgs E) {
-
+			
 			var MousePos = SContainer_Workspace.Panel2.PointToClient(MousePosition);
 
 			ToMove.Left = MousePos.X - Offset.X;

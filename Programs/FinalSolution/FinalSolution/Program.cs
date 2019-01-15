@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Threading;
+using System.Diagnostics;
 using System.Windows.Forms;
-
 using Solution.Welcome;
 
 namespace Solution {
@@ -18,14 +17,20 @@ namespace Solution {
 			// Handler for unhandled exceptions.
 			currentDomain.UnhandledException += (S, E) => {
 				var Ex = (Exception) E.ExceptionObject;
-				Console.Error.WriteLine("A serious error occurred: " + Ex.Message + Environment.NewLine +
-				                        Ex.StackTrace);
+				var Text = "A serious error occurred: " + Ex.Message + Environment.NewLine +
+				           Ex.StackTrace + Environment.NewLine + "The application will now exit.";
+				MessageBox.Show(Text);
+				Debug.WriteLine(Text);
+				Application.Exit();
 			};
 			// Handler for exceptions in threads behind forms.
 			Application.ThreadException += (S, E) => {
 				var Ex = E.Exception;
-				Console.Error.WriteLine("A serious error occurred: " + Ex.Message + Environment.NewLine +
-				                        Ex.StackTrace);
+				var Text = "A serious thread error occurred: " + Ex.Message + Environment.NewLine +
+				           Ex.StackTrace + Environment.NewLine + "The application will now exit.";
+				MessageBox.Show(Text);
+				Debug.WriteLine(Text);
+				Application.Exit();
 			};
 
 			Application.EnableVisualStyles();
