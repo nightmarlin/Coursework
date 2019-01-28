@@ -61,6 +61,96 @@ namespace Solution.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Beep {
+            get {
+                object obj = ResourceManager.GetObject("Beep", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BSharp {
+            get {
+                object obj = ResourceManager.GetObject("BSharp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon BSharpIcon {
+            get {
+                object obj = ResourceManager.GetObject("BSharpIcon", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Decimal {
+            get {
+                object obj = ResourceManager.GetObject("Decimal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap EmptyIcon {
+            get {
+                object obj = ResourceManager.GetObject("EmptyIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap False {
+            get {
+                object obj = ResourceManager.GetObject("False", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap GenericConsole {
+            get {
+                object obj = ResourceManager.GetObject("GenericConsole", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Input {
+            get {
+                object obj = ResourceManager.GetObject("Input", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Integer {
+            get {
+                object obj = ResourceManager.GetObject("Integer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
         internal static System.Drawing.Icon MainIcon {
@@ -71,7 +161,36 @@ namespace Solution.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to the Project Template
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Output {
+            get {
+                object obj = ResourceManager.GetObject("Output", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
+        ///using System.Collections.Generic;
+        ///using System.Linq;
+        ///using System.Text;
+        ///using System.Threading.Tasks;
+        /////&lt;using&gt;
+        ///
+        ///namespace YourProject {
+        ///	
+        ///	/// &lt;summary&gt;
+        ///	/// Your program in C#. You can take this and compile it separately and it will run just the same
+        ///	/// as it does in the debugger.
+        ///	/// The regions help split the program into manageable chunks
+        ///	/// &lt;/summary&gt;
+        ///	public static class Program {
+        ///
+        ///		// This is where your variables are kept
+        ///		#region Internal Variables
+        ///
+        ///		//&lt;Vari [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string ProjectTemplate {
             get {
@@ -80,7 +199,69 @@ namespace Solution.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to the Wrapper
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap StartButton {
+            get {
+                object obj = ResourceManager.GetObject("StartButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap StringType {
+            get {
+                object obj = ResourceManager.GetObject("StringType", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap True {
+            get {
+                object obj = ResourceManager.GetObject("True", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Variable {
+            get {
+                object obj = ResourceManager.GetObject("Variable", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
+        ///using System.Collections.Generic;
+        ///using System.Reflection;
+        ///using System.Threading;
+        ///using System.Threading.Tasks;
+        ///
+        ///using Newtonsoft.Json;
+        ///
+        ///namespace YourProject {
+        ///
+        ////*
+        ///	│
+        ///	├─┬─ Project Directory
+        ///	│ └─┬ ProjectName.BSharp | BSharp save file
+        ///	│   ├ ProjectName.cs     | User code file
+        ///	│   └ ProjectName.exe    | Generated EXE file
+        ///	│
+        /// */
+        ///
+        ///	/// &lt;summary&gt;
+        ///	/// Template class for code construction. User code is placed in the Template class
+        ///	/// and is then wrapped by this class
+        ///	 [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Wrapper {
             get {

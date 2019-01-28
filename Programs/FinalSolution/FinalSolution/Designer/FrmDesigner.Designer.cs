@@ -26,16 +26,50 @@ namespace Solution.Designer {
 		/// the contents of this method with the code editor.
 		/// </summary>
 		private void InitializeComponent() {
-			System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Starter Block");
-			System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Control", new System.Windows.Forms.TreeNode[] {
-            treeNode1});
-			System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Empty Block");
-			System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Process", new System.Windows.Forms.TreeNode[] {
-            treeNode3});
-			System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Output");
-			System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Integer");
-			System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Variables", new System.Windows.Forms.TreeNode[] {
-            treeNode6});
+			System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Declare Variables");
+			System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Starter Block");
+			System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Control", new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode2});
+			System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Add");
+			System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Divide");
+			System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Empty Block");
+			System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Multiply");
+			System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Set");
+			System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Subtract");
+			System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Process", new System.Windows.Forms.TreeNode[] {
+            treeNode4,
+            treeNode5,
+            treeNode6,
+            treeNode7,
+            treeNode8,
+            treeNode9});
+			System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Read Key");
+			System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Read Line");
+			System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Input", new System.Windows.Forms.TreeNode[] {
+            treeNode11,
+            treeNode12});
+			System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Beep");
+			System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Write");
+			System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Write Line");
+			System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Output", new System.Windows.Forms.TreeNode[] {
+            treeNode14,
+            treeNode15,
+            treeNode16});
+			System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("Boolean");
+			System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("Decimal");
+			System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("Integer");
+			System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("String");
+			System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("Declare Variables", new System.Windows.Forms.TreeNode[] {
+            treeNode18,
+            treeNode19,
+            treeNode20,
+            treeNode21});
+			System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("Variable Selector");
+			System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("Use Variables", new System.Windows.Forms.TreeNode[] {
+            treeNode23});
+			System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("Constants");
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDesigner));
 			this.MainMenu = new System.Windows.Forms.MenuStrip();
 			this.FileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.OpenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,11 +87,13 @@ namespace Solution.Designer {
 			// 
 			this.MainMenu.BackColor = System.Drawing.SystemColors.ControlDark;
 			this.MainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.FileToolStripMenuItem, this.QuitToolStripMenuItem, this.DeleteToolStripMenuItem});
+            this.FileToolStripMenuItem,
+            this.QuitToolStripMenuItem,
+            this.DeleteToolStripMenuItem});
 			this.MainMenu.Location = new System.Drawing.Point(0, 0);
 			this.MainMenu.Name = "MainMenu";
 			this.MainMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-			this.MainMenu.Size = new System.Drawing.Size(800, 24);
+			this.MainMenu.Size = new System.Drawing.Size(784, 24);
 			this.MainMenu.TabIndex = 1;
 			this.MainMenu.Text = "Main Menu";
 			// 
@@ -74,17 +110,17 @@ namespace Solution.Designer {
 			this.OpenToolStripMenuItem.Name = "OpenToolStripMenuItem";
 			this.OpenToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
 			this.OpenToolStripMenuItem.Text = "Open";
-			//
-			// QuitToolStripMenuItem;
-			//
+			// 
+			// QuitToolStripMenuItem
+			// 
 			this.QuitToolStripMenuItem.Name = "QuitToolStripMenuItem";
-			this.QuitToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+			this.QuitToolStripMenuItem.Size = new System.Drawing.Size(42, 20);
 			this.QuitToolStripMenuItem.Text = "Quit";
-			//
+			// 
 			// DeleteToolStripMenuItem
-			//
+			// 
 			this.DeleteToolStripMenuItem.Name = "DeleteToolStripMenuItem";
-			this.DeleteToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+			this.DeleteToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
 			this.DeleteToolStripMenuItem.Text = "Delete";
 			// 
 			// SContainer_Workspace
@@ -103,7 +139,7 @@ namespace Solution.Designer {
 			// 
 			this.SContainer_Workspace.Panel2.AllowDrop = true;
 			this.SContainer_Workspace.Panel2.AutoScroll = true;
-			this.SContainer_Workspace.Size = new System.Drawing.Size(800, 426);
+			this.SContainer_Workspace.Size = new System.Drawing.Size(784, 437);
 			this.SContainer_Workspace.SplitterDistance = 266;
 			this.SContainer_Workspace.TabIndex = 2;
 			// 
@@ -112,26 +148,67 @@ namespace Solution.Designer {
 			this.BlockTree.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.BlockTree.Location = new System.Drawing.Point(0, 0);
 			this.BlockTree.Name = "BlockTree";
-			treeNode1.Name = "StarterBlock";
-			treeNode1.Text = "Starter Block";
-			treeNode2.Name = "ControlBlocks";
-			treeNode2.Text = "Control";
-			treeNode3.Name = "EmptyNormalBlock";
-			treeNode3.Text = "Empty Block";
-			treeNode4.Name = "ProcessBlocks";
-			treeNode4.Text = "Process";
-			treeNode5.Name = "Output Blocks";
-			treeNode5.Text = "Output";
-			treeNode6.Name = "IntegerBlock";
-			treeNode6.Text = "Integer";
-			treeNode7.Name = "VariableBlocks";
-			treeNode7.Text = "Variables";
+			treeNode1.Name = "DeclareVarsBlock";
+			treeNode1.Text = "Declare Variables";
+			treeNode2.Name = "StarterBlock";
+			treeNode2.Text = "Starter Block";
+			treeNode3.Name = "ControlBlocks";
+			treeNode3.Text = "Control";
+			treeNode4.Name = "AddBlock";
+			treeNode4.Text = "Add";
+			treeNode5.Name = "DivideBlock";
+			treeNode5.Text = "Divide";
+			treeNode6.Name = "EmptyNormalBlock";
+			treeNode6.Text = "Empty Block";
+			treeNode7.Name = "MultiplyBlock";
+			treeNode7.Text = "Multiply";
+			treeNode8.Name = "SetBlock";
+			treeNode8.Text = "Set";
+			treeNode9.Name = "SubtractBlock";
+			treeNode9.Text = "Subtract";
+			treeNode10.Name = "ProcessBlocks";
+			treeNode10.Text = "Process";
+			treeNode11.Name = "ReadKeyBlock";
+			treeNode11.Text = "Read Key";
+			treeNode12.Name = "ReadLineBlock";
+			treeNode12.Text = "Read Line";
+			treeNode13.Name = "InputBlocks";
+			treeNode13.Text = "Input";
+			treeNode14.Name = "BeepBlock";
+			treeNode14.Text = "Beep";
+			treeNode15.Name = "WriteBlock";
+			treeNode15.Text = "Write";
+			treeNode16.Name = "WriteLineBlock";
+			treeNode16.Text = "Write Line";
+			treeNode17.Name = "Output Blocks";
+			treeNode17.Text = "Output";
+			treeNode18.Name = "BoolSetBlock";
+			treeNode18.Text = "Boolean";
+			treeNode19.Name = "DecimalSetBlock";
+			treeNode19.Text = "Decimal";
+			treeNode20.Name = "IntegerSetBlock";
+			treeNode20.Text = "Integer";
+			treeNode21.Name = "StringSetBlock";
+			treeNode21.Text = "String";
+			treeNode22.Name = "VariableDeclareBlocks";
+			treeNode22.Text = "Declare Variables";
+			treeNode22.ToolTipText = "Place these blocks under the declaration block";
+			treeNode23.Name = "VariableRefBlock";
+			treeNode23.Text = "Variable Selector";
+			treeNode24.Name = "VariableRefBlocks";
+			treeNode24.Text = "Use Variables";
+			treeNode24.ToolTipText = "Place these blocks in your program to reference the variable";
+			treeNode25.Name = "ConstantBlocks";
+			treeNode25.Text = "Constants";
 			this.BlockTree.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode2,
-            treeNode4,
-            treeNode5,
-            treeNode7});
-			this.BlockTree.Size = new System.Drawing.Size(264, 424);
+            treeNode3,
+            treeNode10,
+            treeNode13,
+            treeNode17,
+            treeNode22,
+            treeNode24,
+            treeNode25});
+			this.BlockTree.Size = new System.Drawing.Size(264, 435);
 			this.BlockTree.TabIndex = 1;
 			// 
 			// FrmDesigner
@@ -139,9 +216,11 @@ namespace Solution.Designer {
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.ControlDark;
-			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.ClientSize = new System.Drawing.Size(784, 461);
 			this.Controls.Add(this.SContainer_Workspace);
 			this.Controls.Add(this.MainMenu);
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+			this.MinimumSize = new System.Drawing.Size(575, 250);
 			this.Name = "FrmDesigner";
 			this.Text = "FrmDesigner";
 			this.MainMenu.ResumeLayout(false);
@@ -165,6 +244,6 @@ namespace Solution.Designer {
 		/// The SplitContainer containing the block tree and active editor panels
 		/// </summary>
 		public System.Windows.Forms.SplitContainer SContainer_Workspace;
-		private System.Windows.Forms.TreeView BlockTree;
+		private TreeView BlockTree;
 	}
 }

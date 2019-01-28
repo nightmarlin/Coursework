@@ -39,6 +39,7 @@
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Debug\FinalSolution.xml</DocumentationFile>
     <RunCodeAnalysis>true</RunCodeAnalysis>
+    <LangVersion>7.1</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -48,9 +49,13 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>7.1</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>Solution.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\BSharpIcon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualBasic" />
@@ -77,16 +82,27 @@
     <Compile Include="Designer\Blocks\BaseBlock.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Designer\Blocks\BeepBlock.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Designer\Blocks\DecimalCreateBlock.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Designer\Blocks\EmptyNormalBlock.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Designer\Blocks\DecimalBlock.cs">
+    <Compile Include="Designer\Blocks\VarCreateBlock.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Designer\Blocks\StarterBlock.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Designer\Blocks\VarDeclareBlock.cs" />
+    <Compile Include="Designer\Blocks\VarDeclareBlock.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Designer\Blocks\VarRefBlock.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Designer\FrmDesigner.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +127,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Debugger\FrmDebugger.aa.resx">
+      <DependentUpon>FrmDebugger.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Debugger\FrmDebugger.resx">
       <DependentUpon>FrmDebugger.cs</DependentUpon>
     </EmbeddedResource>
@@ -158,6 +177,48 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\MainIcon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Beep.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BSharp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Decimal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EmptyIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\False.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GenericConsole.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Input.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Integer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Output.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StartButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StringType.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\True.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Variable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BSharpIcon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

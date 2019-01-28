@@ -14,6 +14,9 @@ namespace Solution.Designer.Blocks {
 		/// <inheritdoc />
 		public StartBlock() {
 			Code = "// Start block";
+			Icon = Properties.Resources.StartButton;
+			IconSize = new Size(100, 100);
+			IconLocation = new Point(Width / 2 - IconSize.Width, Height / 2 - IconSize.Height);
 		}
 		
 		/// <summary>
@@ -52,6 +55,12 @@ namespace Solution.Designer.Blocks {
 					GFX.FillRectangle(Brushes.BurlyWood, BottomConnectorZone);
 				}
 			}
+
+			if (!(Icon is null)) {
+				// Draw the icon
+				GFX.DrawImage(Icon, IconLocation.X, IconLocation.Y, IconSize.Width, IconSize.Height);
+			}
+			
 		}
 
 	}

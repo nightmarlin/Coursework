@@ -1,5 +1,6 @@
 namespace Solution.Designer.Blocks {
 
+    /// <inheritdoc />
     /// <summary>
     /// An empty block, for testing purposes
     /// </summary>
@@ -8,6 +9,7 @@ namespace Solution.Designer.Blocks {
         /// <inheritdoc />
         public EmptyNormalBlock() {
             Code = "// Empty Block";
+            Icon = Properties.Resources.BSharp;
         }
 
         

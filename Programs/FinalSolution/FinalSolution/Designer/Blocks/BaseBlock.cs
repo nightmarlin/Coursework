@@ -38,8 +38,8 @@ namespace Solution.Designer.Blocks {
 	public abstract class BaseBlock : Panel {
 
 		/// <summary>
-		/// Constructor for the panel. 
-		/// Sets the event handlers and double buffering for the panel
+		/// Constructor for the block. 
+		/// Sets the event handlers and double buffering for the block
 		/// </summary>
 		protected BaseBlock() {
 
@@ -75,6 +75,8 @@ namespace Solution.Designer.Blocks {
 			BottomConnectorZone = new Rectangle(RectStartX, BottomRectStartY, RectWidth, RectHeight);
 			OutlineRectangle = new Rectangle(0, 7, DisplayRectangle.Width, DisplayRectangle.Height - 14);
 
+			IconLocation = new Point(IconLocation.X , (Height / 2) - (IconSize.Height / 2));
+			
 		}
 
 
@@ -159,6 +161,13 @@ namespace Solution.Designer.Blocks {
 				}
 
 			}
+
+			if (!(Icon is null)) {
+				// Draw the icon
+				GFX.DrawImage(Icon,
+				              IconLocation.X, IconLocation.Y,
+				              IconSize.Width, IconSize.Height);
+			}
 		}
 
 		/// <summary>
@@ -172,6 +181,10 @@ namespace Solution.Designer.Blocks {
 		/// The code that this block represents
 		/// </summary>
 		public string Code = "// BaseBlock. You shouldn't be able to see this bit :)";
+
+		public Image Icon = null;
+		public Point IconLocation = new Point(0, 0);
+		public Size IconSize = new Size(40, 40);
 
 	}
 }

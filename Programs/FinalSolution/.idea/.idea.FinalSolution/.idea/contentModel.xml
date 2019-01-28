@@ -20,10 +20,13 @@
         <e p="Designer" t="Include">
           <e p="Blocks" t="Include">
             <e p="BaseBlock.cs" t="Include" />
-            <e p="DecimalBlock.cs" t="Include" />
+            <e p="BeepBlock.cs" t="Include" />
+            <e p="DecimalCreateBlock.cs" t="Include" />
             <e p="EmptyNormalBlock.cs" t="Include" />
             <e p="StarterBlock.cs" t="Include" />
+            <e p="VarCreateBlock.cs" t="Include" />
             <e p="VarDeclareBlock.cs" t="Include" />
+            <e p="VarRefBlock.cs" t="Include" />
           </e>
           <e p="FrmDesigner.cs" t="Include" />
           <e p="FrmDesigner.Designer.cs" t="Include" />
@@ -44,7 +47,20 @@
           <e p="Settings.settings" t="Include" />
         </e>
         <e p="Resources" t="Include">
+          <e p="Beep.png" t="Include" />
+          <e p="BSharp.png" t="Include" />
+          <e p="Decimal.png" t="Include" />
+          <e p="EmptyIcon.png" t="Include" />
+          <e p="False.png" t="Include" />
+          <e p="GenericConsole.png" t="Include" />
+          <e p="Input.png" t="Include" />
+          <e p="Integer.png" t="Include" />
           <e p="MainIcon.ico" t="Include" />
+          <e p="Output.png" t="Include" />
+          <e p="StartButton.png" t="Include" />
+          <e p="StringType.png" t="Include" />
+          <e p="True.png" t="Include" />
+          <e p="Variable.png" t="Include" />
         </e>
         <e p="Saving" t="Include">
           <e p="BSharpSaveFile.cs" t="Include" />

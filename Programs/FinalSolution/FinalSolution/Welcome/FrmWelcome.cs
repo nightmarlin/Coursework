@@ -47,6 +47,8 @@ namespace Solution.Welcome {
 			MyDebugger.Closed += (S2, E2) => { Show(); };
 
 			MyDebugger.Show();
+
+			Hide();
 		}
 
 		private void BtnShowDesigner_Click(object S, EventArgs E) {

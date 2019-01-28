@@ -60,7 +60,7 @@ namespace Solution.Designer {
 				var StartBlock = new StartBlock {
 					Location = new Point(10, 10),
 					Id = (int) BasicBlockIds.Starter,
-					Size = new Size(200, 100),
+					Size = new Size(100, 100),
 					TabIndex = (int) BasicBlockIds.Starter
 				};
 				StartBlock.Name = StartBlock.GetType().Name + StartBlock.Id;
@@ -94,9 +94,9 @@ namespace Solution.Designer {
 		private void AddBlock(object S, TreeNodeMouseClickEventArgs E) {
 
 			if (E.Node.Nodes.Count != 0) return;
-			var
+			
 				
-			/* NewBlock = new EmptyNormalBlock {
+			/* var NewBlock = new EmptyNormalBlock {
 			 *     // Add New Block
 			 *	   Id = NextId,
 			 *     Size = new Size(200, 100),
@@ -104,32 +104,59 @@ namespace Solution.Designer {
 			 * };
 			 * NewBlock.Name = NewBlock.GetType().Name + NextId;
 			 */
-			
-			NewBlock = GenericBlockConstructor<EmptyNormalBlock>();
+
+			BaseBlock NewBlock;
+
+			switch (E.Node.Name) {
+				case "DecimalSetBlock": {
+					NewBlock = GenericBlockConstructor<DecimalCreateBlock>();
+					break;
+				}
+
+				case "ConstantBlocks": {
+					NewBlock = GenericBlockConstructor<EmptyNormalBlock>();
+					break;
+				}
+
+				default: {
+					MessageBox.Show($@"Could not spawn a block of type {E.Node.Text}");
+					return;
+				}
+			}
 			
 			AddBlock(NewBlock);
 
 		}
 
 		private BaseBlock GenericBlockConstructor<T>() where T : BaseBlock, new() {
-			
+
+			var NewName = typeof(T).Name + NextId;
+
 			var ToAdd = new T {
 				// Add New Block
+				Name = NewName,
 				Id = NextId,
 				Size = new Size(200, 100),
 				TabIndex = NextId
 			};
-
-			ToAdd.Name = ToAdd.GetType().Name + NextId;
 			
 			ToAdd.MouseDown += Block_OnMouseDown;
 			ToAdd.MouseUp += Block_OnMouseUp;
 
 			NextId++;
-			
+
+			if (ToAdd is VarCreateBlock VC) {
+				VC.Height = 60;
+				VC.NameBox.Text = ToAdd.Name;
+				VC.ValidateButton.Hide();
+			}
+
+
+
 			return ToAdd;
 		}
 
+		// ReSharper disable once SuggestBaseTypeForParameter
 		private void AddBlock(BaseBlock ToAdd) {
 
 			var X = SContainer_Workspace.Panel2.Width / 2 - ToAdd.Width / 2;
@@ -140,6 +167,8 @@ namespace Solution.Designer {
 			SContainer_Workspace.Panel2.SuspendLayout();
 			SContainer_Workspace.Panel2.Controls.Add(ToAdd);
 			SContainer_Workspace.Panel2.ResumeLayout(true);
+
+			ToAdd.Refresh();
 
 		}
 
@@ -276,7 +305,16 @@ namespace Solution.Designer {
 				return;
 			}
 
-			
+			if ((Second is VarCreateBlock) && !(First is VarDeclareBlock || First is VarCreateBlock)
+			    || (!(Second is VarCreateBlock) && (First is VarDeclareBlock || First is VarCreateBlock))) {
+				First.Refresh();
+				Second.Refresh();
+				MessageBox.Show("You can't declare a variable where you would run code, and you cant run code where you would declare a variable!",
+				                "B#", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				return;
+			}
+
+
 			Connections.Add(First, Second);
 			First.ConnectNext(Second.Id);
 
@@ -296,6 +334,7 @@ namespace Solution.Designer {
 			DeleteToolStripMenuItem.Text = Deleting
 				? "< Deleting >"
 				: "Delete";
+			
 		}
 
 		private void DeleteBlock(BaseBlock Block) {
@@ -354,7 +393,6 @@ namespace Solution.Designer {
 
 
 		#endregion
-
 
 	}
 }
