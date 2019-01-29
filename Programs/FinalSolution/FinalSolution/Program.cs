@@ -1,19 +1,38 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Threading;
 using System.Windows.Forms;
 using Solution.Welcome;
+using System.Threading.Tasks;
+
+using Newtonsoft.Json;
 
 namespace Solution {
 
 	static class Program {
+
+		private static CancellationTokenSource CTokenSource;
+		private static CancellationToken CToken;
 
 		/// <summary>
 		/// The main entry point for the application.
 		/// </summary>
 		[STAThread]
 		public static void Main() {
-			
+
 			var currentDomain = AppDomain.CurrentDomain;
+			
+			// Prevent RAM 'hogging'
+			CTokenSource = new CancellationTokenSource();
+			CToken = CTokenSource.Token;
+			Task.Factory.StartNew(async () => {
+				while (true) {
+					if (CToken.IsCancellationRequested) return;
+					GC.Collect();
+					await Task.Delay(10000, CToken);
+				}
+			}, CToken);
+
 			// Handler for unhandled exceptions.
 			currentDomain.UnhandledException += (S, E) => {
 				var Ex = (Exception) E.ExceptionObject;

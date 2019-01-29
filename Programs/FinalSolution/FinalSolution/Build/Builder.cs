@@ -40,9 +40,7 @@ namespace Solution.Build {
 			}
 
 			// Get the wrapper file
-			var ResManager = new ResourceManager("Solution.Properties.Resources",
-			                                     Assembly.GetExecutingAssembly());
-			var Wrapper = ResManager.GetString("Wrapper");
+			var Wrapper = Properties.Resources.Wrapper;
 
 			// Build the program
 			var Output = CompileFromStrings(Path, Wrapper, Program);
@@ -50,9 +48,7 @@ namespace Solution.Build {
 			MessageBox.Show(Output);
 
 			if (Output.StartsWith("!: ")) {// errors
-
 				return false;
-				
 			}
 
 			return true;

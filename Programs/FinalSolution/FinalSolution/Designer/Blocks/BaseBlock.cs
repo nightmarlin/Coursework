@@ -182,8 +182,19 @@ namespace Solution.Designer.Blocks {
 		/// </summary>
 		public string Code = "// BaseBlock. You shouldn't be able to see this bit :)";
 
+		/// <summary>
+		/// The icon for the block
+		/// </summary>
 		public Image Icon = null;
+		
+		/// <summary>
+		/// Where the top left point of the icon will be drawn 
+		/// </summary>
 		public Point IconLocation = new Point(0, 0);
+		
+		/// <summary>
+		/// How large the icon will be. Should be square
+		/// </summary>
 		public Size IconSize = new Size(40, 40);
 
 	}

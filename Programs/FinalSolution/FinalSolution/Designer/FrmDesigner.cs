@@ -113,8 +113,19 @@ namespace Solution.Designer {
 					break;
 				}
 
+				case "VariableRefBlock": {
+					MessageBox.Show("Success");
+					NewBlock = GenericBlockConstructor<VarRefBlock>();
+					break;
+				}
+
 				case "ConstantBlocks": {
 					NewBlock = GenericBlockConstructor<EmptyNormalBlock>();
+					break;
+				}
+
+				case "BeepBlock": {
+					NewBlock = GenericBlockConstructor<BeepBlock>();
 					break;
 				}
 
@@ -129,7 +140,7 @@ namespace Solution.Designer {
 		}
 
 		private BaseBlock GenericBlockConstructor<T>() where T : BaseBlock, new() {
-
+			
 			var NewName = typeof(T).Name + NextId;
 
 			var ToAdd = new T {

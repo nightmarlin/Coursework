@@ -12,6 +12,7 @@
           <e p="Builder.cs" t="Include" />
         </e>
         <e p="Debugger" t="Include">
+          <e p="FrmDebugger.aa.resx" t="Include" />
           <e p="FrmDebugger.cs" t="Include" />
           <e p="FrmDebugger.Designer.cs" t="Include" />
           <e p="FrmDebugger.ReadOperations.cs" t="Include" />
@@ -49,6 +50,7 @@
         <e p="Resources" t="Include">
           <e p="Beep.png" t="Include" />
           <e p="BSharp.png" t="Include" />
+          <e p="BSharpIcon.ico" t="Include" />
           <e p="Decimal.png" t="Include" />
           <e p="EmptyIcon.png" t="Include" />
           <e p="False.png" t="Include" />

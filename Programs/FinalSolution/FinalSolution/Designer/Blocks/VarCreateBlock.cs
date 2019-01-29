@@ -13,11 +13,15 @@ namespace Solution.Designer.Blocks {
     /// </summary>
     public abstract class VarCreateBlock : BaseBlock {
 
-	    private Type Represents;
+	    private readonly Type Represents;
 
+	    /// <summary>
+	    /// Shows the value that the variable will start with when execution begins
+	    /// </summary>
         protected TextBox ValueBox;
+        
 		/// <summary>
-		/// stores the name of the box
+		/// Stores the name of the variable
 		/// </summary>
         public TextBox NameBox;
 
