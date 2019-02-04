@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a0e8f969-4a7a-463f-b39f-621ddda0c1be" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.FinalSolution/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FinalSolution/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FinalSolution/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FinalSolution/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FinalSolution/Build/Builder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FinalSolution/Build/Builder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FinalSolution/Designer/Blocks/BaseBlock.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FinalSolution/Designer/Blocks/BaseBlock.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FinalSolution/Designer/Blocks/BeepBlock.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FinalSolution/Designer/Blocks/BeepBlock.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FinalSolution/Designer/Blocks/VarCreateBlock.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FinalSolution/Designer/Blocks/VarCreateBlock.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FinalSolution/Designer/Blocks/VarRefBlock.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FinalSolution/Designer/Blocks/VarRefBlock.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FinalSolution/Designer/FrmDesigner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FinalSolution/Designer/FrmDesigner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FinalSolution/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FinalSolution/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FinalSolution/Properties/Resources.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FinalSolution/Properties/Resources.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Word Documents/Miller, Lewis - V3.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Word Documents/Miller, Lewis - V3.docx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,11 +28,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FinalSolution/Designer/Blocks/BeepBlock.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="13" column="37" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
+            <state relative-caret-position="368">
+              <caret line="19" selection-start-line="19" selection-end-line="19" />
               <folding>
                 <marker date="1548684304056" expanded="false" signature="6:35" ph="..." />
                 <marker date="1548684304056" expanded="true" signature="72:512" ph="{...}" />
@@ -54,63 +47,64 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FinalSolution/Designer/FrmDesigner.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1476">
-              <caret line="407" column="5" lean-forward="true" selection-start-line="407" selection-start-column="5" selection-end-line="407" selection-end-column="5" />
+            <state>
+              <caret line="391" column="22" selection-start-line="391" selection-start-column="22" selection-end-line="391" selection-end-column="22" />
               <folding>
-                <marker date="1548685187385" expanded="false" signature="6:238" ph="..." />
-                <marker date="1548685187385" expanded="true" signature="268:9554" ph="{...}" />
-                <marker date="1548685187385" expanded="true" signature="272:372" ph="/// The form upon which designmentination occurs  ... " />
-                <marker date="1548685187385" expanded="true" signature="414:9552" ph="{...}" />
-                <marker date="1548685187385" expanded="false" signature="471:2156" ph="Startup" />
-                <marker date="1548685187385" expanded="true" signature="568:1961" ph="{...}" />
-                <marker date="1548685187385" expanded="true" signature="784:829" ph="{...}" />
-                <marker date="1548685187385" expanded="true" signature="1123:1480" ph="/* { ... */" />
-                <marker date="1548685187385" expanded="true" signature="1526:1683" ph="{...}" />
-                <marker date="1548685187385" expanded="true" signature="2020:2142" ph="{...}" />
-                <marker date="1548685187385" expanded="false" signature="2162:4215" ph="Block Tree" />
-                <marker date="1548685187385" expanded="true" signature="2300:3233" ph="{...}" />
-                <marker date="1548685187385" expanded="true" signature="2355:2581" ph="/* var NewBlock = new EmptyNormalBlock { ... */" />
-                <marker date="1548685187385" expanded="true" signature="2631:3201" ph="{...}" />
-                <marker date="1548685187385" expanded="true" signature="3311:3746" ph="{...}" />
-                <marker date="1548685187385" expanded="true" signature="3381:3498" ph="{...}" />
-                <marker date="1548685187385" expanded="true" signature="3632:3722" ph="{...}" />
-                <marker date="1548685187385" expanded="true" signature="3845:4201" ph="{...}" />
-                <marker date="1548685187385" expanded="false" signature="4221:5538" ph="Block Movement" />
-                <marker date="1548685187385" expanded="true" signature="4391:5089" ph="{...}" />
-                <marker date="1548685187385" expanded="true" signature="4513:4555" ph="{...}" />
-                <marker date="1548685187385" expanded="true" signature="4637:4688" ph="{...}" />
-                <marker date="1548685187385" expanded="true" signature="4772:4826" ph="{...}" />
-                <marker date="1548685187385" expanded="true" signature="5150:5311" ph="{...}" />
-                <marker date="1548685187385" expanded="true" signature="5358:5524" ph="{...}" />
-                <marker date="1548685187385" expanded="true" signature="5542:8443" ph="Connection Management" />
-                <marker date="1548685187385" expanded="true" signature="5741:6145" ph="{...}" />
-                <marker date="1548685187385" expanded="true" signature="5792:5976" ph="{...}" />
-                <marker date="1548685187385" expanded="true" signature="5824:5958" ph="{...}" />
-                <marker date="1548685187385" expanded="true" signature="6056:6087" ph="{...}" />
-                <marker date="1548685187385" expanded="true" signature="6203:6529" ph="{...}" />
-                <marker date="1548685187385" expanded="true" signature="6234:6362" ph="{...}" />
-                <marker date="1548685187385" expanded="true" signature="6260:6345" ph="{...}" />
-                <marker date="1548685187385" expanded="true" signature="6447:6472" ph="{...}" />
-                <marker date="1548685187385" expanded="true" signature="6624:7629" ph="{...}" />
-                <marker date="1548685187385" expanded="true" signature="6842:6998" ph="{...}" />
-                <marker date="1548685187385" expanded="true" signature="7190:7460" ph="{...}" />
-                <marker date="1548685187385" expanded="true" signature="7738:7974" ph="{...}" />
-                <marker date="1548685187385" expanded="true" signature="8020:8427" ph="{...}" />
-                <marker date="1548685187385" expanded="true" signature="8091:8216" ph="{...}" />
-                <marker date="1548685187385" expanded="true" signature="8366:8397" ph="{...}" />
-                <marker date="1548685187385" expanded="false" signature="8449:9548" ph="Drawing" />
-                <marker date="1548685187385" expanded="true" signature="8519:9533" ph="{...}" />
-                <marker date="1548685187385" expanded="true" signature="8596:9529" ph="{...}" />
+                <marker date="1548864902224" expanded="false" signature="6:238" ph="..." />
+                <marker date="1548864902224" expanded="true" signature="268:9606" ph="{...}" />
+                <marker date="1548864902224" expanded="true" signature="272:372" ph="/// The form upon which designmentination occurs  ... " />
+                <marker date="1548864902224" expanded="true" signature="414:9604" ph="{...}" />
+                <marker date="1548864902224" expanded="true" signature="471:2156" ph="Startup" />
+                <marker date="1548864902224" expanded="true" signature="568:1961" ph="{...}" />
+                <marker date="1548864902224" expanded="true" signature="784:829" ph="{...}" />
+                <marker date="1548864902224" expanded="true" signature="1123:1480" ph="/* { ... */" />
+                <marker date="1548864902224" expanded="true" signature="1526:1683" ph="{...}" />
+                <marker date="1548864902224" expanded="true" signature="2020:2142" ph="{...}" />
+                <marker date="1548864902224" expanded="true" signature="2162:4215" ph="Block Tree" />
+                <marker date="1548864902224" expanded="true" signature="2300:3233" ph="{...}" />
+                <marker date="1548864902224" expanded="true" signature="2355:2581" ph="/* var NewBlock = new EmptyNormalBlock { ... */" />
+                <marker date="1548864902224" expanded="true" signature="2631:3201" ph="{...}" />
+                <marker date="1548864902224" expanded="true" signature="3311:3746" ph="{...}" />
+                <marker date="1548864902224" expanded="true" signature="3381:3498" ph="{...}" />
+                <marker date="1548864902224" expanded="true" signature="3632:3722" ph="{...}" />
+                <marker date="1548864902224" expanded="true" signature="3845:4201" ph="{...}" />
+                <marker date="1548864902224" expanded="true" signature="4221:5538" ph="Block Movement" />
+                <marker date="1548864902224" expanded="true" signature="4391:5089" ph="{...}" />
+                <marker date="1548864902224" expanded="true" signature="4513:4555" ph="{...}" />
+                <marker date="1548864902224" expanded="true" signature="4637:4688" ph="{...}" />
+                <marker date="1548864902224" expanded="true" signature="4772:4826" ph="{...}" />
+                <marker date="1548864902224" expanded="true" signature="5150:5311" ph="{...}" />
+                <marker date="1548864902224" expanded="true" signature="5358:5524" ph="{...}" />
+                <marker date="1548864902224" expanded="true" signature="5542:8495" ph="Connection Management" />
+                <marker date="1548864902224" expanded="true" signature="5741:6145" ph="{...}" />
+                <marker date="1548864902224" expanded="true" signature="5792:5976" ph="{...}" />
+                <marker date="1548864902224" expanded="true" signature="5824:5958" ph="{...}" />
+                <marker date="1548864902224" expanded="true" signature="6056:6087" ph="{...}" />
+                <marker date="1548864902224" expanded="true" signature="6203:6529" ph="{...}" />
+                <marker date="1548864902224" expanded="true" signature="6234:6362" ph="{...}" />
+                <marker date="1548864902224" expanded="true" signature="6260:6345" ph="{...}" />
+                <marker date="1548864902224" expanded="true" signature="6447:6472" ph="{...}" />
+                <marker date="1548864902224" expanded="true" signature="6573:6582" ph="{...}" />
+                <marker date="1548864902224" expanded="true" signature="6679:7681" ph="{...}" />
+                <marker date="1548864902224" expanded="true" signature="6894:7050" ph="{...}" />
+                <marker date="1548864902224" expanded="true" signature="7242:7512" ph="{...}" />
+                <marker date="1548864902224" expanded="true" signature="7790:8026" ph="{...}" />
+                <marker date="1548864902224" expanded="true" signature="8072:8479" ph="{...}" />
+                <marker date="1548864902224" expanded="true" signature="8143:8268" ph="{...}" />
+                <marker date="1548864902224" expanded="true" signature="8418:8449" ph="{...}" />
+                <marker date="1548864902224" expanded="true" signature="8501:9600" ph="Drawing" />
+                <marker date="1548864902224" expanded="true" signature="8571:9585" ph="{...}" />
+                <marker date="1548864902224" expanded="true" signature="8648:9581" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/FinalSolution/Designer/Blocks/BaseBlock.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-276">
-              <caret line="195" column="56" selection-start-line="195" selection-start-column="56" selection-end-line="195" selection-end-column="56" />
+            <state relative-caret-position="414">
+              <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
               <folding>
                 <marker date="1548759249967" expanded="false" signature="6:63" ph="..." />
                 <marker date="1548759249967" expanded="true" signature="100:5836" ph="{...}" />
@@ -147,9 +141,9 @@
                 <marker date="1548759249967" expanded="true" signature="4962:5115" ph="{...}" />
                 <marker date="1548759249967" expanded="true" signature="5123:5277" ph="/// &lt;c&gt;null&lt;/c&gt;: Neither selected. ... " />
                 <marker date="1548759249967" expanded="true" signature="5315:5387" ph="/// The code that this block represents ... " />
-                <marker date="1548759249967" expanded="true" signature="5472:5531" ph="///  ... " />
-                <marker date="1548759249967" expanded="true" signature="5565:5653" ph="///  ... " />
-                <marker date="1548759249967" expanded="true" signature="5706:5787" ph="///  ... " />
+                <marker date="1548759249967" expanded="true" signature="5472:5531" ph="/// The icon for the block ... " />
+                <marker date="1548759249967" expanded="true" signature="5565:5653" ph="/// Where the top left point of the icon will be drawn  ... " />
+                <marker date="1548759249967" expanded="true" signature="5706:5787" ph="/// How large the icon will be. Should be square ... " />
               </folding>
             </state>
           </provider>
@@ -158,15 +152,15 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FinalSolution/Designer/Blocks/VarCreateBlock.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-23">
+            <state relative-caret-position="207">
               <caret line="15" column="41" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
               <folding>
                 <marker date="1548759430317" expanded="false" signature="6:149" ph="..." />
                 <marker date="1548759430317" expanded="true" signature="186:5010" ph="{...}" />
                 <marker date="1548759430317" expanded="true" signature="193:316" ph="/// A block representing a variable declaration ... " />
                 <marker date="1548759430317" expanded="true" signature="370:5007" ph="{...}" />
-                <marker date="1548759430317" expanded="true" signature="418:532" ph="///  ... " />
-                <marker date="1548759430317" expanded="true" signature="580:648" ph="/// stores the name of the box ... " />
+                <marker date="1548759430317" expanded="true" signature="418:532" ph="/// Shows the value that the variable will start with when execution begins ... " />
+                <marker date="1548759430317" expanded="true" signature="580:648" ph="/// Stores the name of the variable ... " />
                 <marker date="1548759430317" expanded="true" signature="684:779" ph="/// Validate the content of the name and value blocks on click ... " />
                 <marker date="1548759430317" expanded="true" signature="887:2923" ph="{...}" />
                 <marker date="1548759430317" expanded="true" signature="1174:1410" ph="{...}" />
@@ -196,7 +190,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FinalSolution/Properties/Resources.Designer.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-460">
+            <state relative-caret-position="4577">
               <caret line="219" column="9" selection-start-line="219" selection-start-column="9" selection-end-line="219" selection-end-column="9" />
               <folding>
                 <marker date="1548759430365" expanded="true" signature="0:395" ph="/* ------------------------------------------------------------------------------ ... */" />
@@ -246,7 +240,7 @@
                 <marker date="1548759430365" expanded="true" signature="6482:6593" ph="///   Looks up a localized resource of type System.Drawing.Bitmap. ... " />
                 <marker date="1548759430365" expanded="true" signature="6647:6828" ph="{...}" />
                 <marker date="1548759430365" expanded="true" signature="6665:6818" ph="{...}" />
-                <marker date="1548759430365" expanded="true" signature="6846:6945" ph="/// ... " />
+                <marker date="1548759430365" expanded="true" signature="6846:6945" ph="/// Looks up the localised template for a user program ... " />
                 <marker date="1548759430365" expanded="true" signature="6993:7122" ph="{...}" />
                 <marker date="1548759430365" expanded="true" signature="7011:7112" ph="{...}" />
                 <marker date="1548759430365" expanded="true" signature="7140:7251" ph="///   Looks up a localized resource of type System.Drawing.Bitmap. ... " />
@@ -261,7 +255,7 @@
                 <marker date="1548759430365" expanded="true" signature="8246:8357" ph="///   Looks up a localized resource of type System.Drawing.Bitmap. ... " />
                 <marker date="1548759430365" expanded="true" signature="8413:8596" ph="{...}" />
                 <marker date="1548759430365" expanded="true" signature="8431:8586" ph="{...}" />
-                <marker date="1548759430365" expanded="true" signature="8614:8736" ph="///   Looks up a localized string similar to using System; ... " />
+                <marker date="1548759430365" expanded="true" signature="8614:8736" ph="///   Looks up the localised Wrapper string (contains debugger functionality) ... " />
                 <marker date="1548759430365" expanded="true" signature="8776:8897" ph="{...}" />
                 <marker date="1548759430365" expanded="true" signature="8794:8887" ph="{...}" />
               </folding>
@@ -272,7 +266,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FinalSolution/Designer/Blocks/VarRefBlock.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="69">
               <caret line="6" selection-start-line="6" selection-end-line="6" />
               <folding>
                 <marker date="1548701524469" expanded="false" signature="6:97" ph="..." />
@@ -300,7 +294,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FinalSolution/Designer/FrmDesigner.Designer.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-46">
+            <state relative-caret-position="4117">
               <caret line="183" column="36" selection-start-line="183" selection-start-column="36" selection-end-line="183" selection-end-column="36" />
               <folding>
                 <marker date="1548665661474" expanded="false" signature="6:41" ph="..." />
@@ -404,11 +398,14 @@
         <option value="$PROJECT_DIR$/FinalSolution/Designer/Blocks/StarterBlock.cs" />
         <option value="$PROJECT_DIR$/FinalSolution/Designer/Blocks/DecimalCreateBlock.cs" />
         <option value="$PROJECT_DIR$/FinalSolution/Designer/Blocks/VarRefBlock.cs" />
-        <option value="$PROJECT_DIR$/FinalSolution/Designer/FrmDesigner.cs" />
         <option value="$PROJECT_DIR$/FinalSolution/Build/Builder.cs" />
-        <option value="$PROJECT_DIR$/FinalSolution/Designer/Blocks/BaseBlock.cs" />
         <option value="$PROJECT_DIR$/FinalSolution/Designer/Blocks/VarCreateBlock.cs" />
         <option value="$PROJECT_DIR$/FinalSolution/Properties/Resources.Designer.cs" />
+        <option value="$PROJECT_DIR$/FinalSolution/Designer/FrmDesigner.cs" />
+        <option value="$PROJECT_DIR$/FinalSolution/Designer/Blocks/IVariableConnector.cs" />
+        <option value="$PROJECT_DIR$/FinalSolution/Designer/Blocks/VariableConnector.cs" />
+        <option value="$PROJECT_DIR$/FinalSolution/Designer/Blocks/HasVariableConnector.cs" />
+        <option value="$PROJECT_DIR$/FinalSolution/Designer/Blocks/BaseBlock.cs" />
       </list>
     </option>
   </component>
@@ -432,8 +429,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="FileSystemExplorer" />
-      <pane id="AssemblyExplorer" />
       <pane id="SolutionExplorer">
         <subPane>
           <expand>
@@ -446,115 +441,14 @@
               <item name="FinalSolution" type="24d0babc:SolutionExplorerModelNode" />
               <item name="FinalSolution" type="24d0babc:SolutionExplorerModelNode" />
             </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="FinalSolution" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="FinalSolution" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="References" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="FinalSolution" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="FinalSolution" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="References" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Assemblies" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="FinalSolution" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="FinalSolution" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Properties" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="FinalSolution" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="FinalSolution" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Properties" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Resources.resx" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="FinalSolution" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="FinalSolution" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Properties" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Settings.settings" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="FinalSolution" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="FinalSolution" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Build" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="FinalSolution" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="FinalSolution" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Debugger" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="FinalSolution" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="FinalSolution" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Debugger" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="FrmDebugger.cs" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="FinalSolution" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="FinalSolution" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Designer" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="FinalSolution" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="FinalSolution" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Designer" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Blocks" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="FinalSolution" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="FinalSolution" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Designer" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="FrmDesigner.cs" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="FinalSolution" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="FinalSolution" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Errors" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="FinalSolution" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="FinalSolution" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Resources" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="FinalSolution" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="FinalSolution" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Saving" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="FinalSolution" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="FinalSolution" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Welcome" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="FinalSolution" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="FinalSolution" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Welcome" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="FrmWelcome.cs" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
           </expand>
           <select />
         </subPane>
         <option name="show-all-files" value="false" />
       </pane>
       <pane id="Scratches" />
+      <pane id="AssemblyExplorer" />
+      <pane id="FileSystemExplorer" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -563,7 +457,12 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="full.screen.before.presentation.mode" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.uml" />
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="uml" />
+    </option>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -704,11 +603,16 @@
       <workItem from="1548596639023" duration="4712000" />
       <workItem from="1548608681244" duration="3459000" />
       <workItem from="1548758268224" duration="1363000" />
+      <workItem from="1548759673118" duration="481000" />
+      <workItem from="1548860641156" duration="20000" />
+      <workItem from="1548860692868" duration="42000" />
+      <workItem from="1548860765462" duration="5741000" />
+      <workItem from="1549269127887" duration="770000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="106262000" />
+    <option name="totallyTimeSpent" value="113316000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -723,8 +627,8 @@
     <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4974359" visible="true" weight="0.20788912" />
-      <window_info id="Structure" order="1" sideWeight="0.50256413" side_tool="true" weight="0.17430703" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49619484" visible="true" weight="0.2185501" />
+      <window_info id="Structure" order="1" sideWeight="0.50380516" side_tool="true" weight="0.21428572" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Capture Tool" order="4" />
@@ -743,14 +647,14 @@
       <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49791667" weight="0.39589745" />
       <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.5026042" side_tool="true" weight="0.32615384" />
       <window_info active="true" anchor="bottom" id="Build" order="14" sideWeight="0.49791667" visible="true" weight="0.32615384" />
-      <window_info anchor="bottom" id="Inspection Results" order="15" weight="0.3290735" />
+      <window_info anchor="bottom" id="Inspection Results" order="15" weight="0.32820514" />
       <window_info anchor="bottom" id="Performance Profiler" order="16" weight="0.32923076" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Errors In Solution" order="3" weight="0.32995737" />
       <window_info anchor="right" id="Database" order="4" />
-      <window_info anchor="right" id="Unit Tests Coverage" order="5" />
+      <window_info anchor="right" id="Unit Tests Coverage" order="5" weight="0.32995737" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
     </layout>
   </component>
@@ -1100,71 +1004,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FinalSolution/Designer/Blocks/VarRefBlock.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-          <folding>
-            <marker date="1548701524469" expanded="false" signature="6:97" ph="..." />
-            <marker date="1548701524469" expanded="true" signature="134:2962" ph="{...}" />
-            <marker date="1548701524469" expanded="true" signature="141:276" ph="/// Allows for the referencing of variables available in the user's program ... " />
-            <marker date="1548701524469" expanded="true" signature="318:2953" ph="{...}" />
-            <marker date="1548701524469" expanded="true" signature="329:392" ph="/// ... " />
-            <marker date="1548701524469" expanded="true" signature="422:1067" ph="{...}" />
-            <marker date="1548701524469" expanded="true" signature="787:861" ph="{...}" />
-            <marker date="1548701524469" expanded="true" signature="1077:1484" ph="///Fires the event indicating that the panel has been resized. Inheriting controls should use this in favor of ac ... " />
-            <marker date="1548701524469" expanded="true" signature="1539:1845" ph="{...}" />
-            <marker date="1548701524469" expanded="true" signature="1855:1969" ph="/// Draws the block and the side connector ... " />
-            <marker date="1548701524469" expanded="true" signature="2034:2549" ph="{...}" />
-            <marker date="1548701524469" expanded="true" signature="2122:2294" ph="{...}" />
-            <marker date="1548701524469" expanded="true" signature="2329:2539" ph="{...}" />
-            <marker date="1548701524469" expanded="true" signature="2559:2640" ph="/// The connector that allows for variable usage ... " />
-            <marker date="1548701524469" expanded="true" signature="2691:2764" ph="/// The list of all variables in project ... " />
-            <marker date="1548701524469" expanded="true" signature="2808:2880" ph="///  ... " />
-            <marker date="1548701524469" expanded="true" signature="2933:2946" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FinalSolution/Designer/FrmDesigner.Designer.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-46">
-          <caret line="183" column="36" selection-start-line="183" selection-start-column="36" selection-end-line="183" selection-end-column="36" />
-          <folding>
-            <marker date="1548665661474" expanded="false" signature="6:41" ph="..." />
-            <marker date="1548665661474" expanded="true" signature="71:11075" ph="{...}" />
-            <marker date="1548665661474" expanded="true" signature="100:11073" ph="{...}" />
-            <marker date="1548665661474" expanded="true" signature="104:168" ph="/// Required designer variable. ... " />
-            <marker date="1548665661474" expanded="true" signature="234:407" ph="/// Clean up any resources being used. ... " />
-            <marker date="1548665661474" expanded="true" signature="458:566" ph="{...}" />
-            <marker date="1548665661474" expanded="true" signature="502:534" ph="{...}" />
-            <marker date="1548665661474" expanded="true" signature="570:10522" ph="Windows Form Designer generated code" />
-            <marker date="1548665661474" expanded="true" signature="618:763" ph="/// Required method for Designer support - do not modify ... " />
-            <marker date="1548665661474" expanded="true" signature="801:10508" ph="{...}" />
-            <marker date="1548665661474" expanded="true" signature="1127:1174" ph="{...}" />
-            <marker date="1548665661474" expanded="true" signature="1847:1986" ph="{...}" />
-            <marker date="1548665661474" expanded="true" signature="2301:2350" ph="{...}" />
-            <marker date="1548665661474" expanded="true" signature="2753:2826" ph="{...}" />
-            <marker date="1548665661474" expanded="true" signature="3333:3430" ph="{...}" />
-            <marker date="1548665661474" expanded="true" signature="3668:3693" ph="{...}" />
-            <marker date="1548665661474" expanded="true" signature="4676:4701" ph="/* MainMenu ... */" />
-            <marker date="1548665661474" expanded="true" signature="4845:4968" ph="{...}" />
-            <marker date="1548665661474" expanded="true" signature="5281:5319" ph="/* FileToolStripMenuItem ... */" />
-            <marker date="1548665661474" expanded="true" signature="5414:5455" ph="{...}" />
-            <marker date="1548665661474" expanded="true" signature="5638:5676" ph="/* OpenToolStripMenuItem ... */" />
-            <marker date="1548665661474" expanded="true" signature="5858:5896" ph="/* QuitToolStripMenuItem ... */" />
-            <marker date="1548665661474" expanded="true" signature="6077:6117" ph="/* DeleteToolStripMenuItem ... */" />
-            <marker date="1548665661474" expanded="true" signature="6308:6345" ph="/* SContainer_Workspace ... */" />
-            <marker date="1548665661474" expanded="true" signature="6726:6770" ph="/* SContainer_Workspace.Panel1 ... */" />
-            <marker date="1548665661474" expanded="true" signature="6840:6884" ph="/* SContainer_Workspace.Panel2 ... */" />
-            <marker date="1548665661474" expanded="true" signature="7164:7190" ph="/* BlockTree ... */" />
-            <marker date="1548665661474" expanded="true" signature="9365:9533" ph="{...}" />
-            <marker date="1548665661474" expanded="true" signature="9631:9659" ph="/* FrmDesigner ... */" />
-            <marker date="1548665661474" expanded="true" signature="10867:10973" ph="/// The SplitContainer containing the block tree and active editor panels ... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/FinalSolution/Properties/Resources.resx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3588" />
@@ -1205,45 +1044,24 @@
     <entry file="file://$PROJECT_DIR$/FinalSolution/Resources/Integer.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/FinalSolution/Designer/Blocks/VarCreateBlock.cs">
+    <entry file="file://$PROJECT_DIR$/FinalSolution/Designer/Blocks/HasVariableConnector.cs" />
+    <entry file="file://$PROJECT_DIR$/FinalSolution/Designer/Blocks/BeepBlock.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-23">
-          <caret line="15" column="41" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
+        <state relative-caret-position="368">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
           <folding>
-            <marker date="1548759430317" expanded="false" signature="6:149" ph="..." />
-            <marker date="1548759430317" expanded="true" signature="186:5010" ph="{...}" />
-            <marker date="1548759430317" expanded="true" signature="193:316" ph="/// A block representing a variable declaration ... " />
-            <marker date="1548759430317" expanded="true" signature="370:5007" ph="{...}" />
-            <marker date="1548759430317" expanded="true" signature="418:532" ph="///  ... " />
-            <marker date="1548759430317" expanded="true" signature="580:648" ph="/// stores the name of the box ... " />
-            <marker date="1548759430317" expanded="true" signature="684:779" ph="/// Validate the content of the name and value blocks on click ... " />
-            <marker date="1548759430317" expanded="true" signature="887:2923" ph="{...}" />
-            <marker date="1548759430317" expanded="true" signature="1174:1410" ph="{...}" />
-            <marker date="1548759430317" expanded="true" signature="1438:1622" ph="{...}" />
-            <marker date="1548759430317" expanded="true" signature="1659:1911" ph="{...}" />
-            <marker date="1548759430317" expanded="true" signature="1711:1807" ph="{...}" />
-            <marker date="1548759430317" expanded="true" signature="2532:2748" ph="{...}" />
-            <marker date="1548759430317" expanded="true" signature="2611:2657" ph="{...}" />
-            <marker date="1548759430317" expanded="true" signature="2933:3195" ph="/// Checks that the value set by the user is a valid value ... " />
-            <marker date="1548759430317" expanded="true" signature="3294:3906" ph="{...}" />
-            <marker date="1548759430317" expanded="true" signature="3355:3902" ph="{...}" />
-            <marker date="1548759430317" expanded="true" signature="3404:3547" ph="{...}" />
-            <marker date="1548759430317" expanded="true" signature="3576:3897" ph="{...}" />
-            <marker date="1548759430317" expanded="true" signature="3614:3861" ph="{...}" />
-            <marker date="1548759430317" expanded="true" signature="3954:4350" ph="{...}" />
-            <marker date="1548759430317" expanded="true" signature="4391:4474" ph="/// The starting value of the variable ... " />
-            <marker date="1548759430317" expanded="true" signature="4503:4577" ph="{...}" />
-            <marker date="1548759430317" expanded="true" signature="4614:4675" ph="/// The name of the variable ... " />
-            <marker date="1548759430317" expanded="true" signature="4706:4884" ph="{...}" />
-            <marker date="1548759430317" expanded="true" signature="4747:4874" ph="{...}" />
-            <marker date="1548759430317" expanded="true" signature="4894:4991" ph="/* &lt;summary&gt;&lt;/summary&gt; ... */" />
+            <marker date="1548684304056" expanded="false" signature="6:35" ph="..." />
+            <marker date="1548684304056" expanded="true" signature="72:512" ph="{...}" />
+            <marker date="1548684304056" expanded="true" signature="79:134" ph="/// ... " />
+            <marker date="1548684304056" expanded="true" signature="174:509" ph="{...}" />
+            <marker date="1548684304056" expanded="true" signature="231:502" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/FinalSolution/Properties/Resources.Designer.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-460">
+        <state relative-caret-position="4577">
           <caret line="219" column="9" selection-start-line="219" selection-start-column="9" selection-end-line="219" selection-end-column="9" />
           <folding>
             <marker date="1548759430365" expanded="true" signature="0:395" ph="/* ------------------------------------------------------------------------------ ... */" />
@@ -1293,7 +1111,7 @@
             <marker date="1548759430365" expanded="true" signature="6482:6593" ph="///   Looks up a localized resource of type System.Drawing.Bitmap. ... " />
             <marker date="1548759430365" expanded="true" signature="6647:6828" ph="{...}" />
             <marker date="1548759430365" expanded="true" signature="6665:6818" ph="{...}" />
-            <marker date="1548759430365" expanded="true" signature="6846:6945" ph="/// ... " />
+            <marker date="1548759430365" expanded="true" signature="6846:6945" ph="/// Looks up the localised template for a user program ... " />
             <marker date="1548759430365" expanded="true" signature="6993:7122" ph="{...}" />
             <marker date="1548759430365" expanded="true" signature="7011:7112" ph="{...}" />
             <marker date="1548759430365" expanded="true" signature="7140:7251" ph="///   Looks up a localized resource of type System.Drawing.Bitmap. ... " />
@@ -1308,17 +1126,172 @@
             <marker date="1548759430365" expanded="true" signature="8246:8357" ph="///   Looks up a localized resource of type System.Drawing.Bitmap. ... " />
             <marker date="1548759430365" expanded="true" signature="8413:8596" ph="{...}" />
             <marker date="1548759430365" expanded="true" signature="8431:8586" ph="{...}" />
-            <marker date="1548759430365" expanded="true" signature="8614:8736" ph="///   Looks up a localized string similar to using System; ... " />
+            <marker date="1548759430365" expanded="true" signature="8614:8736" ph="///   Looks up the localised Wrapper string (contains debugger functionality) ... " />
             <marker date="1548759430365" expanded="true" signature="8776:8897" ph="{...}" />
             <marker date="1548759430365" expanded="true" signature="8794:8887" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/FinalSolution/Designer/Blocks/VarRefBlock.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <marker date="1548701524469" expanded="false" signature="6:97" ph="..." />
+            <marker date="1548701524469" expanded="true" signature="134:2962" ph="{...}" />
+            <marker date="1548701524469" expanded="true" signature="141:276" ph="/// Allows for the referencing of variables available in the user's program ... " />
+            <marker date="1548701524469" expanded="true" signature="318:2953" ph="{...}" />
+            <marker date="1548701524469" expanded="true" signature="329:392" ph="/// ... " />
+            <marker date="1548701524469" expanded="true" signature="422:1067" ph="{...}" />
+            <marker date="1548701524469" expanded="true" signature="787:861" ph="{...}" />
+            <marker date="1548701524469" expanded="true" signature="1077:1484" ph="///Fires the event indicating that the panel has been resized. Inheriting controls should use this in favor of ac ... " />
+            <marker date="1548701524469" expanded="true" signature="1539:1845" ph="{...}" />
+            <marker date="1548701524469" expanded="true" signature="1855:1969" ph="/// Draws the block and the side connector ... " />
+            <marker date="1548701524469" expanded="true" signature="2034:2549" ph="{...}" />
+            <marker date="1548701524469" expanded="true" signature="2122:2294" ph="{...}" />
+            <marker date="1548701524469" expanded="true" signature="2329:2539" ph="{...}" />
+            <marker date="1548701524469" expanded="true" signature="2559:2640" ph="/// The connector that allows for variable usage ... " />
+            <marker date="1548701524469" expanded="true" signature="2691:2764" ph="/// The list of all variables in project ... " />
+            <marker date="1548701524469" expanded="true" signature="2808:2880" ph="///  ... " />
+            <marker date="1548701524469" expanded="true" signature="2933:2946" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FinalSolution/Designer/FrmDesigner.Designer.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4117">
+          <caret line="183" column="36" selection-start-line="183" selection-start-column="36" selection-end-line="183" selection-end-column="36" />
+          <folding>
+            <marker date="1548665661474" expanded="false" signature="6:41" ph="..." />
+            <marker date="1548665661474" expanded="true" signature="71:11075" ph="{...}" />
+            <marker date="1548665661474" expanded="true" signature="100:11073" ph="{...}" />
+            <marker date="1548665661474" expanded="true" signature="104:168" ph="/// Required designer variable. ... " />
+            <marker date="1548665661474" expanded="true" signature="234:407" ph="/// Clean up any resources being used. ... " />
+            <marker date="1548665661474" expanded="true" signature="458:566" ph="{...}" />
+            <marker date="1548665661474" expanded="true" signature="502:534" ph="{...}" />
+            <marker date="1548665661474" expanded="true" signature="570:10522" ph="Windows Form Designer generated code" />
+            <marker date="1548665661474" expanded="true" signature="618:763" ph="/// Required method for Designer support - do not modify ... " />
+            <marker date="1548665661474" expanded="true" signature="801:10508" ph="{...}" />
+            <marker date="1548665661474" expanded="true" signature="1127:1174" ph="{...}" />
+            <marker date="1548665661474" expanded="true" signature="1847:1986" ph="{...}" />
+            <marker date="1548665661474" expanded="true" signature="2301:2350" ph="{...}" />
+            <marker date="1548665661474" expanded="true" signature="2753:2826" ph="{...}" />
+            <marker date="1548665661474" expanded="true" signature="3333:3430" ph="{...}" />
+            <marker date="1548665661474" expanded="true" signature="3668:3693" ph="{...}" />
+            <marker date="1548665661474" expanded="true" signature="4676:4701" ph="/* MainMenu ... */" />
+            <marker date="1548665661474" expanded="true" signature="4845:4968" ph="{...}" />
+            <marker date="1548665661474" expanded="true" signature="5281:5319" ph="/* FileToolStripMenuItem ... */" />
+            <marker date="1548665661474" expanded="true" signature="5414:5455" ph="{...}" />
+            <marker date="1548665661474" expanded="true" signature="5638:5676" ph="/* OpenToolStripMenuItem ... */" />
+            <marker date="1548665661474" expanded="true" signature="5858:5896" ph="/* QuitToolStripMenuItem ... */" />
+            <marker date="1548665661474" expanded="true" signature="6077:6117" ph="/* DeleteToolStripMenuItem ... */" />
+            <marker date="1548665661474" expanded="true" signature="6308:6345" ph="/* SContainer_Workspace ... */" />
+            <marker date="1548665661474" expanded="true" signature="6726:6770" ph="/* SContainer_Workspace.Panel1 ... */" />
+            <marker date="1548665661474" expanded="true" signature="6840:6884" ph="/* SContainer_Workspace.Panel2 ... */" />
+            <marker date="1548665661474" expanded="true" signature="7164:7190" ph="/* BlockTree ... */" />
+            <marker date="1548665661474" expanded="true" signature="9365:9533" ph="{...}" />
+            <marker date="1548665661474" expanded="true" signature="9631:9659" ph="/* FrmDesigner ... */" />
+            <marker date="1548665661474" expanded="true" signature="10867:10973" ph="/// The SplitContainer containing the block tree and active editor panels ... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FinalSolution/Designer/FrmDesigner.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="391" column="22" selection-start-line="391" selection-start-column="22" selection-end-line="391" selection-end-column="22" />
+          <folding>
+            <marker date="1548864902224" expanded="false" signature="6:238" ph="..." />
+            <marker date="1548864902224" expanded="true" signature="268:9606" ph="{...}" />
+            <marker date="1548864902224" expanded="true" signature="272:372" ph="/// The form upon which designmentination occurs  ... " />
+            <marker date="1548864902224" expanded="true" signature="414:9604" ph="{...}" />
+            <marker date="1548864902224" expanded="true" signature="471:2156" ph="Startup" />
+            <marker date="1548864902224" expanded="true" signature="568:1961" ph="{...}" />
+            <marker date="1548864902224" expanded="true" signature="784:829" ph="{...}" />
+            <marker date="1548864902224" expanded="true" signature="1123:1480" ph="/* { ... */" />
+            <marker date="1548864902224" expanded="true" signature="1526:1683" ph="{...}" />
+            <marker date="1548864902224" expanded="true" signature="2020:2142" ph="{...}" />
+            <marker date="1548864902224" expanded="true" signature="2162:4215" ph="Block Tree" />
+            <marker date="1548864902224" expanded="true" signature="2300:3233" ph="{...}" />
+            <marker date="1548864902224" expanded="true" signature="2355:2581" ph="/* var NewBlock = new EmptyNormalBlock { ... */" />
+            <marker date="1548864902224" expanded="true" signature="2631:3201" ph="{...}" />
+            <marker date="1548864902224" expanded="true" signature="3311:3746" ph="{...}" />
+            <marker date="1548864902224" expanded="true" signature="3381:3498" ph="{...}" />
+            <marker date="1548864902224" expanded="true" signature="3632:3722" ph="{...}" />
+            <marker date="1548864902224" expanded="true" signature="3845:4201" ph="{...}" />
+            <marker date="1548864902224" expanded="true" signature="4221:5538" ph="Block Movement" />
+            <marker date="1548864902224" expanded="true" signature="4391:5089" ph="{...}" />
+            <marker date="1548864902224" expanded="true" signature="4513:4555" ph="{...}" />
+            <marker date="1548864902224" expanded="true" signature="4637:4688" ph="{...}" />
+            <marker date="1548864902224" expanded="true" signature="4772:4826" ph="{...}" />
+            <marker date="1548864902224" expanded="true" signature="5150:5311" ph="{...}" />
+            <marker date="1548864902224" expanded="true" signature="5358:5524" ph="{...}" />
+            <marker date="1548864902224" expanded="true" signature="5542:8495" ph="Connection Management" />
+            <marker date="1548864902224" expanded="true" signature="5741:6145" ph="{...}" />
+            <marker date="1548864902224" expanded="true" signature="5792:5976" ph="{...}" />
+            <marker date="1548864902224" expanded="true" signature="5824:5958" ph="{...}" />
+            <marker date="1548864902224" expanded="true" signature="6056:6087" ph="{...}" />
+            <marker date="1548864902224" expanded="true" signature="6203:6529" ph="{...}" />
+            <marker date="1548864902224" expanded="true" signature="6234:6362" ph="{...}" />
+            <marker date="1548864902224" expanded="true" signature="6260:6345" ph="{...}" />
+            <marker date="1548864902224" expanded="true" signature="6447:6472" ph="{...}" />
+            <marker date="1548864902224" expanded="true" signature="6573:6582" ph="{...}" />
+            <marker date="1548864902224" expanded="true" signature="6679:7681" ph="{...}" />
+            <marker date="1548864902224" expanded="true" signature="6894:7050" ph="{...}" />
+            <marker date="1548864902224" expanded="true" signature="7242:7512" ph="{...}" />
+            <marker date="1548864902224" expanded="true" signature="7790:8026" ph="{...}" />
+            <marker date="1548864902224" expanded="true" signature="8072:8479" ph="{...}" />
+            <marker date="1548864902224" expanded="true" signature="8143:8268" ph="{...}" />
+            <marker date="1548864902224" expanded="true" signature="8418:8449" ph="{...}" />
+            <marker date="1548864902224" expanded="true" signature="8501:9600" ph="Drawing" />
+            <marker date="1548864902224" expanded="true" signature="8571:9585" ph="{...}" />
+            <marker date="1548864902224" expanded="true" signature="8648:9581" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FinalSolution/Designer/Blocks/VarCreateBlock.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="15" column="41" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
+          <folding>
+            <marker date="1548759430317" expanded="false" signature="6:149" ph="..." />
+            <marker date="1548759430317" expanded="true" signature="186:5010" ph="{...}" />
+            <marker date="1548759430317" expanded="true" signature="193:316" ph="/// A block representing a variable declaration ... " />
+            <marker date="1548759430317" expanded="true" signature="370:5007" ph="{...}" />
+            <marker date="1548759430317" expanded="true" signature="418:532" ph="/// Shows the value that the variable will start with when execution begins ... " />
+            <marker date="1548759430317" expanded="true" signature="580:648" ph="/// Stores the name of the variable ... " />
+            <marker date="1548759430317" expanded="true" signature="684:779" ph="/// Validate the content of the name and value blocks on click ... " />
+            <marker date="1548759430317" expanded="true" signature="887:2923" ph="{...}" />
+            <marker date="1548759430317" expanded="true" signature="1174:1410" ph="{...}" />
+            <marker date="1548759430317" expanded="true" signature="1438:1622" ph="{...}" />
+            <marker date="1548759430317" expanded="true" signature="1659:1911" ph="{...}" />
+            <marker date="1548759430317" expanded="true" signature="1711:1807" ph="{...}" />
+            <marker date="1548759430317" expanded="true" signature="2532:2748" ph="{...}" />
+            <marker date="1548759430317" expanded="true" signature="2611:2657" ph="{...}" />
+            <marker date="1548759430317" expanded="true" signature="2933:3195" ph="/// Checks that the value set by the user is a valid value ... " />
+            <marker date="1548759430317" expanded="true" signature="3294:3906" ph="{...}" />
+            <marker date="1548759430317" expanded="true" signature="3355:3902" ph="{...}" />
+            <marker date="1548759430317" expanded="true" signature="3404:3547" ph="{...}" />
+            <marker date="1548759430317" expanded="true" signature="3576:3897" ph="{...}" />
+            <marker date="1548759430317" expanded="true" signature="3614:3861" ph="{...}" />
+            <marker date="1548759430317" expanded="true" signature="3954:4350" ph="{...}" />
+            <marker date="1548759430317" expanded="true" signature="4391:4474" ph="/// The starting value of the variable ... " />
+            <marker date="1548759430317" expanded="true" signature="4503:4577" ph="{...}" />
+            <marker date="1548759430317" expanded="true" signature="4614:4675" ph="/// The name of the variable ... " />
+            <marker date="1548759430317" expanded="true" signature="4706:4884" ph="{...}" />
+            <marker date="1548759430317" expanded="true" signature="4747:4874" ph="{...}" />
+            <marker date="1548759430317" expanded="true" signature="4894:4991" ph="/* &lt;summary&gt;&lt;/summary&gt; ... */" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/FinalSolution/Designer/Blocks/BaseBlock.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-276">
-          <caret line="195" column="56" selection-start-line="195" selection-start-column="56" selection-end-line="195" selection-end-column="56" />
+        <state relative-caret-position="414">
+          <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
           <folding>
             <marker date="1548759249967" expanded="false" signature="6:63" ph="..." />
             <marker date="1548759249967" expanded="true" signature="100:5836" ph="{...}" />
@@ -1355,76 +1328,9 @@
             <marker date="1548759249967" expanded="true" signature="4962:5115" ph="{...}" />
             <marker date="1548759249967" expanded="true" signature="5123:5277" ph="/// &lt;c&gt;null&lt;/c&gt;: Neither selected. ... " />
             <marker date="1548759249967" expanded="true" signature="5315:5387" ph="/// The code that this block represents ... " />
-            <marker date="1548759249967" expanded="true" signature="5472:5531" ph="///  ... " />
-            <marker date="1548759249967" expanded="true" signature="5565:5653" ph="///  ... " />
-            <marker date="1548759249967" expanded="true" signature="5706:5787" ph="///  ... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FinalSolution/Designer/FrmDesigner.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1476">
-          <caret line="407" column="5" lean-forward="true" selection-start-line="407" selection-start-column="5" selection-end-line="407" selection-end-column="5" />
-          <folding>
-            <marker date="1548685187385" expanded="false" signature="6:238" ph="..." />
-            <marker date="1548685187385" expanded="true" signature="268:9554" ph="{...}" />
-            <marker date="1548685187385" expanded="true" signature="272:372" ph="/// The form upon which designmentination occurs  ... " />
-            <marker date="1548685187385" expanded="true" signature="414:9552" ph="{...}" />
-            <marker date="1548685187385" expanded="false" signature="471:2156" ph="Startup" />
-            <marker date="1548685187385" expanded="true" signature="568:1961" ph="{...}" />
-            <marker date="1548685187385" expanded="true" signature="784:829" ph="{...}" />
-            <marker date="1548685187385" expanded="true" signature="1123:1480" ph="/* { ... */" />
-            <marker date="1548685187385" expanded="true" signature="1526:1683" ph="{...}" />
-            <marker date="1548685187385" expanded="true" signature="2020:2142" ph="{...}" />
-            <marker date="1548685187385" expanded="false" signature="2162:4215" ph="Block Tree" />
-            <marker date="1548685187385" expanded="true" signature="2300:3233" ph="{...}" />
-            <marker date="1548685187385" expanded="true" signature="2355:2581" ph="/* var NewBlock = new EmptyNormalBlock { ... */" />
-            <marker date="1548685187385" expanded="true" signature="2631:3201" ph="{...}" />
-            <marker date="1548685187385" expanded="true" signature="3311:3746" ph="{...}" />
-            <marker date="1548685187385" expanded="true" signature="3381:3498" ph="{...}" />
-            <marker date="1548685187385" expanded="true" signature="3632:3722" ph="{...}" />
-            <marker date="1548685187385" expanded="true" signature="3845:4201" ph="{...}" />
-            <marker date="1548685187385" expanded="false" signature="4221:5538" ph="Block Movement" />
-            <marker date="1548685187385" expanded="true" signature="4391:5089" ph="{...}" />
-            <marker date="1548685187385" expanded="true" signature="4513:4555" ph="{...}" />
-            <marker date="1548685187385" expanded="true" signature="4637:4688" ph="{...}" />
-            <marker date="1548685187385" expanded="true" signature="4772:4826" ph="{...}" />
-            <marker date="1548685187385" expanded="true" signature="5150:5311" ph="{...}" />
-            <marker date="1548685187385" expanded="true" signature="5358:5524" ph="{...}" />
-            <marker date="1548685187385" expanded="true" signature="5542:8443" ph="Connection Management" />
-            <marker date="1548685187385" expanded="true" signature="5741:6145" ph="{...}" />
-            <marker date="1548685187385" expanded="true" signature="5792:5976" ph="{...}" />
-            <marker date="1548685187385" expanded="true" signature="5824:5958" ph="{...}" />
-            <marker date="1548685187385" expanded="true" signature="6056:6087" ph="{...}" />
-            <marker date="1548685187385" expanded="true" signature="6203:6529" ph="{...}" />
-            <marker date="1548685187385" expanded="true" signature="6234:6362" ph="{...}" />
-            <marker date="1548685187385" expanded="true" signature="6260:6345" ph="{...}" />
-            <marker date="1548685187385" expanded="true" signature="6447:6472" ph="{...}" />
-            <marker date="1548685187385" expanded="true" signature="6624:7629" ph="{...}" />
-            <marker date="1548685187385" expanded="true" signature="6842:6998" ph="{...}" />
-            <marker date="1548685187385" expanded="true" signature="7190:7460" ph="{...}" />
-            <marker date="1548685187385" expanded="true" signature="7738:7974" ph="{...}" />
-            <marker date="1548685187385" expanded="true" signature="8020:8427" ph="{...}" />
-            <marker date="1548685187385" expanded="true" signature="8091:8216" ph="{...}" />
-            <marker date="1548685187385" expanded="true" signature="8366:8397" ph="{...}" />
-            <marker date="1548685187385" expanded="false" signature="8449:9548" ph="Drawing" />
-            <marker date="1548685187385" expanded="true" signature="8519:9533" ph="{...}" />
-            <marker date="1548685187385" expanded="true" signature="8596:9529" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FinalSolution/Designer/Blocks/BeepBlock.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="13" column="37" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
-          <folding>
-            <marker date="1548684304056" expanded="false" signature="6:35" ph="..." />
-            <marker date="1548684304056" expanded="true" signature="72:512" ph="{...}" />
-            <marker date="1548684304056" expanded="true" signature="79:134" ph="/// ... " />
-            <marker date="1548684304056" expanded="true" signature="174:509" ph="{...}" />
-            <marker date="1548684304056" expanded="true" signature="231:502" ph="{...}" />
+            <marker date="1548759249967" expanded="true" signature="5472:5531" ph="/// The icon for the block ... " />
+            <marker date="1548759249967" expanded="true" signature="5565:5653" ph="/// Where the top left point of the icon will be drawn  ... " />
+            <marker date="1548759249967" expanded="true" signature="5706:5787" ph="/// How large the icon will be. Should be square ... " />
           </folding>
         </state>
       </provider>

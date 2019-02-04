@@ -297,9 +297,13 @@ namespace Solution.Designer {
 			}
 		}
 
+		private void VariableConnectorClicked() {
+			
+		}
+		
 		[SuppressMessage("ReSharper", "LocalVariableHidesMember")]
 		private void MakeConnection() {
-			
+
 			this.First.ConnectorSelected = null;
 			this.Second.ConnectorSelected = null;
 
