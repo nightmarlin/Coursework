@@ -109,6 +109,7 @@
     <Compile Include="Designer\FrmDesigner.Designer.cs">
       <DependentUpon>FrmDesigner.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tooltips and Help.cs" />
     <Compile Include="Errors\BSharp_NotABSharpIndexException.cs" />
     <Compile Include="Saving\BSharpSaveFile.cs" />
     <Compile Include="Saving\Save.cs" />

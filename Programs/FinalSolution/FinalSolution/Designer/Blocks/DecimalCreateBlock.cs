@@ -14,6 +14,9 @@ namespace Solution.Designer.Blocks {
         /// </summary>
         public DecimalCreateBlock() : base(typeof(decimal)) {
             Icon = Properties.Resources.Decimal;
+            
+            var TT = new ToolTip();
+            TT.SetToolTip(this, TaH.DecimalCreateBlockTooltip);
         }
 
         /// <inheritdoc />

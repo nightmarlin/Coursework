@@ -17,6 +17,9 @@ namespace Solution.Designer.Blocks {
 			Icon = Properties.Resources.StartButton;
 			IconSize = new Size(100, 100);
 			IconLocation = new Point(Width / 2 - IconSize.Width, Height / 2 - IconSize.Height);
+
+			var TT = new ToolTip();
+			TT.SetToolTip(this, TaH.StarterBlockTooltip);
 		}
 		
 		/// <summary>

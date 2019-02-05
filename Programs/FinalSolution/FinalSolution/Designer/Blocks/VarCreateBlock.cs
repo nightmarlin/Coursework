@@ -60,8 +60,9 @@ namespace Solution.Designer.Blocks {
 			
 			ValidateButton = new Button {
 				Name = "ValidateButton",
+				BackColor = Color.FromKnownColor(KnownColor.ControlDark),
 				FlatAppearance = {
-					BorderColor = Color.FromKnownColor(KnownColor.ControlDarkDark),
+					BorderColor = Color.FromKnownColor(KnownColor.Control),
 					BorderSize = 1
 				},
 				FlatStyle = FlatStyle.Flat,

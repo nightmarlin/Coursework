@@ -33,7 +33,7 @@ namespace Solution.Designer.Blocks {
 
 	/// <inheritdoc />
 	/// <summary>
-	/// A class that can be used in the designer like a normal panel, but has its own explicit features
+	/// A class that can be used in the designer like a normal panel, but has its own set of features
 	/// </summary>
 	public abstract class BaseBlock : Panel {
 

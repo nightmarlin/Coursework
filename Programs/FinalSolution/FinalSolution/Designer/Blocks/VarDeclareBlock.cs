@@ -1,3 +1,5 @@
+using System.Windows.Forms;
+
 namespace Solution.Designer.Blocks {
 
     /// <inheritdoc />
@@ -9,6 +11,10 @@ namespace Solution.Designer.Blocks {
         /// <inheritdoc />
         public VarDeclareBlock() {
             Code = "// Variables ";
+            Icon = Properties.Resources.Variable;
+            
+            var TT = new ToolTip();
+            TT.SetToolTip(this, TaH.VarDeclareBlockTooltip);
         }
 
     }

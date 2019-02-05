@@ -38,8 +38,7 @@ namespace Solution.Designer {
 			_ParentFrmWelcome = ParentFrmWelcome;
 
 			BlockTree.NodeMouseDoubleClick += AddBlock;
-			QuitToolStripMenuItem.Click += BtnExit_Click;
-			DeleteToolStripMenuItem.Click += DeleteToolStripMenuItem_Click;
+			BlockTree.KeyPress += BlockTree_KeyPress; 
 
 			SContainer_Workspace.Panel2.SuspendLayout();
 			/*{
@@ -71,6 +70,22 @@ namespace Solution.Designer {
 				SContainer_Workspace.Panel2.Controls.Add(StartBlock);
 			}
 
+			{
+				var DeclarationBlock = new VarDeclareBlock {
+					Location = new Point(SContainer_Workspace.Panel2.Width - 210, 10),
+					Id = (int) BasicBlockIds.Variable,
+					Size = new Size(100, 100),
+					TabIndex = (int) BasicBlockIds.Variable
+				};
+				DeclarationBlock.Name = DeclarationBlock.GetType().Name + DeclarationBlock.Id;
+
+				DeclarationBlock.MouseDown += Block_OnMouseDown;
+				DeclarationBlock.MouseUp += Block_OnMouseUp;
+
+				SContainer_Workspace.Panel2.Controls.Add(DeclarationBlock);
+			}
+			
+
 			SContainer_Workspace.Panel2.ResumeLayout(true);
 
 		}
@@ -90,6 +105,15 @@ namespace Solution.Designer {
 		#region Block Tree
 		
 		private int NextId = (int) BasicBlockIds.First;
+
+		private void BlockTree_KeyPress(object sender, KeyPressEventArgs e) {
+
+			if (BlockTree.SelectedNode == null) return;
+
+			if ((char)Keys.Return == e.KeyChar) {
+				AddBlock(null, new TreeNodeMouseClickEventArgs(BlockTree.SelectedNode, MouseButtons.Left, 2, 0, 0));
+			}
+		}
 
 		private void AddBlock(object S, TreeNodeMouseClickEventArgs E) {
 
@@ -409,5 +433,16 @@ namespace Solution.Designer {
 
 		#endregion
 
+		private void selectToolboxToolStripMenuItem_Click(object sender, EventArgs e) {
+			BlockTree.Focus();
+		}
+
+		private void aboutBlocksToolStripMenuItem_Click(object sender, EventArgs e) {
+			MessageBox.Show(TaH.FrmDesignerBlockHelpText, "B#", MessageBoxButtons.OK, MessageBoxIcon.Information);
+		}
+
+		private void aboutTheWorkspaceToolStripMenuItem_Click(object sender, EventArgs e) {
+			MessageBox.Show(TaH.FrmDesignerWorkspaceHelpText, "B#", MessageBoxButtons.OK, MessageBoxIcon.Information);
+		}
 	}
 }

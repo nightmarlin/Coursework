@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a0e8f969-4a7a-463f-b39f-621ddda0c1be" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.FinalSolution/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FinalSolution/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FinalSolution/Designer/FrmDesigner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FinalSolution/Designer/FrmDesigner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Word Documents/Miller, Lewis - V3.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Word Documents/Miller, Lewis - V3.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FinalSolution/Designer/Blocks/BaseBlock.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FinalSolution/Designer/Blocks/BaseBlock.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -103,47 +101,47 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/FinalSolution/Designer/Blocks/BaseBlock.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+            <state relative-caret-position="667">
+              <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
               <folding>
-                <marker date="1548759249967" expanded="false" signature="6:63" ph="..." />
-                <marker date="1548759249967" expanded="true" signature="100:5836" ph="{...}" />
-                <marker date="1548759249967" expanded="true" signature="104:139" ph="///  ... " />
-                <marker date="1548759249967" expanded="true" signature="167:667" ph="{...}" />
-                <marker date="1548759249967" expanded="true" signature="172:304" ph="/// An empty connection. Code generation will stop when it reaches a block with a NextBlockId of -1 ... " />
-                <marker date="1548759249967" expanded="true" signature="331:430" ph="/// The variable declaration block. Only one of these per project. ... " />
-                <marker date="1548759249967" expanded="true" signature="452:567" ph="/// The starter block, where code generation starts. Only one of these per project ... " />
-                <marker date="1548759249967" expanded="true" signature="588:651" ph="/// The first user added block ... " />
-                <marker date="1548759249967" expanded="true" signature="670:820" ph="/// A class that can be used in the designer like a normal panel, but has its own explicit features ... " />
-                <marker date="1548759249967" expanded="true" signature="862:5834" ph="{...}" />
-                <marker date="1548759249967" expanded="true" signature="867:996" ph="/// Constructor for the block.  ... " />
-                <marker date="1548759249967" expanded="true" signature="1021:1576" ph="{...}" />
-                <marker date="1548759249967" expanded="true" signature="1580:1820" ph="/// Is called when the box is moved or resized for drawing  purposes ... " />
-                <marker date="1548759249967" expanded="true" signature="1876:2408" ph="{...}" />
-                <marker date="1548759249967" expanded="true" signature="2414:2479" ph="/// The assigned Id of the block ... " />
-                <marker date="1548759249967" expanded="true" signature="2513:2604" ph="/// The block ID for the block that this block leads on to ... " />
-                <marker date="1548759249967" expanded="true" signature="2657:2783" ph="/// An area at the top of the panel which the user can click to connect to the previous block ... " />
-                <marker date="1548759249967" expanded="true" signature="2847:2969" ph="/// An area at the top of the panel which the user can click to connect to the next block ... " />
-                <marker date="1548759249967" expanded="true" signature="3036:3131" ph="/// The rectangle the user can interact with to move the block ... " />
-                <marker date="1548759249967" expanded="true" signature="3195:3434" ph="/// Provides the ability to link 2 blocks together, sequentially. ... " />
-                <marker date="1548759249967" expanded="true" signature="3473:3503" ph="{...}" />
-                <marker date="1548759249967" expanded="true" signature="3507:3607" ph="/// Allows for the disconnection of this block and the one after it ... " />
-                <marker date="1548759249967" expanded="true" signature="3639:3695" ph="{...}" />
-                <marker date="1548759249967" expanded="true" signature="3699:3915" ph="/// Provides the draw method for the block ... " />
-                <marker date="1548759249967" expanded="true" signature="3978:5119" ph="{...}" />
-                <marker date="1548759249967" expanded="true" signature="4054:4936" ph="{...}" />
-                <marker date="1548759249967" expanded="true" signature="4241:4464" ph="{...}" />
-                <marker date="1548759249967" expanded="true" signature="4307:4458" ph="{...}" />
-                <marker date="1548759249967" expanded="true" signature="4381:4451" ph="{...}" />
-                <marker date="1548759249967" expanded="true" signature="4601:4671" ph="{...}" />
-                <marker date="1548759249967" expanded="true" signature="4708:4797" ph="{...}" />
-                <marker date="1548759249967" expanded="true" signature="4835:4930" ph="{...}" />
-                <marker date="1548759249967" expanded="true" signature="4962:5115" ph="{...}" />
-                <marker date="1548759249967" expanded="true" signature="5123:5277" ph="/// &lt;c&gt;null&lt;/c&gt;: Neither selected. ... " />
-                <marker date="1548759249967" expanded="true" signature="5315:5387" ph="/// The code that this block represents ... " />
-                <marker date="1548759249967" expanded="true" signature="5472:5531" ph="/// The icon for the block ... " />
-                <marker date="1548759249967" expanded="true" signature="5565:5653" ph="/// Where the top left point of the icon will be drawn  ... " />
-                <marker date="1548759249967" expanded="true" signature="5706:5787" ph="/// How large the icon will be. Should be square ... " />
+                <marker date="1549270957829" expanded="false" signature="6:63" ph="..." />
+                <marker date="1549270957829" expanded="true" signature="100:5834" ph="{...}" />
+                <marker date="1549270957829" expanded="true" signature="104:139" ph="///  ... " />
+                <marker date="1549270957829" expanded="true" signature="167:667" ph="{...}" />
+                <marker date="1549270957829" expanded="true" signature="172:304" ph="/// An empty connection. Code generation will stop when it reaches a block with a NextBlockId of -1 ... " />
+                <marker date="1549270957829" expanded="true" signature="331:430" ph="/// The variable declaration block. Only one of these per project. ... " />
+                <marker date="1549270957829" expanded="true" signature="452:567" ph="/// The starter block, where code generation starts. Only one of these per project ... " />
+                <marker date="1549270957829" expanded="true" signature="588:651" ph="/// The first user added block ... " />
+                <marker date="1549270957829" expanded="true" signature="670:818" ph="/// A class that can be used in the designer like a normal panel, but has its own explicit features ... " />
+                <marker date="1549270957829" expanded="true" signature="860:5832" ph="{...}" />
+                <marker date="1549270957829" expanded="true" signature="865:994" ph="/// Constructor for the block.  ... " />
+                <marker date="1549270957829" expanded="true" signature="1019:1574" ph="{...}" />
+                <marker date="1549270957829" expanded="true" signature="1578:1818" ph="/// Is called when the box is moved or resized for drawing  purposes ... " />
+                <marker date="1549270957829" expanded="true" signature="1874:2406" ph="{...}" />
+                <marker date="1549270957829" expanded="true" signature="2412:2477" ph="/// The assigned Id of the block ... " />
+                <marker date="1549270957829" expanded="true" signature="2511:2602" ph="/// The block ID for the block that this block leads on to ... " />
+                <marker date="1549270957829" expanded="true" signature="2655:2781" ph="/// An area at the top of the panel which the user can click to connect to the previous block ... " />
+                <marker date="1549270957829" expanded="true" signature="2845:2967" ph="/// An area at the top of the panel which the user can click to connect to the next block ... " />
+                <marker date="1549270957829" expanded="true" signature="3034:3129" ph="/// The rectangle the user can interact with to move the block ... " />
+                <marker date="1549270957829" expanded="true" signature="3193:3432" ph="/// Provides the ability to link 2 blocks together, sequentially. ... " />
+                <marker date="1549270957829" expanded="true" signature="3471:3501" ph="{...}" />
+                <marker date="1549270957829" expanded="true" signature="3505:3605" ph="/// Allows for the disconnection of this block and the one after it ... " />
+                <marker date="1549270957829" expanded="true" signature="3637:3693" ph="{...}" />
+                <marker date="1549270957829" expanded="true" signature="3697:3913" ph="/// Provides the draw method for the block ... " />
+                <marker date="1549270957829" expanded="true" signature="3976:5117" ph="{...}" />
+                <marker date="1549270957829" expanded="true" signature="4052:4934" ph="{...}" />
+                <marker date="1549270957829" expanded="true" signature="4239:4462" ph="{...}" />
+                <marker date="1549270957829" expanded="true" signature="4305:4456" ph="{...}" />
+                <marker date="1549270957829" expanded="true" signature="4379:4449" ph="{...}" />
+                <marker date="1549270957829" expanded="true" signature="4599:4669" ph="{...}" />
+                <marker date="1549270957829" expanded="true" signature="4706:4795" ph="{...}" />
+                <marker date="1549270957829" expanded="true" signature="4833:4928" ph="{...}" />
+                <marker date="1549270957829" expanded="true" signature="4960:5113" ph="{...}" />
+                <marker date="1549270957829" expanded="true" signature="5121:5275" ph="/// &lt;c&gt;null&lt;/c&gt;: Neither selected. ... " />
+                <marker date="1549270957829" expanded="true" signature="5313:5385" ph="/// The code that this block represents ... " />
+                <marker date="1549270957829" expanded="true" signature="5470:5529" ph="/// The icon for the block ... " />
+                <marker date="1549270957829" expanded="true" signature="5563:5651" ph="/// Where the top left point of the icon will be drawn  ... " />
+                <marker date="1549270957829" expanded="true" signature="5704:5785" ph="/// How large the icon will be. Should be square ... " />
               </folding>
             </state>
           </provider>
@@ -607,12 +605,12 @@
       <workItem from="1548860641156" duration="20000" />
       <workItem from="1548860692868" duration="42000" />
       <workItem from="1548860765462" duration="5741000" />
-      <workItem from="1549269127887" duration="770000" />
+      <workItem from="1549269127887" duration="2525000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="113316000" />
+    <option name="totallyTimeSpent" value="115071000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -627,7 +625,7 @@
     <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49619484" visible="true" weight="0.2185501" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49619484" visible="true" weight="0.19083156" />
       <window_info id="Structure" order="1" sideWeight="0.50380516" side_tool="true" weight="0.21428572" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
@@ -1290,47 +1288,47 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/FinalSolution/Designer/Blocks/BaseBlock.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+        <state relative-caret-position="667">
+          <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
           <folding>
-            <marker date="1548759249967" expanded="false" signature="6:63" ph="..." />
-            <marker date="1548759249967" expanded="true" signature="100:5836" ph="{...}" />
-            <marker date="1548759249967" expanded="true" signature="104:139" ph="///  ... " />
-            <marker date="1548759249967" expanded="true" signature="167:667" ph="{...}" />
-            <marker date="1548759249967" expanded="true" signature="172:304" ph="/// An empty connection. Code generation will stop when it reaches a block with a NextBlockId of -1 ... " />
-            <marker date="1548759249967" expanded="true" signature="331:430" ph="/// The variable declaration block. Only one of these per project. ... " />
-            <marker date="1548759249967" expanded="true" signature="452:567" ph="/// The starter block, where code generation starts. Only one of these per project ... " />
-            <marker date="1548759249967" expanded="true" signature="588:651" ph="/// The first user added block ... " />
-            <marker date="1548759249967" expanded="true" signature="670:820" ph="/// A class that can be used in the designer like a normal panel, but has its own explicit features ... " />
-            <marker date="1548759249967" expanded="true" signature="862:5834" ph="{...}" />
-            <marker date="1548759249967" expanded="true" signature="867:996" ph="/// Constructor for the block.  ... " />
-            <marker date="1548759249967" expanded="true" signature="1021:1576" ph="{...}" />
-            <marker date="1548759249967" expanded="true" signature="1580:1820" ph="/// Is called when the box is moved or resized for drawing  purposes ... " />
-            <marker date="1548759249967" expanded="true" signature="1876:2408" ph="{...}" />
-            <marker date="1548759249967" expanded="true" signature="2414:2479" ph="/// The assigned Id of the block ... " />
-            <marker date="1548759249967" expanded="true" signature="2513:2604" ph="/// The block ID for the block that this block leads on to ... " />
-            <marker date="1548759249967" expanded="true" signature="2657:2783" ph="/// An area at the top of the panel which the user can click to connect to the previous block ... " />
-            <marker date="1548759249967" expanded="true" signature="2847:2969" ph="/// An area at the top of the panel which the user can click to connect to the next block ... " />
-            <marker date="1548759249967" expanded="true" signature="3036:3131" ph="/// The rectangle the user can interact with to move the block ... " />
-            <marker date="1548759249967" expanded="true" signature="3195:3434" ph="/// Provides the ability to link 2 blocks together, sequentially. ... " />
-            <marker date="1548759249967" expanded="true" signature="3473:3503" ph="{...}" />
-            <marker date="1548759249967" expanded="true" signature="3507:3607" ph="/// Allows for the disconnection of this block and the one after it ... " />
-            <marker date="1548759249967" expanded="true" signature="3639:3695" ph="{...}" />
-            <marker date="1548759249967" expanded="true" signature="3699:3915" ph="/// Provides the draw method for the block ... " />
-            <marker date="1548759249967" expanded="true" signature="3978:5119" ph="{...}" />
-            <marker date="1548759249967" expanded="true" signature="4054:4936" ph="{...}" />
-            <marker date="1548759249967" expanded="true" signature="4241:4464" ph="{...}" />
-            <marker date="1548759249967" expanded="true" signature="4307:4458" ph="{...}" />
-            <marker date="1548759249967" expanded="true" signature="4381:4451" ph="{...}" />
-            <marker date="1548759249967" expanded="true" signature="4601:4671" ph="{...}" />
-            <marker date="1548759249967" expanded="true" signature="4708:4797" ph="{...}" />
-            <marker date="1548759249967" expanded="true" signature="4835:4930" ph="{...}" />
-            <marker date="1548759249967" expanded="true" signature="4962:5115" ph="{...}" />
-            <marker date="1548759249967" expanded="true" signature="5123:5277" ph="/// &lt;c&gt;null&lt;/c&gt;: Neither selected. ... " />
-            <marker date="1548759249967" expanded="true" signature="5315:5387" ph="/// The code that this block represents ... " />
-            <marker date="1548759249967" expanded="true" signature="5472:5531" ph="/// The icon for the block ... " />
-            <marker date="1548759249967" expanded="true" signature="5565:5653" ph="/// Where the top left point of the icon will be drawn  ... " />
-            <marker date="1548759249967" expanded="true" signature="5706:5787" ph="/// How large the icon will be. Should be square ... " />
+            <marker date="1549270957829" expanded="false" signature="6:63" ph="..." />
+            <marker date="1549270957829" expanded="true" signature="100:5834" ph="{...}" />
+            <marker date="1549270957829" expanded="true" signature="104:139" ph="///  ... " />
+            <marker date="1549270957829" expanded="true" signature="167:667" ph="{...}" />
+            <marker date="1549270957829" expanded="true" signature="172:304" ph="/// An empty connection. Code generation will stop when it reaches a block with a NextBlockId of -1 ... " />
+            <marker date="1549270957829" expanded="true" signature="331:430" ph="/// The variable declaration block. Only one of these per project. ... " />
+            <marker date="1549270957829" expanded="true" signature="452:567" ph="/// The starter block, where code generation starts. Only one of these per project ... " />
+            <marker date="1549270957829" expanded="true" signature="588:651" ph="/// The first user added block ... " />
+            <marker date="1549270957829" expanded="true" signature="670:818" ph="/// A class that can be used in the designer like a normal panel, but has its own explicit features ... " />
+            <marker date="1549270957829" expanded="true" signature="860:5832" ph="{...}" />
+            <marker date="1549270957829" expanded="true" signature="865:994" ph="/// Constructor for the block.  ... " />
+            <marker date="1549270957829" expanded="true" signature="1019:1574" ph="{...}" />
+            <marker date="1549270957829" expanded="true" signature="1578:1818" ph="/// Is called when the box is moved or resized for drawing  purposes ... " />
+            <marker date="1549270957829" expanded="true" signature="1874:2406" ph="{...}" />
+            <marker date="1549270957829" expanded="true" signature="2412:2477" ph="/// The assigned Id of the block ... " />
+            <marker date="1549270957829" expanded="true" signature="2511:2602" ph="/// The block ID for the block that this block leads on to ... " />
+            <marker date="1549270957829" expanded="true" signature="2655:2781" ph="/// An area at the top of the panel which the user can click to connect to the previous block ... " />
+            <marker date="1549270957829" expanded="true" signature="2845:2967" ph="/// An area at the top of the panel which the user can click to connect to the next block ... " />
+            <marker date="1549270957829" expanded="true" signature="3034:3129" ph="/// The rectangle the user can interact with to move the block ... " />
+            <marker date="1549270957829" expanded="true" signature="3193:3432" ph="/// Provides the ability to link 2 blocks together, sequentially. ... " />
+            <marker date="1549270957829" expanded="true" signature="3471:3501" ph="{...}" />
+            <marker date="1549270957829" expanded="true" signature="3505:3605" ph="/// Allows for the disconnection of this block and the one after it ... " />
+            <marker date="1549270957829" expanded="true" signature="3637:3693" ph="{...}" />
+            <marker date="1549270957829" expanded="true" signature="3697:3913" ph="/// Provides the draw method for the block ... " />
+            <marker date="1549270957829" expanded="true" signature="3976:5117" ph="{...}" />
+            <marker date="1549270957829" expanded="true" signature="4052:4934" ph="{...}" />
+            <marker date="1549270957829" expanded="true" signature="4239:4462" ph="{...}" />
+            <marker date="1549270957829" expanded="true" signature="4305:4456" ph="{...}" />
+            <marker date="1549270957829" expanded="true" signature="4379:4449" ph="{...}" />
+            <marker date="1549270957829" expanded="true" signature="4599:4669" ph="{...}" />
+            <marker date="1549270957829" expanded="true" signature="4706:4795" ph="{...}" />
+            <marker date="1549270957829" expanded="true" signature="4833:4928" ph="{...}" />
+            <marker date="1549270957829" expanded="true" signature="4960:5113" ph="{...}" />
+            <marker date="1549270957829" expanded="true" signature="5121:5275" ph="/// &lt;c&gt;null&lt;/c&gt;: Neither selected. ... " />
+            <marker date="1549270957829" expanded="true" signature="5313:5385" ph="/// The code that this block represents ... " />
+            <marker date="1549270957829" expanded="true" signature="5470:5529" ph="/// The icon for the block ... " />
+            <marker date="1549270957829" expanded="true" signature="5563:5651" ph="/// Where the top left point of the icon will be drawn  ... " />
+            <marker date="1549270957829" expanded="true" signature="5704:5785" ph="/// How large the icon will be. Should be square ... " />
           </folding>
         </state>
       </provider>

@@ -35,6 +35,8 @@ namespace Solution.Designer.Blocks {
 
             ResumeLayout();
             
+            var TT = new ToolTip();
+            TT.SetToolTip(this, TaH.VariableReferenceBlockTooltip);
         }
 
         /// <inheritdoc />
