@@ -34,10 +34,11 @@ namespace Solution.Debugger {
 	/// </summary>
 	/// <inheritdoc />
 	public partial class FrmDebugger : Form {
-	
+
 		private readonly Process _DebugProcess;
 		private readonly FrmWelcome _ParentFrmWelcome;
 		private bool _IsDebugging;
+		private ToolTip TT;
 
 		/// <summary>
 		/// Parameter-less initialization. Disables all buttons except Exit so nothing breaks when the user clicks them
@@ -48,6 +49,22 @@ namespace Solution.Debugger {
 			TxtStandardOutput.Text = @"No program was loaded, debugging will not occur"; // Inform the user that
 			TxtVariableOutput.Text = @"No variables can be observed"; // 					debugging is not going to
 			TxtErrorOutput.Text = @"No errors will be recorded"; //							happen
+
+			TT = new ToolTip {
+				AutoPopDelay = 5000,
+				InitialDelay = 1000,
+				ReshowDelay = 500,
+				ShowAlways = true
+			};
+			TT.SetToolTip(TxtInputToProgram, TaH.FrmDebuggerInputBox);
+			TT.SetToolTip(TxtErrorOutput, TaH.FrmDebuggerErrorOut);
+			TT.SetToolTip(TxtStandardOutput, TaH.FrmDebuggerStandardOut);
+			TT.SetToolTip(TxtVariableOutput, TaH.FrmDebuggerObservedVars);
+			TT.SetToolTip(BtnStartExecution, TaH.FrmDebuggerStartButton);
+			TT.SetToolTip(BtnExitDebugging, TaH.FrmDebuggerExitButton);
+			TT.SetToolTip(BtnPauseExecution, TaH.FrmDebuggerPauseButton);
+			TT.SetToolTip(BtnStopExecution, TaH.FrmDebuggerStopButton);
+			TT.SetToolTip(BtnSubmitInput, TaH.FrmDebuggerSubmitButton);
 		}
 
 		/// <summary>

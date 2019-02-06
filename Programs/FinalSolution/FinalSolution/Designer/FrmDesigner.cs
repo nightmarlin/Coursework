@@ -17,6 +17,8 @@ namespace Solution.Designer {
 	/// </summary>
 	public partial class FrmDesigner : Form {
 
+		private string FilePath = "";
+
 		private readonly FrmWelcome _ParentFrmWelcome;
 		
 		#region Startup
@@ -433,16 +435,51 @@ namespace Solution.Designer {
 
 		#endregion
 
-		private void selectToolboxToolStripMenuItem_Click(object sender, EventArgs e) {
+		private void SelectToolboxToolStripMenuItem_Click(object sender, EventArgs e) {
 			BlockTree.Focus();
 		}
 
-		private void aboutBlocksToolStripMenuItem_Click(object sender, EventArgs e) {
+		private void AboutBlocksToolStripMenuItem_Click(object sender, EventArgs e) {
 			MessageBox.Show(TaH.FrmDesignerBlockHelpText, "B#", MessageBoxButtons.OK, MessageBoxIcon.Information);
 		}
 
-		private void aboutTheWorkspaceToolStripMenuItem_Click(object sender, EventArgs e) {
+		private void AboutTheWorkspaceToolStripMenuItem_Click(object sender, EventArgs e) {
 			MessageBox.Show(TaH.FrmDesignerWorkspaceHelpText, "B#", MessageBoxButtons.OK, MessageBoxIcon.Information);
+		}
+
+		private void SaveToolStripMenuItem_Click(object sender, EventArgs e) {
+			if (FilePath == "") {
+				using (var SFD = new SaveFileDialog() {
+					InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
+					Filter = "BSharp Files (*.bs)|*.bs",
+					DefaultExt = "bs",
+					FileName = "My Project.bs"
+				}) {
+					SFD.ShowDialog();
+
+
+					if (!SFD.FileName.Contains('\\')) {
+						MessageBox.Show("No location specified. Cannot save.", "B#", MessageBoxButtons.OK, MessageBoxIcon.Error);
+						return;
+					}
+
+					FilePath = SFD.FileName;
+
+				}
+			}
+
+			MessageBox.Show(FilePath);
+
+			if (!Properties.Settings.Default.RecentItems.Contains(FilePath)) {
+				Properties.Settings.Default.RecentItems.Add(FilePath);
+			} else {
+				Properties.Settings.Default.RecentItems.Remove(FilePath);
+				Properties.Settings.Default.RecentItems.Add(FilePath);
+			}
+
+			Properties.Settings.Default.Save();
+
+
 		}
 	}
 }

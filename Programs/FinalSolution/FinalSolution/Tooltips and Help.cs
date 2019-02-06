@@ -134,6 +134,11 @@ namespace Solution {
 		/// </summary>
 		public static string FrmDebuggerExitButton = "Kill program and return to previous screen";
 
+		/// <summary>
+		/// Start button tooltip
+		/// </summary>
+		public static string FrmDebuggerStartButton = "Resume execution after pause";
+
 		#endregion
 
 		#region Block Tooltips

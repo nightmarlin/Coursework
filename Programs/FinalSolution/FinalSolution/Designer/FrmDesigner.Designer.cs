@@ -27,68 +27,68 @@ namespace Solution.Designer {
 		/// </summary>
 		private void InitializeComponent() {
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDesigner));
-			System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("Declare Variables");
-			System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("Starter Block");
-			System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("Control", new System.Windows.Forms.TreeNode[] {
-            treeNode26,
-            treeNode27});
-			System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("Add");
-			System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("Divide");
-			System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("Empty Block");
-			System.Windows.Forms.TreeNode treeNode32 = new System.Windows.Forms.TreeNode("Multiply");
-			System.Windows.Forms.TreeNode treeNode33 = new System.Windows.Forms.TreeNode("Set");
-			System.Windows.Forms.TreeNode treeNode34 = new System.Windows.Forms.TreeNode("Subtract");
-			System.Windows.Forms.TreeNode treeNode35 = new System.Windows.Forms.TreeNode("Process", new System.Windows.Forms.TreeNode[] {
-            treeNode29,
-            treeNode30,
-            treeNode31,
-            treeNode32,
-            treeNode33,
-            treeNode34});
-			System.Windows.Forms.TreeNode treeNode36 = new System.Windows.Forms.TreeNode("Read Key");
-			System.Windows.Forms.TreeNode treeNode37 = new System.Windows.Forms.TreeNode("Read Line");
-			System.Windows.Forms.TreeNode treeNode38 = new System.Windows.Forms.TreeNode("Input", new System.Windows.Forms.TreeNode[] {
-            treeNode36,
-            treeNode37});
-			System.Windows.Forms.TreeNode treeNode39 = new System.Windows.Forms.TreeNode("Beep");
-			System.Windows.Forms.TreeNode treeNode40 = new System.Windows.Forms.TreeNode("Write");
-			System.Windows.Forms.TreeNode treeNode41 = new System.Windows.Forms.TreeNode("Write Line");
-			System.Windows.Forms.TreeNode treeNode42 = new System.Windows.Forms.TreeNode("Output", new System.Windows.Forms.TreeNode[] {
-            treeNode39,
-            treeNode40,
-            treeNode41});
-			System.Windows.Forms.TreeNode treeNode43 = new System.Windows.Forms.TreeNode("Boolean");
-			System.Windows.Forms.TreeNode treeNode44 = new System.Windows.Forms.TreeNode("Decimal");
-			System.Windows.Forms.TreeNode treeNode45 = new System.Windows.Forms.TreeNode("Integer");
-			System.Windows.Forms.TreeNode treeNode46 = new System.Windows.Forms.TreeNode("String");
-			System.Windows.Forms.TreeNode treeNode47 = new System.Windows.Forms.TreeNode("Declare Variables", new System.Windows.Forms.TreeNode[] {
-            treeNode43,
-            treeNode44,
-            treeNode45,
-            treeNode46});
-			System.Windows.Forms.TreeNode treeNode48 = new System.Windows.Forms.TreeNode("Variable Selector");
-			System.Windows.Forms.TreeNode treeNode49 = new System.Windows.Forms.TreeNode("Use Variables", new System.Windows.Forms.TreeNode[] {
-            treeNode48});
-			System.Windows.Forms.TreeNode treeNode50 = new System.Windows.Forms.TreeNode("Constants");
+			System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Declare Variables");
+			System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Starter Block");
+			System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Control", new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode2});
+			System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Add");
+			System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Divide");
+			System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Empty Block");
+			System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Multiply");
+			System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Set");
+			System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Subtract");
+			System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Process", new System.Windows.Forms.TreeNode[] {
+            treeNode4,
+            treeNode5,
+            treeNode6,
+            treeNode7,
+            treeNode8,
+            treeNode9});
+			System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Read Key");
+			System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Read Line");
+			System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Input", new System.Windows.Forms.TreeNode[] {
+            treeNode11,
+            treeNode12});
+			System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Beep");
+			System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Write");
+			System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Write Line");
+			System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Output", new System.Windows.Forms.TreeNode[] {
+            treeNode14,
+            treeNode15,
+            treeNode16});
+			System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("Boolean");
+			System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("Decimal");
+			System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("Integer");
+			System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("String");
+			System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("Declare Variables", new System.Windows.Forms.TreeNode[] {
+            treeNode18,
+            treeNode19,
+            treeNode20,
+            treeNode21});
+			System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("Variable Selector");
+			System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("Use Variables", new System.Windows.Forms.TreeNode[] {
+            treeNode23});
+			System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("Constants");
 			this.MainMenu = new System.Windows.Forms.MenuStrip();
 			this.FileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.showInCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.quitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-			this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.selectToolboxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+			this.SaveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.ShowInCSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.QuitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+			this.EditToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.SelectToolboxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.ToolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
 			this.DeleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-			this.commandPaletteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.runToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.debugToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.getexeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.aboutBlocksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.aboutTheWorkspaceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.CopyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.PasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.ToolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+			this.CommandPaletteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.RunToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.DebugToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.GetexeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.HelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.AboutBlocksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.AboutTheWorkspaceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.SContainer_Workspace = new System.Windows.Forms.SplitContainer();
 			this.BlockTree = new System.Windows.Forms.TreeView();
 			this.MainMenu.SuspendLayout();
@@ -102,9 +102,9 @@ namespace Solution.Designer {
 			this.MainMenu.BackColor = System.Drawing.SystemColors.ControlDarkDark;
 			this.MainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.FileToolStripMenuItem,
-            this.editToolStripMenuItem,
-            this.runToolStripMenuItem,
-            this.helpToolStripMenuItem});
+            this.EditToolStripMenuItem,
+            this.RunToolStripMenuItem,
+            this.HelpToolStripMenuItem});
 			this.MainMenu.Location = new System.Drawing.Point(0, 0);
 			this.MainMenu.Name = "MainMenu";
 			this.MainMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
@@ -115,64 +115,65 @@ namespace Solution.Designer {
 			// FileToolStripMenuItem
 			// 
 			this.FileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.saveToolStripMenuItem,
-            this.showInCToolStripMenuItem,
-            this.quitToolStripMenuItem1});
+            this.SaveToolStripMenuItem,
+            this.ShowInCSToolStripMenuItem,
+            this.QuitToolStripMenuItem1});
 			this.FileToolStripMenuItem.Name = "FileToolStripMenuItem";
 			this.FileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
 			this.FileToolStripMenuItem.Text = "File";
 			// 
-			// saveToolStripMenuItem
+			// SaveToolStripMenuItem
 			// 
-			this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-			this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-			this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-			this.saveToolStripMenuItem.Text = "Save";
-			this.saveToolStripMenuItem.ToolTipText = "Save your work";
+			this.SaveToolStripMenuItem.Name = "SaveToolStripMenuItem";
+			this.SaveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+			this.SaveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.SaveToolStripMenuItem.Text = "Save";
+			this.SaveToolStripMenuItem.ToolTipText = "Save your work";
+			this.SaveToolStripMenuItem.Click += new System.EventHandler(this.SaveToolStripMenuItem_Click);
 			// 
-			// showInCToolStripMenuItem
+			// ShowInCSToolStripMenuItem
 			// 
-			this.showInCToolStripMenuItem.Name = "showInCToolStripMenuItem";
-			this.showInCToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-			this.showInCToolStripMenuItem.Text = "Show in C#";
-			this.showInCToolStripMenuItem.ToolTipText = "Show your code in C-Sharp";
+			this.ShowInCSToolStripMenuItem.Name = "ShowInCSToolStripMenuItem";
+			this.ShowInCSToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.ShowInCSToolStripMenuItem.Text = "Show in C#";
+			this.ShowInCSToolStripMenuItem.ToolTipText = "Show your code in C-Sharp";
 			// 
-			// quitToolStripMenuItem1
+			// QuitToolStripMenuItem1
 			// 
-			this.quitToolStripMenuItem1.Name = "quitToolStripMenuItem1";
-			this.quitToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
-			this.quitToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-			this.quitToolStripMenuItem1.Text = "Quit";
-			this.quitToolStripMenuItem1.ToolTipText = "Go back to the welcome screen";
-			this.quitToolStripMenuItem1.Click += new System.EventHandler(this.BtnExit_Click);
+			this.QuitToolStripMenuItem1.Name = "QuitToolStripMenuItem1";
+			this.QuitToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
+			this.QuitToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+			this.QuitToolStripMenuItem1.Text = "Quit";
+			this.QuitToolStripMenuItem1.ToolTipText = "Go back to the welcome screen";
+			this.QuitToolStripMenuItem1.Click += new System.EventHandler(this.BtnExit_Click);
 			// 
-			// editToolStripMenuItem
+			// EditToolStripMenuItem
 			// 
-			this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.selectToolboxToolStripMenuItem,
-            this.toolStripSeparator2,
+			this.EditToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.SelectToolboxToolStripMenuItem,
+            this.ToolStripSeparator2,
             this.DeleteToolStripMenuItem,
-            this.copyToolStripMenuItem,
-            this.pasteToolStripMenuItem,
-            this.toolStripSeparator1,
-            this.commandPaletteToolStripMenuItem});
-			this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-			this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
-			this.editToolStripMenuItem.Text = "Edit";
+            this.CopyToolStripMenuItem,
+            this.PasteToolStripMenuItem,
+            this.ToolStripSeparator1,
+            this.CommandPaletteToolStripMenuItem});
+			this.EditToolStripMenuItem.Name = "EditToolStripMenuItem";
+			this.EditToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+			this.EditToolStripMenuItem.Text = "Edit";
 			// 
-			// selectToolboxToolStripMenuItem
+			// SelectToolboxToolStripMenuItem
 			// 
-			this.selectToolboxToolStripMenuItem.Name = "selectToolboxToolStripMenuItem";
-			this.selectToolboxToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Space)));
-			this.selectToolboxToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
-			this.selectToolboxToolStripMenuItem.Text = "Select Toolbox";
-			this.selectToolboxToolStripMenuItem.ToolTipText = "Focus the toolbox";
-			this.selectToolboxToolStripMenuItem.Click += new System.EventHandler(this.selectToolboxToolStripMenuItem_Click);
+			this.SelectToolboxToolStripMenuItem.Name = "SelectToolboxToolStripMenuItem";
+			this.SelectToolboxToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Space)));
+			this.SelectToolboxToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
+			this.SelectToolboxToolStripMenuItem.Text = "Select Toolbox";
+			this.SelectToolboxToolStripMenuItem.ToolTipText = "Focus the toolbox";
+			this.SelectToolboxToolStripMenuItem.Click += new System.EventHandler(this.SelectToolboxToolStripMenuItem_Click);
 			// 
-			// toolStripSeparator2
+			// ToolStripSeparator2
 			// 
-			this.toolStripSeparator2.Name = "toolStripSeparator2";
-			this.toolStripSeparator2.Size = new System.Drawing.Size(212, 6);
+			this.ToolStripSeparator2.Name = "ToolStripSeparator2";
+			this.ToolStripSeparator2.Size = new System.Drawing.Size(212, 6);
 			// 
 			// DeleteToolStripMenuItem
 			// 
@@ -183,88 +184,88 @@ namespace Solution.Designer {
 			this.DeleteToolStripMenuItem.ToolTipText = "Delete the next block you click";
 			this.DeleteToolStripMenuItem.Click += new System.EventHandler(this.DeleteToolStripMenuItem_Click);
 			// 
-			// copyToolStripMenuItem
+			// CopyToolStripMenuItem
 			// 
-			this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
-			this.copyToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-			this.copyToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
-			this.copyToolStripMenuItem.Text = "Copy";
-			this.copyToolStripMenuItem.ToolTipText = "Copy the next block you click";
+			this.CopyToolStripMenuItem.Name = "CopyToolStripMenuItem";
+			this.CopyToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
+			this.CopyToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
+			this.CopyToolStripMenuItem.Text = "Copy";
+			this.CopyToolStripMenuItem.ToolTipText = "Copy the next block you click";
 			// 
-			// pasteToolStripMenuItem
+			// PasteToolStripMenuItem
 			// 
-			this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
-			this.pasteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-			this.pasteToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
-			this.pasteToolStripMenuItem.Text = "Paste";
-			this.pasteToolStripMenuItem.ToolTipText = "Paste the last block you copied";
+			this.PasteToolStripMenuItem.Name = "PasteToolStripMenuItem";
+			this.PasteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
+			this.PasteToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
+			this.PasteToolStripMenuItem.Text = "Paste";
+			this.PasteToolStripMenuItem.ToolTipText = "Paste the last block you copied";
 			// 
-			// toolStripSeparator1
+			// ToolStripSeparator1
 			// 
-			this.toolStripSeparator1.Name = "toolStripSeparator1";
-			this.toolStripSeparator1.Size = new System.Drawing.Size(212, 6);
+			this.ToolStripSeparator1.Name = "ToolStripSeparator1";
+			this.ToolStripSeparator1.Size = new System.Drawing.Size(212, 6);
 			// 
-			// commandPaletteToolStripMenuItem
+			// CommandPaletteToolStripMenuItem
 			// 
-			this.commandPaletteToolStripMenuItem.Name = "commandPaletteToolStripMenuItem";
-			this.commandPaletteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
-			this.commandPaletteToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
-			this.commandPaletteToolStripMenuItem.Text = "Command Palette";
-			this.commandPaletteToolStripMenuItem.ToolTipText = "Open the command palette";
+			this.CommandPaletteToolStripMenuItem.Name = "CommandPaletteToolStripMenuItem";
+			this.CommandPaletteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
+			this.CommandPaletteToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
+			this.CommandPaletteToolStripMenuItem.Text = "Command Palette";
+			this.CommandPaletteToolStripMenuItem.ToolTipText = "Open the command palette";
 			// 
-			// runToolStripMenuItem
+			// RunToolStripMenuItem
 			// 
-			this.runToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.debugToolStripMenuItem,
-            this.getexeToolStripMenuItem});
-			this.runToolStripMenuItem.Name = "runToolStripMenuItem";
-			this.runToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
-			this.runToolStripMenuItem.Text = "Run";
+			this.RunToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.DebugToolStripMenuItem,
+            this.GetexeToolStripMenuItem});
+			this.RunToolStripMenuItem.Name = "RunToolStripMenuItem";
+			this.RunToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
+			this.RunToolStripMenuItem.Text = "Run";
 			// 
-			// debugToolStripMenuItem
+			// DebugToolStripMenuItem
 			// 
-			this.debugToolStripMenuItem.Name = "debugToolStripMenuItem";
-			this.debugToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
-			this.debugToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
-			this.debugToolStripMenuItem.Text = "Debug";
-			this.debugToolStripMenuItem.ToolTipText = "Run your code";
+			this.DebugToolStripMenuItem.Name = "DebugToolStripMenuItem";
+			this.DebugToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
+			this.DebugToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+			this.DebugToolStripMenuItem.Text = "Debug";
+			this.DebugToolStripMenuItem.ToolTipText = "Run your code";
 			// 
-			// getexeToolStripMenuItem
+			// GetexeToolStripMenuItem
 			// 
-			this.getexeToolStripMenuItem.Name = "getexeToolStripMenuItem";
-			this.getexeToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.B)));
-			this.getexeToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
-			this.getexeToolStripMenuItem.Text = "Get \"exe\"";
-			this.getexeToolStripMenuItem.ToolTipText = "Get your \"exe\" file path";
+			this.GetexeToolStripMenuItem.Name = "GetexeToolStripMenuItem";
+			this.GetexeToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.B)));
+			this.GetexeToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+			this.GetexeToolStripMenuItem.Text = "Get \"exe\"";
+			this.GetexeToolStripMenuItem.ToolTipText = "Get your \"exe\" file path";
 			// 
-			// helpToolStripMenuItem
+			// HelpToolStripMenuItem
 			// 
-			this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aboutBlocksToolStripMenuItem,
-            this.aboutTheWorkspaceToolStripMenuItem});
-			this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-			this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-			this.helpToolStripMenuItem.Text = "Help";
+			this.HelpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.AboutBlocksToolStripMenuItem,
+            this.AboutTheWorkspaceToolStripMenuItem});
+			this.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem";
+			this.HelpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+			this.HelpToolStripMenuItem.Text = "Help";
 			// 
-			// aboutBlocksToolStripMenuItem
+			// AboutBlocksToolStripMenuItem
 			// 
-			this.aboutBlocksToolStripMenuItem.Name = "aboutBlocksToolStripMenuItem";
-			this.aboutBlocksToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+			this.AboutBlocksToolStripMenuItem.Name = "AboutBlocksToolStripMenuItem";
+			this.AboutBlocksToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.H)));
-			this.aboutBlocksToolStripMenuItem.Size = new System.Drawing.Size(254, 22);
-			this.aboutBlocksToolStripMenuItem.Text = "About Blocks";
-			this.aboutBlocksToolStripMenuItem.ToolTipText = resources.GetString("aboutBlocksToolStripMenuItem.ToolTipText");
-			this.aboutBlocksToolStripMenuItem.Click += new System.EventHandler(this.aboutBlocksToolStripMenuItem_Click);
+			this.AboutBlocksToolStripMenuItem.Size = new System.Drawing.Size(254, 22);
+			this.AboutBlocksToolStripMenuItem.Text = "About Blocks";
+			this.AboutBlocksToolStripMenuItem.ToolTipText = resources.GetString("AboutBlocksToolStripMenuItem.ToolTipText");
+			this.AboutBlocksToolStripMenuItem.Click += new System.EventHandler(this.AboutBlocksToolStripMenuItem_Click);
 			// 
-			// aboutTheWorkspaceToolStripMenuItem
+			// AboutTheWorkspaceToolStripMenuItem
 			// 
-			this.aboutTheWorkspaceToolStripMenuItem.Name = "aboutTheWorkspaceToolStripMenuItem";
-			this.aboutTheWorkspaceToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
+			this.AboutTheWorkspaceToolStripMenuItem.Name = "AboutTheWorkspaceToolStripMenuItem";
+			this.AboutTheWorkspaceToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
             | System.Windows.Forms.Keys.H)));
-			this.aboutTheWorkspaceToolStripMenuItem.Size = new System.Drawing.Size(254, 22);
-			this.aboutTheWorkspaceToolStripMenuItem.Text = "About the Workspace";
-			this.aboutTheWorkspaceToolStripMenuItem.ToolTipText = resources.GetString("aboutTheWorkspaceToolStripMenuItem.ToolTipText");
-			this.aboutTheWorkspaceToolStripMenuItem.Click += new System.EventHandler(this.aboutTheWorkspaceToolStripMenuItem_Click);
+			this.AboutTheWorkspaceToolStripMenuItem.Size = new System.Drawing.Size(254, 22);
+			this.AboutTheWorkspaceToolStripMenuItem.Text = "About the Workspace";
+			this.AboutTheWorkspaceToolStripMenuItem.ToolTipText = resources.GetString("AboutTheWorkspaceToolStripMenuItem.ToolTipText");
+			this.AboutTheWorkspaceToolStripMenuItem.Click += new System.EventHandler(this.AboutTheWorkspaceToolStripMenuItem_Click);
 			// 
 			// SContainer_Workspace
 			// 
@@ -294,66 +295,66 @@ namespace Solution.Designer {
 			this.BlockTree.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.BlockTree.Location = new System.Drawing.Point(0, 0);
 			this.BlockTree.Name = "BlockTree";
-			treeNode26.Name = "DeclareVarsBlock";
-			treeNode26.Text = "Declare Variables";
-			treeNode27.Name = "StarterBlock";
-			treeNode27.Text = "Starter Block";
-			treeNode28.Name = "ControlBlocks";
-			treeNode28.Text = "Control";
-			treeNode29.Name = "AddBlock";
-			treeNode29.Text = "Add";
-			treeNode30.Name = "DivideBlock";
-			treeNode30.Text = "Divide";
-			treeNode31.Name = "EmptyNormalBlock";
-			treeNode31.Text = "Empty Block";
-			treeNode32.Name = "MultiplyBlock";
-			treeNode32.Text = "Multiply";
-			treeNode33.Name = "SetBlock";
-			treeNode33.Text = "Set";
-			treeNode34.Name = "SubtractBlock";
-			treeNode34.Text = "Subtract";
-			treeNode35.Name = "ProcessBlocks";
-			treeNode35.Text = "Process";
-			treeNode36.Name = "ReadKeyBlock";
-			treeNode36.Text = "Read Key";
-			treeNode37.Name = "ReadLineBlock";
-			treeNode37.Text = "Read Line";
-			treeNode38.Name = "InputBlocks";
-			treeNode38.Text = "Input";
-			treeNode39.Name = "BeepBlock";
-			treeNode39.Text = "Beep";
-			treeNode40.Name = "WriteBlock";
-			treeNode40.Text = "Write";
-			treeNode41.Name = "WriteLineBlock";
-			treeNode41.Text = "Write Line";
-			treeNode42.Name = "Output Blocks";
-			treeNode42.Text = "Output";
-			treeNode43.Name = "BoolSetBlock";
-			treeNode43.Text = "Boolean";
-			treeNode44.Name = "DecimalSetBlock";
-			treeNode44.Text = "Decimal";
-			treeNode45.Name = "IntegerSetBlock";
-			treeNode45.Text = "Integer";
-			treeNode46.Name = "StringSetBlock";
-			treeNode46.Text = "String";
-			treeNode47.Name = "VariableDeclareBlocks";
-			treeNode47.Text = "Declare Variables";
-			treeNode47.ToolTipText = "Place these blocks under the declaration block";
-			treeNode48.Name = "VariableRefBlock";
-			treeNode48.Text = "Variable Selector";
-			treeNode49.Name = "VariableRefBlocks";
-			treeNode49.Text = "Use Variables";
-			treeNode49.ToolTipText = "Place these blocks in your program to reference the variable";
-			treeNode50.Name = "ConstantBlocks";
-			treeNode50.Text = "Constants";
+			treeNode1.Name = "DeclareVarsBlock";
+			treeNode1.Text = "Declare Variables";
+			treeNode2.Name = "StarterBlock";
+			treeNode2.Text = "Starter Block";
+			treeNode3.Name = "ControlBlocks";
+			treeNode3.Text = "Control";
+			treeNode4.Name = "AddBlock";
+			treeNode4.Text = "Add";
+			treeNode5.Name = "DivideBlock";
+			treeNode5.Text = "Divide";
+			treeNode6.Name = "EmptyNormalBlock";
+			treeNode6.Text = "Empty Block";
+			treeNode7.Name = "MultiplyBlock";
+			treeNode7.Text = "Multiply";
+			treeNode8.Name = "SetBlock";
+			treeNode8.Text = "Set";
+			treeNode9.Name = "SubtractBlock";
+			treeNode9.Text = "Subtract";
+			treeNode10.Name = "ProcessBlocks";
+			treeNode10.Text = "Process";
+			treeNode11.Name = "ReadKeyBlock";
+			treeNode11.Text = "Read Key";
+			treeNode12.Name = "ReadLineBlock";
+			treeNode12.Text = "Read Line";
+			treeNode13.Name = "InputBlocks";
+			treeNode13.Text = "Input";
+			treeNode14.Name = "BeepBlock";
+			treeNode14.Text = "Beep";
+			treeNode15.Name = "WriteBlock";
+			treeNode15.Text = "Write";
+			treeNode16.Name = "WriteLineBlock";
+			treeNode16.Text = "Write Line";
+			treeNode17.Name = "Output Blocks";
+			treeNode17.Text = "Output";
+			treeNode18.Name = "BoolSetBlock";
+			treeNode18.Text = "Boolean";
+			treeNode19.Name = "DecimalSetBlock";
+			treeNode19.Text = "Decimal";
+			treeNode20.Name = "IntegerSetBlock";
+			treeNode20.Text = "Integer";
+			treeNode21.Name = "StringSetBlock";
+			treeNode21.Text = "String";
+			treeNode22.Name = "VariableDeclareBlocks";
+			treeNode22.Text = "Declare Variables";
+			treeNode22.ToolTipText = "Place these blocks under the declaration block";
+			treeNode23.Name = "VariableRefBlock";
+			treeNode23.Text = "Variable Selector";
+			treeNode24.Name = "VariableRefBlocks";
+			treeNode24.Text = "Use Variables";
+			treeNode24.ToolTipText = "Place these blocks in your program to reference the variable";
+			treeNode25.Name = "ConstantBlocks";
+			treeNode25.Text = "Constants";
 			this.BlockTree.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode28,
-            treeNode35,
-            treeNode38,
-            treeNode42,
-            treeNode47,
-            treeNode49,
-            treeNode50});
+            treeNode3,
+            treeNode10,
+            treeNode13,
+            treeNode17,
+            treeNode22,
+            treeNode24,
+            treeNode25});
 			this.BlockTree.Size = new System.Drawing.Size(178, 435);
 			this.BlockTree.TabIndex = 1;
 			// 
@@ -389,22 +390,22 @@ namespace Solution.Designer {
 		/// </summary>
 		public System.Windows.Forms.SplitContainer SContainer_Workspace;
 		private TreeView BlockTree;
-		private ToolStripMenuItem quitToolStripMenuItem1;
-		private ToolStripMenuItem editToolStripMenuItem;
-		private ToolStripMenuItem runToolStripMenuItem;
-		private ToolStripMenuItem helpToolStripMenuItem;
+		private ToolStripMenuItem QuitToolStripMenuItem1;
+		private ToolStripMenuItem EditToolStripMenuItem;
+		private ToolStripMenuItem RunToolStripMenuItem;
+		private ToolStripMenuItem HelpToolStripMenuItem;
 		private ToolStripMenuItem DeleteToolStripMenuItem;
-		private ToolStripMenuItem saveToolStripMenuItem;
-		private ToolStripMenuItem showInCToolStripMenuItem;
-		private ToolStripMenuItem copyToolStripMenuItem;
-		private ToolStripMenuItem pasteToolStripMenuItem;
-		private ToolStripSeparator toolStripSeparator1;
-		private ToolStripMenuItem commandPaletteToolStripMenuItem;
-		private ToolStripMenuItem debugToolStripMenuItem;
-		private ToolStripMenuItem getexeToolStripMenuItem;
-		private ToolStripMenuItem aboutBlocksToolStripMenuItem;
-		private ToolStripMenuItem aboutTheWorkspaceToolStripMenuItem;
-		private ToolStripMenuItem selectToolboxToolStripMenuItem;
-		private ToolStripSeparator toolStripSeparator2;
+		private ToolStripMenuItem SaveToolStripMenuItem;
+		private ToolStripMenuItem ShowInCSToolStripMenuItem;
+		private ToolStripMenuItem CopyToolStripMenuItem;
+		private ToolStripMenuItem PasteToolStripMenuItem;
+		private ToolStripSeparator ToolStripSeparator1;
+		private ToolStripMenuItem CommandPaletteToolStripMenuItem;
+		private ToolStripMenuItem DebugToolStripMenuItem;
+		private ToolStripMenuItem GetexeToolStripMenuItem;
+		private ToolStripMenuItem AboutBlocksToolStripMenuItem;
+		private ToolStripMenuItem AboutTheWorkspaceToolStripMenuItem;
+		private ToolStripMenuItem SelectToolboxToolStripMenuItem;
+		private ToolStripSeparator ToolStripSeparator2;
 	}
 }

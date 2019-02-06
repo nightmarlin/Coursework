@@ -1,8 +1,6 @@
 using System;
 using System.CodeDom.Compiler;
 using System.Drawing;
-using System.Drawing.Text;
-using System.Globalization;
 using System.Windows.Forms;
 
 namespace Solution.Designer.Blocks {
@@ -119,6 +117,9 @@ namespace Solution.Designer.Blocks {
 					foreach (var C in P.Controls) {
 						if (!(C is VarCreateBlock V)) continue;
 						if (V.VarName != NameBox.Text) continue;
+
+						if (V.Id == Id) continue;
+
 						MessageBox.Show("Name Must Be Unique", "B#", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 						NameBox.Text = VarName;
 						return;
