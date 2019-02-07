@@ -17,7 +17,7 @@ namespace Solution.Designer {
 	/// </summary>
 	public partial class FrmDesigner : Form {
 
-		private string FilePath = "";
+		private string FileInfo = "";
 
 		private readonly FrmWelcome _ParentFrmWelcome;
 		
@@ -448,7 +448,11 @@ namespace Solution.Designer {
 		}
 
 		private void SaveToolStripMenuItem_Click(object sender, EventArgs e) {
-			if (FilePath == "") {
+			Save();
+		}
+
+		private bool Save() {
+			if (FileInfo == "") {
 				using (var SFD = new SaveFileDialog() {
 					InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
 					Filter = "BSharp Files (*.bs)|*.bs",
@@ -460,25 +464,39 @@ namespace Solution.Designer {
 
 					if (!SFD.FileName.Contains('\\')) {
 						MessageBox.Show("No location specified. Cannot save.", "B#", MessageBoxButtons.OK, MessageBoxIcon.Error);
-						return;
+						return false;
 					}
-
-					FilePath = SFD.FileName;
+					
+					FileInfo = $"{DateTime.Now:d}|";
+					FileInfo += SFD.FileName;
 
 				}
 			}
 
-			MessageBox.Show(FilePath);
+			MessageBox.Show(FileInfo);
 
-			if (!Properties.Settings.Default.RecentItems.Contains(FilePath)) {
-				Properties.Settings.Default.RecentItems.Add(FilePath);
+			if (!Properties.Settings.Default.RecentItems.Contains(FileInfo)) {
+				Properties.Settings.Default.RecentItems.Add(FileInfo);
 			} else {
-				Properties.Settings.Default.RecentItems.Remove(FilePath);
-				Properties.Settings.Default.RecentItems.Add(FilePath);
+				Properties.Settings.Default.RecentItems.Remove(FileInfo);
+				Properties.Settings.Default.RecentItems.Add(FileInfo);
+			}
+
+			if (Properties.Settings.Default.RecentItems.Count > 5) {
+				Properties.Settings.Default.RecentItems.RemoveAt(0);
 			}
 
 			Properties.Settings.Default.Save();
 
+			return true;
+		}
+
+		private void DebugToolStripMenuItem_Click(object sender, EventArgs e) {
+			// Save
+
+			// Build
+
+			// Run
 
 		}
 	}

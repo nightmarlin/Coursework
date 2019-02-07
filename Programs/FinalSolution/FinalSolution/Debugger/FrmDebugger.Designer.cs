@@ -23,6 +23,7 @@
 		/// the contents of this method with the code editor.
 		/// </summary>
 		private void InitializeComponent() {
+			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDebugger));
 			this.TxtStandardOutput = new System.Windows.Forms.TextBox();
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -37,6 +38,7 @@
 			this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
 			this.TxtErrorOutput = new System.Windows.Forms.TextBox();
 			this.TxtVariableOutput = new System.Windows.Forms.TextBox();
+			this.TTGeneral = new System.Windows.Forms.ToolTip(this.components);
 			this.tableLayoutPanel1.SuspendLayout();
 			this.tableLayoutPanel2.SuspendLayout();
 			this.tableLayoutPanel3.SuspendLayout();
@@ -50,6 +52,7 @@
 			this.TxtStandardOutput.ForeColor = System.Drawing.SystemColors.ControlDark;
 			this.TxtStandardOutput.Name = "TxtStandardOutput";
 			this.TxtStandardOutput.ReadOnly = true;
+
 			// 
 			// tableLayoutPanel1
 			// 
@@ -184,5 +187,6 @@
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
 		private System.Windows.Forms.TextBox TxtErrorOutput;
 		private System.Windows.Forms.TextBox TxtVariableOutput;
+		private System.Windows.Forms.ToolTip TTGeneral;
 	}
 }

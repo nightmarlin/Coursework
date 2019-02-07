@@ -36,9 +36,8 @@
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.List_RecentItems = new System.Windows.Forms.ListView();
 			this.Lbl_RecentItems_Header = new System.Windows.Forms.Label();
-			this.BtnShowDebugger = new System.Windows.Forms.Button();
-			this.BtnShowDesigner = new System.Windows.Forms.Button();
 			this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+			this.BtnShowDesigner = new System.Windows.Forms.Button();
 			this.BtnOpenFile = new System.Windows.Forms.Button();
 			this.MainMenu.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -72,7 +71,7 @@
 			// QuitToolStripMenuItem
 			// 
 			this.QuitToolStripMenuItem.Name = "QuitToolStripMenuItem";
-			this.QuitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.QuitToolStripMenuItem.Size = new System.Drawing.Size(97, 22);
 			this.QuitToolStripMenuItem.Text = "Quit";
 			// 
 			// splitContainer1
@@ -89,7 +88,6 @@
 			// splitContainer1.Panel2
 			// 
 			this.splitContainer1.Panel2.Controls.Add(this.tableLayoutPanel2);
-			this.splitContainer1.Panel2.Controls.Add(this.BtnShowDebugger);
 			this.splitContainer1.Size = new System.Drawing.Size(800, 287);
 			this.splitContainer1.SplitterDistance = 284;
 			this.splitContainer1.TabIndex = 1;
@@ -138,28 +136,6 @@
 			this.Lbl_RecentItems_Header.Text = "Recent Projects";
 			this.Lbl_RecentItems_Header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
-			// BtnShowDebugger
-			// 
-			this.BtnShowDebugger.Location = new System.Drawing.Point(344, 81);
-			this.BtnShowDebugger.Name = "BtnShowDebugger";
-			this.BtnShowDebugger.Size = new System.Drawing.Size(109, 57);
-			this.BtnShowDebugger.TabIndex = 9;
-			this.BtnShowDebugger.Text = "Debug A Program";
-			this.BtnShowDebugger.UseVisualStyleBackColor = true;
-			this.BtnShowDebugger.Click += new System.EventHandler(this.BtnShowDebugger_Click);
-			// 
-			// BtnShowDesigner
-			// 
-			this.BtnShowDesigner.AutoSize = true;
-			this.BtnShowDesigner.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.BtnShowDesigner.Location = new System.Drawing.Point(3, 3);
-			this.BtnShowDesigner.Name = "BtnShowDesigner";
-			this.BtnShowDesigner.Size = new System.Drawing.Size(126, 275);
-			this.BtnShowDesigner.TabIndex = 10;
-			this.BtnShowDesigner.Text = "Create A Program";
-			this.BtnShowDesigner.UseVisualStyleBackColor = true;
-			this.BtnShowDesigner.Click += new System.EventHandler(this.BtnShowDesigner_Click);
-			// 
 			// tableLayoutPanel2
 			// 
 			this.tableLayoutPanel2.ColumnCount = 2;
@@ -173,6 +149,18 @@
 			this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
 			this.tableLayoutPanel2.Size = new System.Drawing.Size(265, 281);
 			this.tableLayoutPanel2.TabIndex = 11;
+			// 
+			// BtnShowDesigner
+			// 
+			this.BtnShowDesigner.AutoSize = true;
+			this.BtnShowDesigner.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.BtnShowDesigner.Location = new System.Drawing.Point(3, 3);
+			this.BtnShowDesigner.Name = "BtnShowDesigner";
+			this.BtnShowDesigner.Size = new System.Drawing.Size(126, 275);
+			this.BtnShowDesigner.TabIndex = 10;
+			this.BtnShowDesigner.Text = "Create A Program";
+			this.BtnShowDesigner.UseVisualStyleBackColor = true;
+			this.BtnShowDesigner.Click += new System.EventHandler(this.BtnShowDesigner_Click);
 			// 
 			// BtnOpenFile
 			// 
@@ -216,7 +204,6 @@
 		private System.Windows.Forms.ToolStripMenuItem FileToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem QuitToolStripMenuItem;
 		private System.Windows.Forms.SplitContainer splitContainer1;
-		private System.Windows.Forms.Button BtnShowDebugger;
 		private System.Windows.Forms.Button BtnShowDesigner;
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
 		private System.Windows.Forms.ListView List_RecentItems;

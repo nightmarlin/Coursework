@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
+using Solution.Designer;
 using Solution.Welcome;
 
 /* - SRC: https://stackoverflow.com/questions/355724/embedding-a-dos-console-in-a-windows-form -
@@ -36,9 +37,8 @@ namespace Solution.Debugger {
 	public partial class FrmDebugger : Form {
 
 		private readonly Process _DebugProcess;
-		private readonly FrmWelcome _ParentFrmWelcome;
+		private readonly FrmDesigner _ParentFrmWelcome;
 		private bool _IsDebugging;
-		private ToolTip TT;
 
 		/// <summary>
 		/// Parameter-less initialization. Disables all buttons except Exit so nothing breaks when the user clicks them
@@ -49,22 +49,7 @@ namespace Solution.Debugger {
 			TxtStandardOutput.Text = @"No program was loaded, debugging will not occur"; // Inform the user that
 			TxtVariableOutput.Text = @"No variables can be observed"; // 					debugging is not going to
 			TxtErrorOutput.Text = @"No errors will be recorded"; //							happen
-
-			TT = new ToolTip {
-				AutoPopDelay = 5000,
-				InitialDelay = 1000,
-				ReshowDelay = 500,
-				ShowAlways = true
-			};
-			TT.SetToolTip(TxtInputToProgram, TaH.FrmDebuggerInputBox);
-			TT.SetToolTip(TxtErrorOutput, TaH.FrmDebuggerErrorOut);
-			TT.SetToolTip(TxtStandardOutput, TaH.FrmDebuggerStandardOut);
-			TT.SetToolTip(TxtVariableOutput, TaH.FrmDebuggerObservedVars);
-			TT.SetToolTip(BtnStartExecution, TaH.FrmDebuggerStartButton);
-			TT.SetToolTip(BtnExitDebugging, TaH.FrmDebuggerExitButton);
-			TT.SetToolTip(BtnPauseExecution, TaH.FrmDebuggerPauseButton);
-			TT.SetToolTip(BtnStopExecution, TaH.FrmDebuggerStopButton);
-			TT.SetToolTip(BtnSubmitInput, TaH.FrmDebuggerSubmitButton);
+			
 		}
 
 		/// <summary>
@@ -72,7 +57,7 @@ namespace Solution.Debugger {
 		/// </summary>
 		/// <param name="FileToDebug">The path of the "*.exe" file to be debugged</param>
 		/// <param name="MyParent">The FrmWelcome that instantiated the FrmDebugger</param>
-		public FrmDebugger(string FileToDebug, FrmWelcome MyParent) {
+		public FrmDebugger(string FileToDebug, FrmDesigner MyParent) {
 			InitializeComponent(); // Reqd. for forms
 
 			BtnStartExecution.Enabled = true; // Text colour changes do not occur on disabled controls
