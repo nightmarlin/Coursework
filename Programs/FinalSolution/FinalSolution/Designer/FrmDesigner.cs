@@ -1,11 +1,15 @@
 ﻿using System;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Text;
 using System.Windows.Forms;
 
+using Solution.Build;
 using Solution.Designer.Blocks;
 using Solution.Welcome;
 
@@ -17,16 +21,24 @@ namespace Solution.Designer {
 	/// </summary>
 	public partial class FrmDesigner : Form {
 
-		private string FileInfo = "";
+		/// <summary>
+		/// DD/MM/YYYY HH:mm|Disk:\File\Path\Project.bs
+		/// </summary>
+		public string FileInfo = "";
 
-		private readonly FrmWelcome _ParentFrmWelcome;
-		
+		/// <summary>
+		/// The parent form
+		/// </summary>
+		public FrmWelcome _ParentFrmWelcome;
+
 		#region Startup
 		
 		/// <inheritdoc />
 		public FrmDesigner(FrmWelcome ParentFrmWelcome = null) {
 			InitializeComponent();
 			Connections = new Dictionary<BaseBlock, BaseBlock>();
+
+			PnlCommandPalette.Hide();
 			
 			SContainer_Workspace.Panel2.Paint += DrawLinks;
 			SContainer_Workspace.Panel2.Refresh();
@@ -40,7 +52,17 @@ namespace Solution.Designer {
 			_ParentFrmWelcome = ParentFrmWelcome;
 
 			BlockTree.NodeMouseDoubleClick += AddBlock;
-			BlockTree.KeyPress += BlockTree_KeyPress; 
+			BlockTree.KeyPress += BlockTree_KeyPress;
+
+			TxtCommandPaletteSearch.TextChanged += (S, E) => {
+				DoSearch();
+			};
+			BtnHideCommandPalette.Click += (S, E) => {
+				TxtCommandPaletteSearch.Text = "";
+				PnlCommandPalette.Hide();
+			};
+			KeyUp += OnKeyRelease;
+			LViewSearchResults.ItemActivate += LViewSearchResults_Activated;
 
 			SContainer_Workspace.Panel2.SuspendLayout();
 			/*{
@@ -103,23 +125,23 @@ namespace Solution.Designer {
 		}
 
 		#endregion
-		
+
 		#region Block Tree
 		
-		private int NextId = (int) BasicBlockIds.First;
+		private int NextId = (int) BasicBlockIds.First; 
 
 		private void BlockTree_KeyPress(object sender, KeyPressEventArgs e) {
 
-			if (BlockTree.SelectedNode == null) return;
+			if (BlockTree.SelectedNode == null) return; // Do nothing
 
-			if ((char)Keys.Return == e.KeyChar) {
+			if ((char)Keys.Return == e.KeyChar) { // If it's enter, select that block
 				AddBlock(null, new TreeNodeMouseClickEventArgs(BlockTree.SelectedNode, MouseButtons.Left, 2, 0, 0));
 			}
 		}
 
-		private void AddBlock(object S, TreeNodeMouseClickEventArgs E) {
+		private void AddBlock(object S, TreeNodeMouseClickEventArgs E) { // Add a block from the blockTree
 
-			if (E.Node.Nodes.Count != 0) return;
+			if (E.Node.Nodes.Count != 0) return; // If the node has children, do nothing
 			
 				
 			/* var NewBlock = new EmptyNormalBlock {
@@ -133,7 +155,7 @@ namespace Solution.Designer {
 
 			BaseBlock NewBlock;
 
-			switch (E.Node.Name) {
+			switch (E.Node.Name) { // Create a block based on the user's selection
 				case "DecimalSetBlock": {
 					NewBlock = GenericBlockConstructor<DecimalCreateBlock>();
 					break;
@@ -161,11 +183,11 @@ namespace Solution.Designer {
 				}
 			}
 			
-			AddBlock(NewBlock);
+			AddBlock(NewBlock); // Add it
 
 		}
 
-		private BaseBlock GenericBlockConstructor<T>() where T : BaseBlock, new() {
+		private BaseBlock GenericBlockConstructor<T>() where T : BaseBlock, new() { // Generic constructor
 			
 			var NewName = typeof(T).Name + NextId;
 
@@ -182,7 +204,7 @@ namespace Solution.Designer {
 
 			NextId++;
 
-			if (ToAdd is VarCreateBlock VC) {
+			if (ToAdd is VarCreateBlock VC) { // Make it small
 				VC.Height = 60;
 				VC.NameBox.Text = ToAdd.Name;
 				VC.ValidateButton.Hide();
@@ -194,74 +216,77 @@ namespace Solution.Designer {
 		}
 
 		// ReSharper disable once SuggestBaseTypeForParameter
-		private void AddBlock(BaseBlock ToAdd) {
+		private void AddBlock(BaseBlock ToAdd) { // Add block to panel
 
-			var X = SContainer_Workspace.Panel2.Width / 2 - ToAdd.Width / 2;
+			var X = SContainer_Workspace.Panel2.Width / 2 - ToAdd.Width / 2; // Add in the middle
 			var Y = SContainer_Workspace.Panel2.Height / 2 - ToAdd.Height / 2;
 
 			ToAdd.Location = new Point(X, Y);
 
-			SContainer_Workspace.Panel2.SuspendLayout();
-			SContainer_Workspace.Panel2.Controls.Add(ToAdd);
-			SContainer_Workspace.Panel2.ResumeLayout(true);
+			SContainer_Workspace.Panel2.SuspendLayout(); // Stop layout
+			SContainer_Workspace.Panel2.Controls.Add(ToAdd); // Add the block
+			SContainer_Workspace.Panel2.ResumeLayout(true); // Continue
 
-			ToAdd.Refresh();
+			ToAdd.Refresh(); // Redraw
 
 		}
 
 		#endregion
-		
+
 		#region Block Movement
 
-		private Timer MovementTicker;
-		private Point Offset;
-		private BaseBlock ToMove;
+		private readonly Timer MovementTicker; // Move block to mouse each tick
+		private Point Offset; // Point mouse clicked on
+		private BaseBlock ToMove; // Block to move
 
 		private void Block_OnMouseDown(object S, MouseEventArgs E) {
-			if (!(S is BaseBlock Block)) return;
+			if (!(S is BaseBlock Block)) return; // Do nothing if it isn't a baseBlock
 			//Debug.WriteLine("Mouse Down");
 
-			Block.BringToFront();
+			Block.BringToFront(); // Layering
 
-			if (Deleting) {
+			if (Deleting) { // Delete
 				DeleteBlock(Block);
+				return;
+			} else if (Copying) { // Copy
+				CopyBlock(Block);
 				return;
 			}
 
-			if (Block.RectangleToScreen(Block.TopConnectorZone).Contains(MousePosition)) {
+			if (Block.RectangleToScreen(Block.TopConnectorZone).Contains(MousePosition)) { // Top connector
 				TopConnector_Clicked(Block);
 				return;
 			}
-			if (Block.RectangleToScreen(Block.BottomConnectorZone).Contains(MousePosition)) {
+			if (Block.RectangleToScreen(Block.BottomConnectorZone).Contains(MousePosition)) { // Bottom Connector
 				BottomConnector_Clicked(Block);
 				return;
 			}
 
-			var RTS = Block.RectangleToScreen(Block.DisplayRectangle);
+			var RTS = Block.RectangleToScreen(Block.DisplayRectangle); // Get the RTS to keep things relative to the screen
 
 			Offset = new Point(MousePosition.X - RTS.Left,
-			                   MousePosition.Y - RTS.Top);   
+			                   MousePosition.Y - RTS.Top); // New mouse offset
 			
-			ToMove = Block;
-			MovementTicker.Start();
-			SContainer_Workspace.Panel2.Refresh();
+			ToMove = Block; // Pick up the block
+			MovementTicker.Start(); // Start moving
+			SContainer_Workspace.Panel2.Refresh(); // Redraw
 		}
 
-		private void Block_OnMouseUp(object S, MouseEventArgs E) {
-			if (!(S is BaseBlock)) return;
+		private void Block_OnMouseUp(object S, MouseEventArgs E) { // Stop moving
+			if (!(S is BaseBlock)) return; // PatternMatchingIsAUsefulTool
 			//Debug.WriteLine("Mouse Up");
 
 			MovementTicker.Stop();
-			ToMove = null;
+			ToMove = null; // Drop the block
 
-			SContainer_Workspace.Panel2.Refresh();
+			SContainer_Workspace.Panel2.Refresh(); // Redraw
 		}
 
-		private void DoMove(object S, EventArgs E) {
+		private void DoMove(object S, EventArgs E) { // Go to mouse
 			
-			var MousePos = SContainer_Workspace.Panel2.PointToClient(MousePosition);
+			var MousePos = SContainer_Workspace.Panel2.PointToClient(MousePosition); // Get mouse position
 
-			ToMove.Left = MousePos.X - Offset.X;
+			ToMove.Left = MousePos.X - Offset.X; // Move block there and adjust by offset
 			ToMove.Top = MousePos.Y - Offset.Y;
 
 		}
@@ -270,17 +295,17 @@ namespace Solution.Designer {
 
 		#region Connection Management
 
-		private Dictionary<BaseBlock, BaseBlock> Connections;
+		private Dictionary<BaseBlock, BaseBlock> Connections; // Store the links
 		
-		private BaseBlock First;
+		private BaseBlock First; // The blocksss
 		private BaseBlock Second;
 
-		private void TopConnector_Clicked(BaseBlock Block) {
+		private void TopConnector_Clicked(BaseBlock Block) { // Top connector
 
-			if (!(Second is null) | Block is StartBlock) {
+			if (!(Second is null) | Block is StartBlock) { // If there is already a second block, don't override it
 				
-				if (Block == Second) {
-					Debug.WriteLine($"Second: {Second.Name}");
+				if (Block == Second) { // Click the same connector to deselect it
+					// Debug.WriteLine($"Second: {Second.Name}");
 					Block.ConnectorSelected = null;
 					Block.Refresh();
 					Second = null;
@@ -289,19 +314,19 @@ namespace Solution.Designer {
 				return;
 			}
 
-			Block.ConnectorSelected = true;
-			Block.Refresh();
+			Block.ConnectorSelected = true; // top connector selected
+			Block.Refresh(); // redraw
 
-			if (First is null) {
+			if (First is null) { // wait for the next connection
 				Second = Block;
 				
-			} else {
+			} else { // we're ready. let's go
 				Second = Block;
 				MakeConnection();
 			}
 		}
 
-		private void BottomConnector_Clicked(BaseBlock Block) {
+		private void BottomConnector_Clicked(BaseBlock Block) { // Like top connectors, but for bottoms
 			
 			if (!(First is null)) {
 				if (Block == First) {
@@ -323,23 +348,23 @@ namespace Solution.Designer {
 			}
 		}
 
-		private void VariableConnectorClicked() {
+		private void VariableConnectorClicked() { // TODO
 			
 		}
 		
-		[SuppressMessage("ReSharper", "LocalVariableHidesMember")]
-		private void MakeConnection() {
-
-			this.First.ConnectorSelected = null;
+		[SuppressMessage("ReSharper", "LocalVariableHidesMember")] // ReSharper annoyed me
+		private void MakeConnection() { // Everything is in place. Create the link
+		
+			this.First.ConnectorSelected = null; // No more illuminated connectors
 			this.Second.ConnectorSelected = null;
 
-			var First = this.First;
+			var First = this.First; // Localise variables
 			var Second = this.Second;
 
-			this.First = null;
+			this.First = null; // Empty "this." vars
 			this.Second = null;
 			
-			if (First == Second) {
+			if (First == Second) { // Bad self-connection. Bad
 				First.Refresh();
 				Second.Refresh();
 				MessageBox.Show("You can't do that!", "B#", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -348,6 +373,10 @@ namespace Solution.Designer {
 
 			if ((Second is VarCreateBlock) && !(First is VarDeclareBlock || First is VarCreateBlock)
 			    || (!(Second is VarCreateBlock) && (First is VarDeclareBlock || First is VarCreateBlock))) {
+				/*
+				 * We can't allow declaration blocks and action blocks to be connected, so don't
+				 */
+
 				First.Refresh();
 				Second.Refresh();
 				MessageBox.Show("You can't declare a variable where you would run code, and you cant run code where you would declare a variable!",
@@ -356,13 +385,13 @@ namespace Solution.Designer {
 			}
 
 
-			Connections.Add(First, Second);
-			First.ConnectNext(Second.Id);
+			Connections.Add(First, Second); // Make the link
+			First.ConnectNext(Second.Id); // Setup for the next block
 
-			SContainer_Workspace.Panel2.Refresh();
+			SContainer_Workspace.Panel2.Refresh(); // redraw
 			
-			First.Invalidate();
-			Second.Invalidate();
+			First.Invalidate(); // redraw
+			Second.Invalidate(); // redraw
 
 		}
 
@@ -378,7 +407,7 @@ namespace Solution.Designer {
 			
 		}
 
-		private void DeleteBlock(BaseBlock Block) {
+		private void DeleteBlock(BaseBlock Block) { // TODO
 			
 			DeleteToolStripMenuItem_Click();
 
@@ -398,36 +427,41 @@ namespace Solution.Designer {
 
 
 		}
-		
+
+		private bool Copying;
+		private void CopyBlock(BaseBlock ToCopy) { // TODO
+			
+		}
+
 		#endregion
-		
+
 		#region Drawing
 
-		private void DrawLinks(object S, PaintEventArgs E) {
-			var SCWPnl2GFX = E.Graphics;
+		private void DrawLinks(object S, PaintEventArgs E) { // Draw the connections
+			var GFX = E.Graphics; // Better name
 			foreach (var Connection in Connections) {
 
 				if (Connection.Key == ToMove || Connection.Value == ToMove) continue;
 
-				var CK = Connection.Key;
+				var CK = Connection.Key; // Compactness
 				var CV = Connection.Value;
 				var CR = Connection.Key.BottomConnectorZone.Location;
 				
-				var P1 = SContainer_Workspace.Panel2
+				var P1 = SContainer_Workspace.Panel2 // First point on First Line
 				                             .PointToClient(CK.PointToScreen(new Point(CR.X,
 				                                                                       CR.Y +
 				                                                                       CK.BottomConnectorZone.Height)
 				                                                             )
 				                                            );
 				
-				var P2 = SContainer_Workspace.Panel2.PointToClient(CV.PointToScreen(CV.TopConnectorZone.Location));
+				var P2 = SContainer_Workspace.Panel2.PointToClient(CV.PointToScreen(CV.TopConnectorZone.Location)); // Second point on First Line
 				
-				SCWPnl2GFX.DrawLine(Pens.Black, P1, P2);
+				GFX.DrawLine(Pens.Black, P1, P2);
 
-				P1.X = P1.X + CK.BottomConnectorZone.Width;
-				P2.X = P2.X + CV.TopConnectorZone.Width;
+				P1.X = P1.X + CK.BottomConnectorZone.Width; // First point on Second Line
+				P2.X = P2.X + CV.TopConnectorZone.Width; // Second point on Second Line
 
-				SCWPnl2GFX.DrawLine(Pens.Black, P1, P2);
+				GFX.DrawLine(Pens.Black, P1, P2);
 
 			}
 		}
@@ -435,12 +469,15 @@ namespace Solution.Designer {
 
 		#endregion
 
+		#region Save, Build and Generic Functions
+
 		private void SelectToolboxToolStripMenuItem_Click(object sender, EventArgs e) {
-			BlockTree.Focus();
+			BlockTree.Focus(); // CTRL + {SPACE} = Focus blockTree
 		}
 
 		private void AboutBlocksToolStripMenuItem_Click(object sender, EventArgs e) {
 			MessageBox.Show(TaH.FrmDesignerBlockHelpText, "B#", MessageBoxButtons.OK, MessageBoxIcon.Information);
+			// Show MessageBox
 		}
 
 		private void AboutTheWorkspaceToolStripMenuItem_Click(object sender, EventArgs e) {
@@ -448,56 +485,215 @@ namespace Solution.Designer {
 		}
 
 		private void SaveToolStripMenuItem_Click(object sender, EventArgs e) {
-			Save();
+			Save(); // Save it
 		}
 
-		private bool Save() {
+		private bool Save() { // TODO
+			return GetSaveFilePath() && Saving.Save.SaveProject(this);
+		}
+
+		private bool GetSaveFilePath() {
 			if (FileInfo == "") {
-				using (var SFD = new SaveFileDialog() {
-					InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
-					Filter = "BSharp Files (*.bs)|*.bs",
-					DefaultExt = "bs",
-					FileName = "My Project.bs"
-				}) {
-					SFD.ShowDialog();
-
-
-					if (!SFD.FileName.Contains('\\')) {
-						MessageBox.Show("No location specified. Cannot save.", "B#", MessageBoxButtons.OK, MessageBoxIcon.Error);
-						return false;
-					}
-					
-					FileInfo = $"{DateTime.Now:d}|";
-					FileInfo += SFD.FileName;
-
+				if (!UpdateSavePath()) { // get new save path
+					return false;
 				}
 			}
 
-			MessageBox.Show(FileInfo);
+			FileInfo = $"{DateTime.Now:g}|" + FileInfo.Split('|')[1]; // update the date
 
-			if (!Properties.Settings.Default.RecentItems.Contains(FileInfo)) {
-				Properties.Settings.Default.RecentItems.Add(FileInfo);
+			if (!Properties.Settings.Default.RecentItems.Contains(FileInfo)) {// If it's not already in there
+				Properties.Settings.Default.RecentItems.Add(FileInfo); // Add it
 			} else {
-				Properties.Settings.Default.RecentItems.Remove(FileInfo);
-				Properties.Settings.Default.RecentItems.Add(FileInfo);
+				Properties.Settings.Default.RecentItems.Remove(FileInfo); // otherwise remove it
+				Properties.Settings.Default.RecentItems.Add(FileInfo); // and add it again
 			}
 
 			if (Properties.Settings.Default.RecentItems.Count > 5) {
-				Properties.Settings.Default.RecentItems.RemoveAt(0);
+				Properties.Settings.Default.RecentItems.RemoveAt(0); // Remove any items that would make the list longer than 5 items
 			}
 
-			Properties.Settings.Default.Save();
+			Properties.Settings.Default.Save(); // SAVE
 
-			return true;
+			return true; // success
+		}
+
+		private bool UpdateSavePath() {
+			using (var SFD = new SaveFileDialog() { // Get the file name and path
+				InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), // Start in docs
+				Filter = "BSharp Files (*.bs)|*.bs", // Only show .bs files
+				DefaultExt = "bs", // Save as a .bs file
+				FileName = "My Project.bs" // Default file name
+			}) {
+				var Complete = SFD.ShowDialog();
+
+				if (Complete != DialogResult.OK) { // No path was specified
+					MessageBox.Show("No location specified. Cannot save.", "B#", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					return false; // failure
+				}
+				
+				FileInfo = $"{DateTime.Now:g}|"; // Set the date last saved
+				FileInfo += SFD.FileName; // Add the filepath
+
+				Name = FileInfo.Split('|')[1].Split('\\')[FileInfo.Split('|')[1].Split('\\').Length - 1];
+				return true; // success
+			}
 		}
 
 		private void DebugToolStripMenuItem_Click(object sender, EventArgs e) {
 			// Save
 
+			if (!Save()) {
+				MessageBox.Show("You have to save your work in order to run it");
+				return;
+			}
+
+			// Generate code
+
+			/* 1) Find the StartBlock
+			 * 2) Iterate through the connections and build up the code
+			 * 3) Find the VarDeclareBlock
+			 * 4) Iterate through those connections and build up variable declarations
+			 */
+
+			// 1
+			var Actions = new StringBuilder("");
+			var HasNext = true;
+			var CurrentBlock = GetBlockById((int) BasicBlockIds.Starter);
+
+			while (HasNext) { // 2
+
+				Actions.AppendLine(CurrentBlock.Code);
+				
+				if (CurrentBlock.NextBlockId == (int) BasicBlockIds.NoConnection) {
+					HasNext = false;
+				} else {
+					CurrentBlock = GetBlockById(CurrentBlock.NextBlockId);
+				}
+
+			}
+
+			// 3
+			var Vars = new StringBuilder("");
+			HasNext = true;
+			CurrentBlock = GetBlockById((int) BasicBlockIds.Variable);
+
+			while (HasNext) { // 2
+
+				Actions.AppendLine(CurrentBlock.Code);
+				
+				if (CurrentBlock.NextBlockId == (int) BasicBlockIds.NoConnection) {
+					HasNext = false;
+				} else {
+					CurrentBlock = GetBlockById(CurrentBlock.NextBlockId);
+				}
+
+			}
+				
 			// Build
+
+			
+
+			var Program = Properties.Resources.ProjectTemplate;
+
+			Builder BDR;
+
+			using (var CDP = CodeDomProvider.CreateProvider("C#")) {
+				BDR = CDP.IsValidIdentifier(Name) 
+					? new Builder(Name) 
+					: new Builder("YourProject");
+			}
+
+			Program = Program.Replace("//<VariableSet>", Vars.ToString()) // Insert code
+			                 .Replace("//<Program>", Actions.ToString());
+
+			/*
+			 * 1) Pass generated code to builder
+			 * 2) Builder does the buildy thing
+			 * 3) Receive exe path
+			 */
+
+			var FilePath = FileInfo.Split('|')[1];
+
+			var Path = System.IO.Path.GetDirectoryName(FilePath);
+
+			var Success = BDR.Build(Program, Path);
+
+			if (Success) {
+				MessageBox.Show("Compilation was successful", "B#", MessageBoxButtons.OK, MessageBoxIcon.Information);
+			} else {
+				MessageBox.Show("Compilation was unsuccessful", "B#", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+
 
 			// Run
 
+			/*
+			 * Open FrmDebugger with the exe output from earlier
+			 */
+
 		}
+
+		private BaseBlock GetBlockById(int Id) { // TODO
+			return null;
+		}
+
+		
+
+		private void CommandPaletteToolStripMenuItem_Click(object sender, EventArgs e) { // Show the command palette
+			PnlCommandPalette.Show();
+			TxtCommandPaletteSearch.Focus();
+		}
+
+		private void DoSearch() { // Search on text update
+
+			if (TxtCommandPaletteSearch.Text == "") { // Don't search if empty
+				LViewSearchResults.Clear();
+				return;
+			}
+
+			var Results = new List<ToolStripItem>(); // Scoping
+			
+			foreach (var TSI in MainMenu.Items) { // Iterate through the main menu items
+				if (!(TSI is ToolStripMenuItem Item)) continue; // PATTERN MATCHING
+
+				foreach (var I in Item.DropDownItems) { // Iterate through the dropdowns
+					if (!(I is ToolStripMenuItem Option)) continue; // PATTERN MATCHING
+
+					if (Option.Text.ToLower().Contains(TxtCommandPaletteSearch.Text.ToLower())) {
+						Results.Add(Option); // Fuzzy search for results
+					}
+				}
+			}
+
+			// show results on list box
+
+			LViewSearchResults.Clear(); // Empty box
+
+			foreach (var Result in Results) {
+				// Fill box
+				LViewSearchResults.Items.Add(new ListViewItem(new [] {Result.Text, Result.Name}));
+			}
+
+
+		}
+
+		private void LViewSearchResults_Activated(object S, EventArgs E) { // On selection of a result
+			var NameToFind = LViewSearchResults.SelectedItems[0].SubItems[1].Text;
+
+			var Results = MainMenu.Items.Find(NameToFind, true); // Quick search
+			
+			PnlCommandPalette.Hide();
+			TxtCommandPaletteSearch.Text = "";
+
+			Results[0].PerformClick(); // No need to null check cos we know it's there
+		}
+
+		private void OnKeyRelease(object S, KeyEventArgs E) { 
+			if (E.KeyData == Keys.Escape) { 
+				PnlCommandPalette.Hide(); // Hide on {ESCAPE} keypress
+				TxtCommandPaletteSearch.Text = "";
+			}
+		}
+		#endregion
 	}
 }

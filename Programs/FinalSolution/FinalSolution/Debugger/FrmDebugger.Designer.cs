@@ -52,7 +52,6 @@
 			this.TxtStandardOutput.ForeColor = System.Drawing.SystemColors.ControlDark;
 			this.TxtStandardOutput.Name = "TxtStandardOutput";
 			this.TxtStandardOutput.ReadOnly = true;
-
 			// 
 			// tableLayoutPanel1
 			// 

@@ -23,6 +23,7 @@ namespace Solution.Build {
 		/// </summary>
 		/// <param name="Name">The name of the project</param>
 		public Builder(string Name) {
+			if (Name is null) Name = "YourProject";
 			this.Name = Name;
 		}
 
@@ -41,6 +42,9 @@ namespace Solution.Build {
 
 			// Get the wrapper file
 			var Wrapper = Properties.Resources.Wrapper;
+
+			Wrapper = Wrapper.Replace("YourProject", $"namespace {Name}");
+			Program = Program.Replace("YourProject", $"namespace {Name}");
 
 			// Build the program
 			var Output = CompileFromStrings(Path, Wrapper, Program);

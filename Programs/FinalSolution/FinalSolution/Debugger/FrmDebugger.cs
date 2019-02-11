@@ -37,7 +37,7 @@ namespace Solution.Debugger {
 	public partial class FrmDebugger : Form {
 
 		private readonly Process _DebugProcess;
-		private readonly FrmDesigner _ParentFrmWelcome;
+		private readonly FrmDesigner _ParentFrmDesigner;
 		private bool _IsDebugging;
 
 		/// <summary>
@@ -52,6 +52,7 @@ namespace Solution.Debugger {
 			
 		}
 
+		/// <inheritdoc />
 		/// <summary>
 		/// Initialization with parameters. Allows debugging to begin
 		/// </summary>
@@ -119,9 +120,9 @@ namespace Solution.Debugger {
 				EnableRaisingEvents = true // Allows me to hook on to the "Exited" event
 			};
 
-			_ParentFrmWelcome = MyParent; // Set parent form
+			_ParentFrmDesigner = MyParent; // Set parent form
 
-			_ParentFrmWelcome.Hide(); // Hide the parent form
+			_ParentFrmDesigner.Hide(); // Hide the parent form
 
 			_IsDebugging = _DebugProcess.Start(); // Start the process
 
@@ -132,7 +133,7 @@ namespace Solution.Debugger {
 
 				KillDebugProcess(); // Kill everything just in case
 
-				_ParentFrmWelcome.Show(); // Show the main form
+				_ParentFrmDesigner.Show(); // Show the main form
 
 				Hide(); // Disappear
 				Dispose(); // Clean up
@@ -343,7 +344,7 @@ namespace Solution.Debugger {
 			StopDebuggingInterfaceChanges();
 			KillDebugProcess();
 
-			_ParentFrmWelcome?.Show(); // Show parent form
+			_ParentFrmDesigner?.Show(); // Show parent form
 			
 
 			Hide(); // Become invisible

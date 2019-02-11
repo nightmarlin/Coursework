@@ -91,10 +91,16 @@ namespace Solution.Designer {
 			this.AboutTheWorkspaceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.SContainer_Workspace = new System.Windows.Forms.SplitContainer();
 			this.BlockTree = new System.Windows.Forms.TreeView();
+			this.PnlCommandPalette = new System.Windows.Forms.TableLayoutPanel();
+			this.TxtCommandPaletteSearch = new System.Windows.Forms.TextBox();
+			this.BtnHideCommandPalette = new System.Windows.Forms.Button();
+			this.LViewSearchResults = new System.Windows.Forms.ListView();
 			this.MainMenu.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.SContainer_Workspace)).BeginInit();
 			this.SContainer_Workspace.Panel1.SuspendLayout();
+			this.SContainer_Workspace.Panel2.SuspendLayout();
 			this.SContainer_Workspace.SuspendLayout();
+			this.PnlCommandPalette.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// MainMenu
@@ -212,6 +218,7 @@ namespace Solution.Designer {
 			this.CommandPaletteToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
 			this.CommandPaletteToolStripMenuItem.Text = "Command Palette";
 			this.CommandPaletteToolStripMenuItem.ToolTipText = "Open the command palette";
+			this.CommandPaletteToolStripMenuItem.Click += new System.EventHandler(this.CommandPaletteToolStripMenuItem_Click);
 			// 
 			// RunToolStripMenuItem
 			// 
@@ -226,7 +233,7 @@ namespace Solution.Designer {
 			// 
 			this.DebugToolStripMenuItem.Name = "DebugToolStripMenuItem";
 			this.DebugToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
-			this.DebugToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.DebugToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
 			this.DebugToolStripMenuItem.Text = "Debug";
 			this.DebugToolStripMenuItem.ToolTipText = "Run your code";
 			this.DebugToolStripMenuItem.Click += new System.EventHandler(this.DebugToolStripMenuItem_Click);
@@ -235,7 +242,7 @@ namespace Solution.Designer {
 			// 
 			this.GetexeToolStripMenuItem.Name = "GetexeToolStripMenuItem";
 			this.GetexeToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.B)));
-			this.GetexeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.GetexeToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
 			this.GetexeToolStripMenuItem.Text = "Get \"exe\"";
 			this.GetexeToolStripMenuItem.ToolTipText = "Get your \"exe\" file path";
 			// 
@@ -286,6 +293,7 @@ namespace Solution.Designer {
 			this.SContainer_Workspace.Panel2.AllowDrop = true;
 			this.SContainer_Workspace.Panel2.AutoScroll = true;
 			this.SContainer_Workspace.Panel2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+			this.SContainer_Workspace.Panel2.Controls.Add(this.PnlCommandPalette);
 			this.SContainer_Workspace.Size = new System.Drawing.Size(784, 437);
 			this.SContainer_Workspace.SplitterDistance = 180;
 			this.SContainer_Workspace.TabIndex = 2;
@@ -359,6 +367,58 @@ namespace Solution.Designer {
 			this.BlockTree.Size = new System.Drawing.Size(178, 435);
 			this.BlockTree.TabIndex = 1;
 			// 
+			// PnlCommandPalette
+			// 
+			this.PnlCommandPalette.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.PnlCommandPalette.BackColor = System.Drawing.SystemColors.ControlDark;
+			this.PnlCommandPalette.ColumnCount = 2;
+			this.PnlCommandPalette.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
+			this.PnlCommandPalette.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+			this.PnlCommandPalette.Controls.Add(this.TxtCommandPaletteSearch, 0, 0);
+			this.PnlCommandPalette.Controls.Add(this.BtnHideCommandPalette, 1, 0);
+			this.PnlCommandPalette.Controls.Add(this.LViewSearchResults, 0, 1);
+			this.PnlCommandPalette.Location = new System.Drawing.Point(3, 3);
+			this.PnlCommandPalette.Name = "PnlCommandPalette";
+			this.PnlCommandPalette.RowCount = 2;
+			this.PnlCommandPalette.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+			this.PnlCommandPalette.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+			this.PnlCommandPalette.Size = new System.Drawing.Size(400, 100);
+			this.PnlCommandPalette.TabIndex = 0;
+			this.PnlCommandPalette.Visible = false;
+			// 
+			// TxtCommandPaletteSearch
+			// 
+			this.TxtCommandPaletteSearch.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.TxtCommandPaletteSearch.Location = new System.Drawing.Point(3, 3);
+			this.TxtCommandPaletteSearch.Name = "TxtCommandPaletteSearch";
+			this.TxtCommandPaletteSearch.Size = new System.Drawing.Size(294, 20);
+			this.TxtCommandPaletteSearch.TabIndex = 0;
+			// 
+			// BtnHideCommandPalette
+			// 
+			this.BtnHideCommandPalette.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.BtnHideCommandPalette.Location = new System.Drawing.Point(303, 3);
+			this.BtnHideCommandPalette.Name = "BtnHideCommandPalette";
+			this.PnlCommandPalette.SetRowSpan(this.BtnHideCommandPalette, 2);
+			this.BtnHideCommandPalette.Size = new System.Drawing.Size(94, 94);
+			this.BtnHideCommandPalette.TabIndex = 3;
+			this.BtnHideCommandPalette.Text = "Hide\r\n(ESC)";
+			this.BtnHideCommandPalette.UseVisualStyleBackColor = true;
+			// 
+			// LViewSearchResults
+			// 
+			this.LViewSearchResults.Activation = System.Windows.Forms.ItemActivation.TwoClick;
+			this.LViewSearchResults.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.LViewSearchResults.Location = new System.Drawing.Point(3, 33);
+			this.LViewSearchResults.Name = "LViewSearchResults";
+			this.LViewSearchResults.Size = new System.Drawing.Size(294, 64);
+			this.LViewSearchResults.Sorting = System.Windows.Forms.SortOrder.Descending;
+			this.LViewSearchResults.TabIndex = 2;
+			this.LViewSearchResults.UseCompatibleStateImageBehavior = false;
+			this.LViewSearchResults.View = System.Windows.Forms.View.List;
+			// 
 			// FrmDesigner
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -375,8 +435,11 @@ namespace Solution.Designer {
 			this.MainMenu.ResumeLayout(false);
 			this.MainMenu.PerformLayout();
 			this.SContainer_Workspace.Panel1.ResumeLayout(false);
+			this.SContainer_Workspace.Panel2.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.SContainer_Workspace)).EndInit();
 			this.SContainer_Workspace.ResumeLayout(false);
+			this.PnlCommandPalette.ResumeLayout(false);
+			this.PnlCommandPalette.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -408,5 +471,9 @@ namespace Solution.Designer {
 		private ToolStripMenuItem AboutTheWorkspaceToolStripMenuItem;
 		private ToolStripMenuItem SelectToolboxToolStripMenuItem;
 		private ToolStripSeparator ToolStripSeparator2;
+		private TableLayoutPanel PnlCommandPalette;
+		private TextBox TxtCommandPaletteSearch;
+		private Button BtnHideCommandPalette;
+		private ListView LViewSearchResults;
 	}
 }

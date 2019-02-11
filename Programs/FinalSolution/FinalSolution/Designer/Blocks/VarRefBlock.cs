@@ -88,9 +88,12 @@ namespace Solution.Designer.Blocks {
 		/// 
 		/// </summary>
 		/// <param name="Names"></param>
-        public void SetVarNames(List<string> Names) {
+        public void UpdateVarNames(List<string> Names) {
+            Names.ForEach(N => {
+                VarNames.Items.Add(N);
 
 
+            });
         }
 
     }
