@@ -1,6 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Drawing;
+using System.Reflection;
+using System.Runtime.Remoting.Messaging;
+using System.Runtime.Serialization;
+
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
+using System.Diagnostics;
+using System.Linq;
 
 namespace Solution.Designer.Blocks {
 
@@ -37,6 +46,7 @@ namespace Solution.Designer.Blocks {
 	/// </summary>
 	public abstract class BaseBlock : Panel {
 
+		/// <inheritdoc />
 		/// <summary>
 		/// Constructor for the block. 
 		/// Sets the event handlers and double buffering for the block
@@ -56,6 +66,7 @@ namespace Solution.Designer.Blocks {
 
 
 		}
+
 
 		/// <summary>
 		/// Is called when the box is moved or resized for drawing  purposes
@@ -89,22 +100,22 @@ namespace Solution.Designer.Blocks {
 		/// <summary>
 		/// The block ID for the block that this block leads on to
 		/// </summary>
-		public int NextBlockId { get; protected set; }
+		public int NextBlockId { get; set; }
 
 		/// <summary>
 		/// An area at the top of the panel which the user can click to connect to the previous block
 		/// </summary>
-		public Rectangle TopConnectorZone { get; protected set; }
+		public Rectangle TopConnectorZone { get; set; }
 
 		/// <summary>
 		/// An area at the top of the panel which the user can click to connect to the next block
 		/// </summary>
-		public Rectangle BottomConnectorZone { get; protected set; }
+		public Rectangle BottomConnectorZone { get; set; }
 
 		/// <summary>
 		/// The rectangle the user can interact with to move the block
 		/// </summary>
-		public Rectangle OutlineRectangle { get; protected set; }
+		public Rectangle OutlineRectangle { get; set; }
 
 		/// <summary>
 		/// Provides the ability to link 2 blocks together, sequentially.
@@ -197,5 +208,63 @@ namespace Solution.Designer.Blocks {
 		/// </summary>
 		public Size IconSize = new Size(40, 40);
 
+		/// <summary>
+		/// The names of properties that need serializing
+		/// </summary>
+		public static readonly List<string> PropertiesToSerialize = new List<string> {
+			"Code", "Name", "ConnectorSelected", "TopConnectorZone",
+			"BottomConnectorZone", "Id", "NextBlockId", "OutlineRectangle", "Location", "Size", "VarConnectorZone",
+			"VarBlockId", "InputConnector", "VarName","Value"
+		};
+
 	}
+
+	/// <inheritdoc />
+	/// <summary>
+	/// Controls which properties are serialized upon save
+	/// </summary>
+	public class BaseBlockContractResolver : DefaultContractResolver {
+
+#pragma warning disable CS0109 // Member does not hide an inherited member; new keyword is not required
+		/// <summary>
+		/// The default instance of the ContractResolver for this session
+		/// </summary>
+		public new static readonly BaseBlockContractResolver Instance = new BaseBlockContractResolver();
+#pragma warning restore CS0109 // Member does not hide an inherited member; new keyword is not required
+
+		//protected override JsonProperty CreateProperty(MemberInfo member, MemberSerialization memberSerialization) {
+
+		//	var Property = base.CreateProperty(member, memberSerialization);
+
+		//	Debug.WriteLine($"1Checking if type {Property.DeclaringType.Name} inherits from baseblock");
+
+
+		//	if (Property.DeclaringType != typeof(BaseBlock) & !Property.DeclaringType.IsSubclassOf(typeof(BaseBlock))) return Property;
+
+		//	Debug.WriteLine($"2Type {Property.DeclaringType.Name} inherits from baseblock");
+
+		//	if (!BaseBlock.PropertiesToSerialize.Contains(Property.PropertyName)) {
+		//		Debug.WriteLine(Property.PropertyName);
+		//		Property.ShouldSerialize = inst => false;
+		//	} else {
+		//		Debug.WriteLine("This property passed the test: "+ Property.PropertyName);
+		//	}
+
+		//	return Property;
+		//}
+
+		/// <inheritdoc />
+		protected override IList<JsonProperty> CreateProperties(Type type, MemberSerialization memberSerialization)
+		{
+			var Properties = base.CreateProperties(type, memberSerialization);
+
+			// only serializer properties that start with the specified character
+			Properties =
+				Properties.Where(p => BaseBlock.PropertiesToSerialize.Contains(p.PropertyName)).ToList();
+
+			return Properties;
+		}
+
+	}
+
 }

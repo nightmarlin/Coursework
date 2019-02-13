@@ -5,32 +5,6 @@ using System.Windows.Forms;
 
 namespace Solution.Designer.Blocks {
 
-	/// <summary>
-	/// Fired when the variable's name is changed
-	/// </summary>
-	public class VarNameChangedEventArgs : EventArgs {
-
-		/// <summary>
-		/// The new name of the variable
-		/// </summary>
-		public string NewName;
-
-		/// <summary>
-		/// The original name of the variable
-		/// </summary>
-		public string OldName;
-
-		/// <summary>
-		/// .ctor
-		/// </summary>
-		/// <param name="OldName">Old Name of variable</param>
-		/// <param name="NewName">New Name of variable</param>
-		public VarNameChangedEventArgs(string OldName, string NewName) {
-			this.NewName = NewName;
-			this.OldName = OldName;
-		}
-
-	}
 
     /// <inheritdoc cref="BaseBlock"/>
     /// <summary>
@@ -43,12 +17,13 @@ namespace Solution.Designer.Blocks {
 		/// </summary>
 		/// <param name="S">The object that called the event</param>
 		/// <param name="E">The EventArgs for the event</param>
-	    public delegate void NameChanged(object S, VarNameChangedEventArgs E);
+	    public delegate void NameChanged(object S, EventArgs E);
 
 		/// <summary>
 		/// Fired when the variable name changes
 		/// </summary>
-	    public event NameChanged OnNameChanged;
+		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1009:DeclareEventHandlersCorrectly")]
+		public event NameChanged OnVarNameChanged;
 
 	    private readonly Type Represents;
 
@@ -164,7 +139,7 @@ namespace Solution.Designer.Blocks {
 						return;
 					}
 
-					OnNameChanged?.Invoke(this, new VarNameChangedEventArgs(VarName, NameBox.Text));
+					OnVarNameChanged?.Invoke(this, new EventArgs());
 					VarName = NameBox.Text;
 				}
 			}

@@ -30,6 +30,7 @@ namespace Solution.Designer.Blocks {
             };
 
             VarNames.Location = new Point(IconLocation.X + IconSize.Width + 10, Height / 2 - VarNames.Height / 2);
+            VarNames.SelectedIndexChanged += VarNames_ItemSelectedChanged;
 
             Controls.Add(VarNames);
 
@@ -85,15 +86,31 @@ namespace Solution.Designer.Blocks {
         public ComboBox VarNames;
 
         /// <summary>
+		/// The chosen variable name
+		/// </summary>
+        public string VarName { get; set; }
+
+        /// <summary>
 		/// 
 		/// </summary>
 		/// <param name="Names"></param>
         public void UpdateVarNames(List<string> Names) {
+
+            if (!Names.Contains(VarName)) {
+                VarName = "";
+            }
+
             Names.ForEach(N => {
                 VarNames.Items.Add(N);
 
-
             });
+
+            VarNames.Refresh();
+        }
+
+        private void VarNames_ItemSelectedChanged(object S, EventArgs E) {
+            VarName = (string) VarNames.SelectedItem;
+            MessageBox.Show(VarName);
         }
 
     }

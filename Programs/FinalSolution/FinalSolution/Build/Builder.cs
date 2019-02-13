@@ -43,20 +43,15 @@ namespace Solution.Build {
 			// Get the wrapper file
 			var Wrapper = Properties.Resources.Wrapper;
 
-			Wrapper = Wrapper.Replace("YourProject", $"namespace {Name}");
-			Program = Program.Replace("YourProject", $"namespace {Name}");
+			Wrapper = Wrapper.Replace("YourProject", $"{Name}");
+			Program = Program.Replace("YourProject", $"{Name}");
 
 			// Build the program
 			var Output = CompileFromStrings(Path, Wrapper, Program);
 
 			MessageBox.Show(Output);
 
-			if (Output.StartsWith("!: ")) {// errors
-				return false;
-			}
-
-			return true;
-
+			return !Output.StartsWith("!: "); // 
 		}
 
 		/// <summary>
@@ -77,10 +72,10 @@ namespace Solution.Build {
 
 	    private string CompileFromStrings(string FilePath, string WrapperTxt, string ProgramTxt) {
 
-		    var codeProvider = CodeDomProvider.CreateProvider("CSharp");
+		    var CodeProvider = CodeDomProvider.CreateProvider("CSharp");
 		    var OutputLocation = $"{FilePath}\\{Name}.exe";
 
-		    var parameters = new CompilerParameters {
+		    var Parameters = new CompilerParameters {
 			    GenerateExecutable = true,
 			    OutputAssembly = OutputLocation,
 			    CompilerOptions = "/main:YourProject.Main_Program" // There is a Main method in both the wrapper
@@ -88,21 +83,21 @@ namespace Solution.Build {
 																// MSBuild is told to execute the program from
 																// the Main method in the Wrapper
 		    };
-		    parameters.ReferencedAssemblies.Add("Newtonsoft.Json.dll");
+		    Parameters.ReferencedAssemblies.Add("Newtonsoft.Json.dll");
 			
 		    //Make sure we generate an EXE, not a DLL
-		    var Results = codeProvider.CompileAssemblyFromSource(parameters, WrapperTxt, ProgramTxt);
+		    var Results = CodeProvider.CompileAssemblyFromSource(Parameters, WrapperTxt, ProgramTxt);
 
 		    var OutputText = new StringBuilder();
 		    
 		    if (Results.Errors.Count > 0) {
 			    // Errors Happened
-			    OutputText.Append($@"!: {Results.Errors.Count} error{(Results.Errors.Count == 1 ? "" : "s")} occurred: ");
+			    OutputText.Append($@"!: {Results.Errors.Count} error{(Results.Errors.Count == 1 ? "" : "s")} occurred: {Environment.NewLine}");
 			    foreach (CompilerError CompErr in Results.Errors) {
-				    OutputText.Append("(" + CompErr.Line + ", " + CompErr.Column + ") " +
+				    OutputText.AppendLine("(" + CompErr.Line + ", " + CompErr.Column + ") " +
 				                      ", Error Number: " + CompErr.ErrorNumber +
 				                      ", '" + CompErr.ErrorText + ";" + 
-				                      Environment.NewLine + Environment.NewLine);
+				                      Environment.NewLine);
 			    }
 		    } else {
 			    //Successful Compile

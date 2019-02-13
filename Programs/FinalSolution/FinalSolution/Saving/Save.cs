@@ -1,11 +1,16 @@
 
 using System;
+using System.Diagnostics;
 using System.IO;
+using System.Text;
 using System.Windows.Forms;
 
 using Solution.Designer;
 
 using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
+
+using Solution.Designer.Blocks;
 
 namespace Solution.Saving {
 
@@ -23,9 +28,6 @@ namespace Solution.Saving {
 
 	        try {
 		        var Path = Designer.FileInfo.Split('|')[1];
-		        var DesignerAsJson = JsonConvert.SerializeObject(Designer.SContainer_Workspace.Panel2, new JsonSerializerSettings {
-					ReferenceLoopHandling = ReferenceLoopHandling.Ignore
-		        });
 
 		        if (File.Exists(Path)) {
 			        File.WriteAllText(Path, "");
@@ -34,9 +36,25 @@ namespace Solution.Saving {
 			        F.Close();
 		        }
 
+		        var DesignerAsJson = new StringBuilder();
+
+		        foreach (var Control in Designer.SContainer_Workspace.Panel2.Controls) {
+			        if (!(Control is BaseBlock Block)) continue;
+
+			        var BlockAsJson = JsonConvert.SerializeObject(Block, new JsonSerializerSettings {
+				        ContractResolver = new BaseBlockContractResolver(),
+						//ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+			        });
+
+			        //MessageBox.Show($"Block: JSON Follows{Environment.NewLine}{BlockAsJson}");
+
+			        DesignerAsJson.AppendLine(BlockAsJson);
+
+		        }
+
 		        using (var SW = new StreamWriter(Path)) {
 
-			        SW.Write(DesignerAsJson);
+			        SW.Write(DesignerAsJson.ToString());
 
 		        }
 

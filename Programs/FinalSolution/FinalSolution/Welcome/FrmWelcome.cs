@@ -131,24 +131,13 @@ namespace Solution.Welcome {
 
 		private void OpenDesigner(string Path) { // Open from a path
 
-			var DesignerAsJSON = File.ReadAllText(Path);
+			var Designer = Saving.Load.LoadFromFile(Path);
 
-			FrmDesigner Designer = null;
-
-			try {
-				Designer = (FrmDesigner) JsonConvert.DeserializeObject(DesignerAsJSON, typeof(FrmDesigner)); // open the designer
-
-				if (Designer is null) throw new Exception("Something went wrong"); // it broke
-
-			} catch (Exception Ex) { // it broke
-				MessageBox.Show("Unable to deserialise the file. It may have been corrupted.", "B#",
-				                MessageBoxButtons.OK, MessageBoxIcon.Error);
-				return;
-			}
+			if (Designer is null) return;
 
 			Designer._ParentFrmWelcome = this; // Show the designer
 
-			Designer.VisibleChanged += (S2, E2) => { Show(); };
+			Designer.VisibleChanged += (S2, E2) => { Show(); };	
 			Designer.Closed += (S2, E2) => { Show(); };
 
 			Designer.Show();

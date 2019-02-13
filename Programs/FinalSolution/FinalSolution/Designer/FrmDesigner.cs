@@ -36,7 +36,7 @@ namespace Solution.Designer {
 		/// <inheritdoc />
 		public FrmDesigner(FrmWelcome ParentFrmWelcome = null) {
 			InitializeComponent();
-			Connections = new Dictionary<BaseBlock, BaseBlock>();
+			//Connections = new Dictionary<BaseBlock, BaseBlock>();
 
 			PnlCommandPalette.Hide();
 			
@@ -162,7 +162,6 @@ namespace Solution.Designer {
 				}
 
 				case "VariableRefBlock": {
-					MessageBox.Show("Success");
 					NewBlock = GenericBlockConstructor<VarRefBlock>();
 					break;
 				}
@@ -188,6 +187,26 @@ namespace Solution.Designer {
 		}
 
 		private BaseBlock GenericBlockConstructor<T>() where T : BaseBlock, new() { // Generic constructor
+
+			while (true) {
+				var AnotherHasThisId = false;
+
+				foreach (var Panel2Control in SContainer_Workspace.Panel2.Controls) {
+					if (!(Panel2Control is BaseBlock B)) continue;
+
+					if (B.Id != NextId) continue;
+
+					AnotherHasThisId = true;
+					break;
+
+				}
+
+				if (AnotherHasThisId) {
+					NextId++;
+				} else {
+					break;
+				}
+			}
 			
 			var NewName = typeof(T).Name + NextId;
 
@@ -210,7 +229,9 @@ namespace Solution.Designer {
 				VC.ValidateButton.Hide();
 			}
 
-
+			if (ToAdd is VarCreateBlock VCB) {
+				VCB.OnVarNameChanged += UpdateVarNameList;
+			}
 
 			return ToAdd;
 		}
@@ -239,7 +260,12 @@ namespace Solution.Designer {
 		private Point Offset; // Point mouse clicked on
 		private BaseBlock ToMove; // Block to move
 
-		private void Block_OnMouseDown(object S, MouseEventArgs E) {
+		/// <summary>
+		/// Start Movement
+		/// </summary>
+		/// <param name="S"></param>
+		/// <param name="E"></param>
+		public void Block_OnMouseDown(object S, MouseEventArgs E) {
 			if (!(S is BaseBlock Block)) return; // Do nothing if it isn't a baseBlock
 			//Debug.WriteLine("Mouse Down");
 
@@ -272,7 +298,12 @@ namespace Solution.Designer {
 			SContainer_Workspace.Panel2.Refresh(); // Redraw
 		}
 
-		private void Block_OnMouseUp(object S, MouseEventArgs E) { // Stop moving
+		/// <summary>
+		/// Finish movement
+		/// </summary>
+		/// <param name="S"></param>
+		/// <param name="E"></param>
+		public void Block_OnMouseUp(object S, MouseEventArgs E) { // Stop moving
 			if (!(S is BaseBlock)) return; // PatternMatchingIsAUsefulTool
 			//Debug.WriteLine("Mouse Up");
 
@@ -295,7 +326,7 @@ namespace Solution.Designer {
 
 		#region Connection Management
 
-		private Dictionary<BaseBlock, BaseBlock> Connections; // Store the links
+		//private Dictionary<BaseBlock, BaseBlock> Connections; // Store the links
 		
 		private BaseBlock First; // The blocksss
 		private BaseBlock Second;
@@ -385,7 +416,7 @@ namespace Solution.Designer {
 			}
 
 
-			Connections.Add(First, Second); // Make the link
+			//Connections.Add(First, Second); // Make the link
 			First.ConnectNext(Second.Id); // Setup for the next block
 
 			SContainer_Workspace.Panel2.Refresh(); // redraw
@@ -418,12 +449,12 @@ namespace Solution.Designer {
 			
 			Block.DisconnectNext();
 
-			var FeaturedConnections = Connections.Select(C => C.Key == Block);
+			//var FeaturedConnections = Connections.Select(C => C.Key == Block);
 			
-			foreach (var FC in FeaturedConnections) {
-				Debug.WriteLine(FC);
-			}
-			Debug.WriteLine("");
+			//foreach (var FC in FeaturedConnections) {
+			//	Debug.WriteLine(FC);
+			//}
+			//Debug.WriteLine("");
 
 
 		}
@@ -433,37 +464,94 @@ namespace Solution.Designer {
 			
 		}
 
+
 		#endregion
 
 		#region Drawing
 
 		private void DrawLinks(object S, PaintEventArgs E) { // Draw the connections
 			var GFX = E.Graphics; // Better name
-			foreach (var Connection in Connections) {
 
-				if (Connection.Key == ToMove || Connection.Value == ToMove) continue;
+			foreach (var C in SContainer_Workspace.Panel2.Controls) {
+				if (!(C is BaseBlock Block)) continue;
+				if (Block.NextBlockId == (int) BasicBlockIds.NoConnection) continue;
 
-				var CK = Connection.Key; // Compactness
-				var CV = Connection.Value;
-				var CR = Connection.Key.BottomConnectorZone.Location;
+				var Next = GetBlockById(Block.NextBlockId);
+
+				if (Next is null || Next == ToMove || Block == ToMove) continue;
+
 				
+				var BBCZ = Block.BottomConnectorZone.Location;
+
 				var P1 = SContainer_Workspace.Panel2 // First point on First Line
-				                             .PointToClient(CK.PointToScreen(new Point(CR.X,
-				                                                                       CR.Y +
-				                                                                       CK.BottomConnectorZone.Height)
-				                                                             )
-				                                            );
-				
-				var P2 = SContainer_Workspace.Panel2.PointToClient(CV.PointToScreen(CV.TopConnectorZone.Location)); // Second point on First Line
-				
-				GFX.DrawLine(Pens.Black, P1, P2);
+				                             .PointToClient(Block.PointToScreen(new Point(BBCZ.X,
+				                                                                       BBCZ.Y +
+				                                                                       Block.BottomConnectorZone.Height)
+				                                                            )
+				                                           );
 
-				P1.X = P1.X + CK.BottomConnectorZone.Width; // First point on Second Line
-				P2.X = P2.X + CV.TopConnectorZone.Width; // Second point on Second Line
+				var P2 =
+					SContainer_Workspace.Panel2.PointToClient(Next.PointToScreen(Next.TopConnectorZone
+					                                                                 .Location)); // Second point on First Line
 
 				GFX.DrawLine(Pens.Black, P1, P2);
+
+				P1.X = P1.X + Block.BottomConnectorZone.Width; // First point on Second Line
+				P2.X = P2.X + Next.TopConnectorZone.Width; // Second point on Second Line
+
+				GFX.DrawLine(Pens.Black, P1, P2);
+
+				if (!(Block is IUsesVariable VBlock)) continue;
+
+				if (VBlock.VarBlockId == (int) BasicBlockIds.NoConnection) continue;
+
+				Next = GetBlockById(VBlock.VarBlockId);
+
+				if (Next is null || Next == ToMove) continue;
+				if (!(Next is VarRefBlock VNext)) continue;
+
+
+				var VBVZ = VBlock.VarConnectorZone.Location;
+
+				P1 = SContainer_Workspace.Panel2 // First point on First Line
+				                         .PointToClient(Block.PointToScreen(new Point(VBVZ.X +
+				                                                                      VBlock.VarConnectorZone.Width,
+				                                                                      VBVZ.Y)
+				                                                           )
+				                                       );
+				P2 =
+#pragma warning disable CS1690 // Accessing a member on a field of a marshal-by-reference class may cause a runtime exception
+					SContainer_Workspace.Panel2.PointToClient(VNext.PointToScreen(VNext.InputConnector // TODO
+#pragma warning restore CS1690 // Accessing a member on a field of a marshal-by-reference class may cause a runtime exception
+					                                                                 .Location)); // Second point on First Line
 
 			}
+
+			//foreach (var Connection in Connections) {
+
+			//	if (Connection.Key == ToMove || Connection.Value == ToMove) continue;
+
+			//	var CK = Connection.Key; // Compactness
+			//	var CV = Connection.Value;
+			//	var CR = Connection.Key.BottomConnectorZone.Location;
+				
+			//	var P1 = SContainer_Workspace.Panel2 // First point on First Line
+			//	                             .PointToClient(CK.PointToScreen(new Point(CR.X,
+			//	                                                                       CR.Y +
+			//	                                                                       CK.BottomConnectorZone.Height)
+			//	                                                             )
+			//	                                            );
+				
+			//	var P2 = SContainer_Workspace.Panel2.PointToClient(CV.PointToScreen(CV.TopConnectorZone.Location)); // Second point on First Line
+				
+			//	GFX.DrawLine(Pens.Black, P1, P2);
+
+			//	P1.X = P1.X + CK.BottomConnectorZone.Width; // First point on Second Line
+			//	P2.X = P2.X + CV.TopConnectorZone.Width; // Second point on Second Line
+
+			//	GFX.DrawLine(Pens.Black, P1, P2);
+
+			//}
 		}
 
 
@@ -634,6 +722,16 @@ namespace Solution.Designer {
 		}
 
 		private BaseBlock GetBlockById(int Id) { // TODO
+
+			if (Id == -1) return null;
+
+			foreach (var Control in SContainer_Workspace.Panel2.Controls) {
+				if (!(Control is BaseBlock Block)) continue;
+				if (Block.Id == Id) {
+					return Block;
+				}
+			}
+
 			return null;
 		}
 
@@ -694,6 +792,32 @@ namespace Solution.Designer {
 				TxtCommandPaletteSearch.Text = "";
 			}
 		}
+
+		private List<string> VarNamesList = new List<string>();
+
+		/// <summary>
+		/// Updates the 
+		/// </summary>
+		public void UpdateVarNameList(object S, EventArgs E) {
+			VarNamesList = new List<string>();
+
+			foreach (var Panel2Control in SContainer_Workspace.Panel2.Controls) {
+				if (!(Panel2Control is VarCreateBlock VCB)) continue;
+
+				VarNamesList.Add(VCB.VarName);
+
+			}
+
+			foreach (var Panel2Control in SContainer_Workspace.Panel2.Controls) {
+				if (!(Panel2Control is VarRefBlock VRB)) continue;
+
+				VRB.UpdateVarNames(VarNamesList);
+
+			}
+
+		}
 		#endregion
+
+		
 	}
 }

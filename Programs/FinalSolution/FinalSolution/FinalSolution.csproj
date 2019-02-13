@@ -91,6 +91,7 @@
     <Compile Include="Designer\Blocks\EmptyNormalBlock.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Designer\Blocks\IUsesVariable.cs" />
     <Compile Include="Designer\Blocks\VarCreateBlock.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -109,6 +110,7 @@
     <Compile Include="Designer\FrmDesigner.Designer.cs">
       <DependentUpon>FrmDesigner.cs</DependentUpon>
     </Compile>
+    <Compile Include="Saving\Load.cs" />
     <Compile Include="Tooltips and Help.cs" />
     <Compile Include="Errors\BSharp_NotABSharpIndexException.cs" />
     <Compile Include="Saving\Save.cs" />
