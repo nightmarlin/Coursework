@@ -107,7 +107,7 @@ namespace Solution.Saving {
 
 				case "DecimalCreateBlock": {
 					BlockToReturn = new DecimalCreateBlock {
-						Value = Props.Value,
+						Value = (decimal) Props.Value,
 						VarName = Props.VarName,
 					};
 					break;
@@ -149,7 +149,6 @@ namespace Solution.Saving {
 	/// </summary>
 	[SuppressMessage("ReSharper", "UnassignedField.Global")]
 	public struct DeserializedProps {
-		
 
 		/// <summary>
 		/// The code

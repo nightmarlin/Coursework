@@ -179,6 +179,8 @@ namespace Solution.Designer.Blocks {
 				              IconLocation.X, IconLocation.Y,
 				              IconSize.Width, IconSize.Height);
 			}
+
+			
 		}
 
 		/// <summary>
@@ -214,7 +216,7 @@ namespace Solution.Designer.Blocks {
 		public static readonly List<string> PropertiesToSerialize = new List<string> {
 			"Code", "Name", "ConnectorSelected", "TopConnectorZone",
 			"BottomConnectorZone", "Id", "NextBlockId", "OutlineRectangle", "Location", "Size", "VarConnectorZone",
-			"VarBlockId", "InputConnector", "VarName","Value"
+			"VarBlockId", "InputConnector", "VarName", "Value"
 		};
 
 	}
@@ -236,12 +238,12 @@ namespace Solution.Designer.Blocks {
 
 		//	var Property = base.CreateProperty(member, memberSerialization);
 
-		//	Debug.WriteLine($"1Checking if type {Property.DeclaringType.Name} inherits from baseblock");
+		//	Debug.WriteLine($"1Checking if type {Property.DeclaringType.Name} inherits from BaseBlock");
 
 
 		//	if (Property.DeclaringType != typeof(BaseBlock) & !Property.DeclaringType.IsSubclassOf(typeof(BaseBlock))) return Property;
 
-		//	Debug.WriteLine($"2Type {Property.DeclaringType.Name} inherits from baseblock");
+		//	Debug.WriteLine($"2Type {Property.DeclaringType.Name} inherits from BaseBlock");
 
 		//	if (!BaseBlock.PropertiesToSerialize.Contains(Property.PropertyName)) {
 		//		Debug.WriteLine(Property.PropertyName);

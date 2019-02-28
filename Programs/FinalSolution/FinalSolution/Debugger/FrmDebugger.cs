@@ -151,7 +151,10 @@ namespace Solution.Debugger {
 			_DebugProcess.ErrorDataReceived += ReadError; // Bind the ASYNC code
 			_DebugProcess.OutputDataReceived += ReadOutput; // MORE ASYNC CODE BINDING
 			
-			_DebugProcess.Exited += (Sender, E) => { StopDebuggingInterfaceChanges(); }; // Sleep if the program exits
+			_DebugProcess.Exited += (Sender, E) => {
+				WriteExitText();
+				StopDebuggingInterfaceChanges();
+			}; // Sleep if the program exits
 
 			StartDebuggingInterfaceChanges(); // Enable buttons because nothing broke
 
@@ -180,6 +183,23 @@ namespace Solution.Debugger {
 				// ?. operators are great because they do all the null checking for you. I really don't like errors...
 				
 			} catch (InvalidOperationException) { } // If this happens then it was already dead...
+
+			WriteExitText();
+		}
+		
+		private delegate void ExitTextDelegate();
+		private void WriteExitText() {
+			
+			if (TxtStandardOutput.InvokeRequired) {
+				var ETD = new ExitTextDelegate(WriteExitText);
+				try {
+					Invoke(ETD);
+				} catch (ObjectDisposedException) { }
+
+			} else {
+				
+				TxtStandardOutput.Text += $"{Environment.NewLine}: Process exited at {DateTime.Now:f}";
+			}
 		}
 
 		#endregion

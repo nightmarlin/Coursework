@@ -1,5 +1,6 @@
 using System;
 using System.CodeDom.Compiler;
+using System.IO;
 using System.Reflection;
 using System.Resources;
 using System.Text;
@@ -51,6 +52,8 @@ namespace Solution.Build {
 
 			MessageBox.Show(Output);
 
+
+
 			return !Output.StartsWith("!: "); // 
 		}
 
@@ -84,6 +87,7 @@ namespace Solution.Build {
 																// the Main method in the Wrapper
 		    };
 		    Parameters.ReferencedAssemblies.Add("Newtonsoft.Json.dll");
+		    Parameters.ReferencedAssemblies.Add("System.Linq.dll");
 			
 		    //Make sure we generate an EXE, not a DLL
 		    var Results = CodeProvider.CompileAssemblyFromSource(Parameters, WrapperTxt, ProgramTxt);
@@ -107,6 +111,24 @@ namespace Solution.Build {
 		    return OutputText.ToString();
 		    
 	    }
+
+		/// <summary>
+		/// Saves the user file generated from the user program and the template.
+		/// Saved in "FolderPath\ProjectName.cs", or (if the name is unsuitable) "FolderPath\MyProjectSave.cs"
+		/// </summary>
+		/// <param name="Program">The program text</param>
+		/// <param name="FolderPath">The path to the folder where the file will be saved</param>
+		/// <returns>Whether the operation was successful or not</returns>
+	    public bool SaveUserCSFile(string Program, string FolderPath) {
+			try {
+				File.WriteAllText(FolderPath + Name, Program);
+				return true;
+
+			} catch (Exception) {
+				return false;
+
+			}
+		}
 
     }
 

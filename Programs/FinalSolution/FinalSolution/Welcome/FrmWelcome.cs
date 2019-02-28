@@ -44,14 +44,18 @@ namespace Solution.Welcome {
 
 		private void BtnShowDesigner_Click(object S, EventArgs E) {
 			
+
 			var Designer = new FrmDesigner(this); // Set up a new FrmDesigner with a reference to this
-			Designer.VisibleChanged += (S2, E2) => { Show(); }; // Add event handlers
+			Designer.VisibleChanged += (S2, E2) => {
+				if (S2 is FrmDesigner D && D.Visible) return;
+				Show();
+			}; // Add event handlers
 			Designer.Closed += (S2, E2) => { Show(); };
 
 			Designer.Show(); // Show designer
 
+			
 			Hide();
-
 		}
 
 		private void FrmWelcome_Load(object sender, EventArgs e) {

@@ -10,6 +10,7 @@ using System.Text;
 using System.Windows.Forms;
 
 using Solution.Build;
+using Solution.Debugger;
 using Solution.Designer.Blocks;
 using Solution.Welcome;
 
@@ -635,6 +636,88 @@ namespace Solution.Designer {
 				return;
 			}
 
+			// Get Code
+
+			var CS = BuildToCompiledStruct();
+
+			if (!CS.HasValue) return;
+
+			// Build			
+
+			var Program = Properties.Resources.ProjectTemplate;
+
+			Builder BDR;
+
+			using (var CDP = CodeDomProvider.CreateProvider("C#")) {
+				BDR = CDP.IsValidIdentifier(Name) 
+					? new Builder(Name) 
+					: new Builder("YourProject");
+			}
+
+
+			Program = Program.Replace("//<VariableSet>", CS.Value.Vars) // Insert code
+			                 .Replace("//<Program>", CS.Value.Actions);
+
+			/*
+			 * 1) Pass generated code to builder
+			 * 2) Builder does the buildy thing
+			 * 3) Receive exe path
+			 */
+
+			var FilePath = FileInfo.Split('|')[1];
+
+			var Path = System.IO.Path.GetDirectoryName(FilePath); // 3
+
+			var Success = BDR.Build(Program, Path); // 1 // 2
+
+			if (Success) {
+				MessageBox.Show("Compilation was successful", "B#", MessageBoxButtons.OK, MessageBoxIcon.Information);
+			} else {
+				MessageBox.Show("Compilation was unsuccessful", "B#", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				return;
+			}
+
+
+			// Run
+
+			/*
+			 * Open FrmDebugger with the exe output from earlier
+			 */
+			
+			var EXEPath = $"{Path}\\{Name}.exe";
+
+			if (!File.Exists(EXEPath)) EXEPath = $"{Path}\\YourProject.exe";
+
+			var Debugger = new FrmDebugger(EXEPath, this);
+
+			Debugger.VisibleChanged += (S, E) => {
+				if (S is FrmDebugger D && D.Visible) return;
+				Show();
+			};
+
+			Debugger.Closed += (S, E) => Show();
+			
+			Debugger.Show();
+
+			Hide();
+
+		}
+
+		private struct CompiledStruct {
+
+			/// <summary>
+			/// The variable
+			/// </summary>
+			public string Vars;
+
+			public string Actions;
+
+		}
+
+		private CompiledStruct? BuildToCompiledStruct() {
+			var CS = new CompiledStruct();
+
+			
 			// Generate code
 
 			/* 1) Find the StartBlock
@@ -648,10 +731,21 @@ namespace Solution.Designer {
 			var HasNext = true;
 			var CurrentBlock = GetBlockById((int) BasicBlockIds.Starter);
 
+			var IteratedThrough = new List<BaseBlock>();
+
 			while (HasNext) { // 2
 
-				Actions.AppendLine(CurrentBlock.Code);
-				
+				if (IteratedThrough.Contains(CurrentBlock)) {
+					MessageBox.Show("There is a circular reference in your code. " +
+					                "This would cause the compiler to enter an infinite loop. " +
+					                "Please remove the loop and try again", "B#", MessageBoxButtons.OK,
+					                MessageBoxIcon.Error);
+					return null;
+				}
+
+				Actions.AppendLine(CurrentBlock.Code + Environment.NewLine);
+				IteratedThrough.Add(CurrentBlock);
+
 				if (CurrentBlock.NextBlockId == (int) BasicBlockIds.NoConnection) {
 					HasNext = false;
 				} else {
@@ -665,9 +759,18 @@ namespace Solution.Designer {
 			HasNext = true;
 			CurrentBlock = GetBlockById((int) BasicBlockIds.Variable);
 
-			while (HasNext) { // 2
+			while (HasNext) { // 4
 
-				Actions.AppendLine(CurrentBlock.Code);
+				if (IteratedThrough.Contains(CurrentBlock)) {
+					MessageBox.Show("There is a circular reference in your code. " +
+					                "This would cause the compiler to enter an infinite loop. " +
+					                "Please remove the loop and try again", "B#", MessageBoxButtons.OK,
+					                MessageBoxIcon.Error);
+					return null;
+				}
+
+				Actions.AppendLine(CurrentBlock.Code + Environment.NewLine);
+				IteratedThrough.Add(CurrentBlock);
 				
 				if (CurrentBlock.NextBlockId == (int) BasicBlockIds.NoConnection) {
 					HasNext = false;
@@ -676,52 +779,14 @@ namespace Solution.Designer {
 				}
 
 			}
-				
-			// Build
 
-			
+			CS.Actions = Actions.ToString();
+			CS.Vars = Vars.ToString();
 
-			var Program = Properties.Resources.ProjectTemplate;
-
-			Builder BDR;
-
-			using (var CDP = CodeDomProvider.CreateProvider("C#")) {
-				BDR = CDP.IsValidIdentifier(Name) 
-					? new Builder(Name) 
-					: new Builder("YourProject");
-			}
-
-			Program = Program.Replace("//<VariableSet>", Vars.ToString()) // Insert code
-			                 .Replace("//<Program>", Actions.ToString());
-
-			/*
-			 * 1) Pass generated code to builder
-			 * 2) Builder does the buildy thing
-			 * 3) Receive exe path
-			 */
-
-			var FilePath = FileInfo.Split('|')[1];
-
-			var Path = System.IO.Path.GetDirectoryName(FilePath);
-
-			var Success = BDR.Build(Program, Path);
-
-			if (Success) {
-				MessageBox.Show("Compilation was successful", "B#", MessageBoxButtons.OK, MessageBoxIcon.Information);
-			} else {
-				MessageBox.Show("Compilation was unsuccessful", "B#", MessageBoxButtons.OK, MessageBoxIcon.Error);
-			}
-
-
-			// Run
-
-			/*
-			 * Open FrmDebugger with the exe output from earlier
-			 */
-
+			return CS;
 		}
 
-		private BaseBlock GetBlockById(int Id) { // TODO
+		private BaseBlock GetBlockById(int Id) {
 
 			if (Id == -1) return null;
 
