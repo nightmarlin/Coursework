@@ -23,11 +23,12 @@
 		/// the contents of this method with the code editor.
 		/// </summary>
 		private void InitializeComponent() {
+			this.components = new System.ComponentModel.Container();
 			System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
-            "yay",
-            "yeet",
-            "yote",
-            "doot"}, -1);
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes"}, -1);
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmWelcome));
 			this.MainMenu = new System.Windows.Forms.MenuStrip();
 			this.FileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,6 +44,7 @@
 			this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
 			this.BtnShowDesigner = new System.Windows.Forms.Button();
 			this.BtnOpenFile = new System.Windows.Forms.Button();
+			this.TT = new System.Windows.Forms.ToolTip(this.components);
 			this.MainMenu.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
 			this.splitContainer1.Panel1.SuspendLayout();
@@ -124,7 +126,6 @@
 			// 
 			// List_RecentItems
 			// 
-			this.List_RecentItems.Activation = System.Windows.Forms.ItemActivation.TwoClick;
 			this.List_RecentItems.BackColor = System.Drawing.SystemColors.ControlDark;
 			this.List_RecentItems.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.List_RecentItems.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -177,6 +178,7 @@
 			this.BtnShowDesigner.Size = new System.Drawing.Size(251, 281);
 			this.BtnShowDesigner.TabIndex = 10;
 			this.BtnShowDesigner.Text = "Create A Program";
+			this.TT.SetToolTip(this.BtnShowDesigner, "Open an empty designer");
 			this.BtnShowDesigner.UseVisualStyleBackColor = true;
 			this.BtnShowDesigner.Click += new System.EventHandler(this.BtnShowDesigner_Click);
 			// 
@@ -233,6 +235,7 @@
 		private System.Windows.Forms.ColumnHeader columnHeader1;
 		private System.Windows.Forms.ColumnHeader columnHeader2;
 		private System.Windows.Forms.ColumnHeader columnHeader3;
+		private System.Windows.Forms.ToolTip TT;
 	}
 }
 

@@ -154,12 +154,12 @@ namespace Solution.Debugger {
 
 				// Remove "DAT|". Note that `string.Remove` is used instead of `string.Replace`. This is because
 				//   variable data may contain the "DAT|" string, so the method should not delete that
-				Data = Data.Remove(0, 4);
+				var MyData = Data.Remove(0, 4);
 
 				//Console.WriteLine(Data);
 
 				// Deserialize JSON object with NewtonSoft.Json
-				var ListOut = JsonConvert.DeserializeObject<List<string[]>>(Data);
+				var ListOut = JsonConvert.DeserializeObject<List<string[]>>(MyData);
 
 				var VariableOut = "Variables:" + Environment.NewLine;
 
@@ -182,8 +182,7 @@ namespace Solution.Debugger {
 			} catch (Exception) {
 				
 				// Show the user the output
-				TxtStandardOutput.Text += $@"Unable to deserialize variable data:{Environment.NewLine}" +
-				                          $@"--> {Data}{Environment.NewLine}";
+				TxtStandardOutput.Text += $"{Data}{Environment.NewLine}";
 			}
 		
 		}

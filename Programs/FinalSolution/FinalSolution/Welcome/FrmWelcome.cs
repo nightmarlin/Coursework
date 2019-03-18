@@ -1,14 +1,8 @@
 ﻿using System;
 using System.Collections.Specialized;
-using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Windows.Forms;
-using System.Windows.Forms.VisualStyles;
 
-using Newtonsoft.Json;
-
-using Solution.Debugger;
 using Solution.Designer;
 using Solution.Properties;
 
@@ -43,7 +37,7 @@ namespace Solution.Welcome {
 		
 
 		private void BtnShowDesigner_Click(object S, EventArgs E) {
-			
+
 
 			var Designer = new FrmDesigner(this); // Set up a new FrmDesigner with a reference to this
 			Designer.VisibleChanged += (S2, E2) => {
@@ -61,6 +55,15 @@ namespace Solution.Welcome {
 		private void FrmWelcome_Load(object sender, EventArgs e) {
 
 			List_RecentItems_Update(); // reload the list
+			
+			
+			// allow resizing evenly
+			List_RecentItems.Resize += (S, E) => {
+				List_RecentItems.Columns[0].Width = List_RecentItems.Width / 3;
+				List_RecentItems.Columns[1].Width = List_RecentItems.Width / 3;
+				List_RecentItems.Columns[2].Width = List_RecentItems.Width / 3;
+				List_RecentItems.Refresh();
+			};
 
 		}
 
@@ -84,16 +87,11 @@ namespace Solution.Welcome {
 				var ToList = Item.Split('|'); // Split on pipe character
 
 				// Details time
-				List_RecentItems.Items.Add(new ListViewItem(new [] {ToList[1].Split('\\')[Item.Split('\\').Length - 1], ToList[1], ToList[0]}));
+				List_RecentItems.Items.Add(new ListViewItem(new []
+					{ToList[1].Split('\\')[Item.Split('\\').Length - 1],
+					ToList[1],
+					ToList[0]}));
 			}
-			
-			// allow resizing evenly
-			List_RecentItems.Resize += (S, E) => {
-				List_RecentItems.Columns[0].Width = List_RecentItems.Width / 3;
-				List_RecentItems.Columns[1].Width = List_RecentItems.Width / 3;
-				List_RecentItems.Columns[2].Width = List_RecentItems.Width / 3;
-				List_RecentItems.Refresh();
-			};
 
 			List_RecentItems.Update();
 
@@ -148,7 +146,6 @@ namespace Solution.Welcome {
 
 			Hide();
 
-
 		}
 
 		private void ListRecentItemsItemSelected(object S, EventArgs E) { // Open from the list
@@ -168,7 +165,11 @@ namespace Solution.Welcome {
 				Settings.Default.Save();
 
 				List_RecentItems_Update();
+
+				return;
 			}
+
+			OpenDesigner(SelectedPath);
 
 		}
 	}

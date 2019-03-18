@@ -171,7 +171,26 @@ namespace Solution.Properties {
         }
         
         /// <summary>
-        /// Looks up the localised template for a user program
+        ///   Looks up a localized string similar to using System;
+        ///using System.Collections.Generic;
+        ///using System.Linq;
+        ///using System.Text;
+        ///using System.Threading.Tasks;
+        /////&lt;using&gt;
+        ///
+        ///namespace YourProject {
+        ///	
+        ///	/// &lt;summary&gt;
+        ///	/// Your program in C#. You can take this and compile it separately and it will run just the same
+        ///	/// as it does in the debugger.
+        ///	/// The regions help split the program into manageable chunks
+        ///	/// &lt;/summary&gt;
+        ///	public static class Program {
+        ///
+        ///		// This is where your variables are kept
+        ///		#region Internal Variables
+        ///
+        ///		//&lt;Vari [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string ProjectTemplate {
             get {
@@ -220,7 +239,28 @@ namespace Solution.Properties {
         }
         
         /// <summary>
-        ///   Looks up the localised Wrapper string (contains debugger functionality)
+        ///   Looks up a localized string similar to using System;
+        ///using System.Collections.Generic;
+        ///using System.Reflection;
+        ///using System.Threading;
+        ///using System.Threading.Tasks;
+        ///
+        ///using Newtonsoft.Json;
+        ///
+        ///namespace YourProject {
+        ///
+        ////*
+        ///  │
+        ///  ├─┬─ Project Directory
+        ///  │ └─┬ ProjectName.BSharp | BSharp save file
+        ///  │   ├ ProjectName.cs     | User code file
+        ///  │   └ ProjectName.exe    | Generated EXE file
+        ///  │
+        /// */
+        ///
+        ///  /// &lt;summary&gt;
+        ///  /// Template class for code construction. User code is placed in the Template class
+        ///  /// and is then wrapped by this [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Wrapper {
             get {

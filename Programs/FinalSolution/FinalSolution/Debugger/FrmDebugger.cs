@@ -123,6 +123,7 @@ namespace Solution.Debugger {
 			_ParentFrmDesigner = MyParent; // Set parent form
 
 			_ParentFrmDesigner.Hide(); // Hide the parent form
+			_ParentFrmDesigner._ParentFrmWelcome.Hide();
 
 			_IsDebugging = _DebugProcess.Start(); // Start the process
 
@@ -134,6 +135,7 @@ namespace Solution.Debugger {
 				KillDebugProcess(); // Kill everything just in case
 
 				_ParentFrmDesigner.Show(); // Show the main form
+				_ParentFrmDesigner._ParentFrmWelcome.Hide(); // Prevent some quirky behaviour
 
 				Hide(); // Disappear
 				Dispose(); // Clean up
@@ -164,6 +166,7 @@ namespace Solution.Debugger {
 			// START THE ASYNC OPERATIONS
 			_DebugProcess.BeginOutputReadLine();
 			_DebugProcess.BeginErrorReadLine();
+
 
 			TxtInputToProgram.Focus(); // Give focus to TxtInputToProgram
 		}

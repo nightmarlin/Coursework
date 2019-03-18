@@ -37,8 +37,7 @@ namespace Solution.Saving {
 			}
 
 
-			var Contents = ReadText(Path);
-
+			var Contents = File.ReadAllLines(Path);
 
 			var BlockSet = Contents.Select(JsonConvert.DeserializeObject<DeserializedProps>)
 			                       .Select(RebuildBlock)
@@ -51,8 +50,6 @@ namespace Solution.Saving {
 			Designer.SContainer_Workspace.Panel2.Controls.RemoveByKey("VarDeclareBlock0");
 
 			foreach (var Block in BlockSet) {
-
-				
 
 				if (Block is VarCreateBlock VCB) {
 					VCB.OnVarNameChanged += Designer.UpdateVarNameList;
@@ -71,10 +68,6 @@ namespace Solution.Saving {
 
 
 			return Designer;
-		}
-
-		private static IEnumerable<string> ReadText(string Path) {
-			return File.ReadAllLines(Path);
 		}
 
 		private static BaseBlock RebuildBlock(DeserializedProps Props) {
@@ -219,8 +212,6 @@ namespace Solution.Saving {
 		/// Variable name
 		/// </summary>
 		public string VarName;
-
-
 	}
 
 }
