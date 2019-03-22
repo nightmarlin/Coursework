@@ -141,6 +141,8 @@
 			this.TxtErrorOutput.ForeColor = System.Drawing.Color.DarkRed;
 			this.TxtErrorOutput.Name = "TxtErrorOutput";
 			this.TxtErrorOutput.ReadOnly = true;
+			this.TxtErrorOutput.Multiline = true;
+			this.TxtErrorOutput.AcceptsReturn = true;
 			// 
 			// TxtVariableOutput
 			// 
@@ -149,6 +151,8 @@
 			this.TxtVariableOutput.ForeColor = System.Drawing.Color.MediumSeaGreen;
 			this.TxtVariableOutput.Name = "TxtVariableOutput";
 			this.TxtVariableOutput.ReadOnly = true;
+			this.TxtVariableOutput.Multiline = true;
+			this.TxtVariableOutput.AcceptsReturn = true;
 			// 
 			// FrmDebugger
 			// 
