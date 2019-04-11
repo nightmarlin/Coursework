@@ -132,7 +132,7 @@ namespace Solution.Designer {
 			// 
 			this.SaveToolStripMenuItem.Name = "SaveToolStripMenuItem";
 			this.SaveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-			this.SaveToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+			this.SaveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.SaveToolStripMenuItem.Text = "Save";
 			this.SaveToolStripMenuItem.ToolTipText = "Save your work";
 			this.SaveToolStripMenuItem.Click += new System.EventHandler(this.SaveToolStripMenuItem_Click);
@@ -140,7 +140,7 @@ namespace Solution.Designer {
 			// ShowInCSToolStripMenuItem
 			// 
 			this.ShowInCSToolStripMenuItem.Name = "ShowInCSToolStripMenuItem";
-			this.ShowInCSToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+			this.ShowInCSToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.ShowInCSToolStripMenuItem.Text = "Show in C#";
 			this.ShowInCSToolStripMenuItem.ToolTipText = "Show your code in C-Sharp";
 			// 
@@ -148,7 +148,7 @@ namespace Solution.Designer {
 			// 
 			this.QuitToolStripMenuItem1.Name = "QuitToolStripMenuItem1";
 			this.QuitToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
-			this.QuitToolStripMenuItem1.Size = new System.Drawing.Size(140, 22);
+			this.QuitToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
 			this.QuitToolStripMenuItem1.Text = "Quit";
 			this.QuitToolStripMenuItem1.ToolTipText = "Go back to the welcome screen";
 			this.QuitToolStripMenuItem1.Click += new System.EventHandler(this.BtnExit_Click);
@@ -233,7 +233,7 @@ namespace Solution.Designer {
 			// 
 			this.DebugToolStripMenuItem.Name = "DebugToolStripMenuItem";
 			this.DebugToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
-			this.DebugToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+			this.DebugToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.DebugToolStripMenuItem.Text = "Debug";
 			this.DebugToolStripMenuItem.ToolTipText = "Run your code";
 			this.DebugToolStripMenuItem.Click += new System.EventHandler(this.DebugToolStripMenuItem_Click);
@@ -242,7 +242,7 @@ namespace Solution.Designer {
 			// 
 			this.GetexeToolStripMenuItem.Name = "GetexeToolStripMenuItem";
 			this.GetexeToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.B)));
-			this.GetexeToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+			this.GetexeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.GetexeToolStripMenuItem.Text = "Get \"exe\"";
 			this.GetexeToolStripMenuItem.ToolTipText = "Get your \"exe\" file path";
 			// 
